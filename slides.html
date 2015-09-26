@@ -90,7 +90,14 @@
           <li>What is a CMS? What is WordPress?</li>
           <li>WordPress.com vs WordPress.org</li>
           <li>Creating a local dev environment</li>
-          <li></li>
+          <li>Intro to PHP
+            <ul>
+              <li>Syntax</li>
+              <li>Variables</li>
+              <li>Functions</li>
+            </ul>
+          </li>
+          
           
           <li>Getting to know the Dashboard
             <ul>
@@ -150,8 +157,7 @@
         Web content can be modified and published without editing the code or database.
         
         A CMS like WordPress also includes features such as:
-
-        * creating site navigation elements
+        
         * database management 
         * themes and templates for page layouts
         * making content searchable and indexable
@@ -163,14 +169,32 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
+        ## What is PHP?
+        
+        HTML, CSS & JavaScript are examples of *client-side* languages. They run in the *browser*.
+
+        PHP is a *server-side* language and runs in the *web server*. PHP development began in the mid-90s and originally stood for Personal Home Page, but now stands for PHP: Hypertext Preprocessor. (Yep, that first “P” stands for PHP.)
+
+        PHP requires a *server* to run the commands so you can't just simply open a PHP page in your browser like an HTML page.
+
+        PHP code can be written on its own, mixed with HTML, or used in combination with many templating engines and frameworks like Wordpress.
+
+        PHP can be used to make a website *dynamic*. PHP can generate HTML, and HTML can pass information to PHP so if you view source on the Ladies Learning Code site, you cannot see the PHP code, even though it's being used to run the WordPress code base.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
         ##Blog vs Website
         
         How are blogs different from standard websites?
         
         * the term *blog* is an abbreviation for *weblog*
         * blogs often contain an ongoing collection of posts and articles presented in date-based order
-        * blogs are often (but not always) written in a diary-style of commentary
-        * a website can contain a blog section and standard informational web pages
+        * blogs are often (but not always) written in a diary-style commentary or first-person narrative
+        * a website can contain both blog section and standard informational web pages like an about or contact page
+        
+        WordPress started as primarily a blogging platform but has since been a choice for many as the platform to create entire websites on.
       </script>
     </section>
     
@@ -198,34 +222,18 @@
         Today we'll be exploring the **.org** version.
       </script>
     </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Front end & Backend
-        
-        **Front-end languages** (also referred to as “client-side”) are basically the elements you see in the web browser and are static.  This includes languages such as HTML, CSS and JavaScript.
-
-        Go to any website and right-click or two-finger tap anywhere on the page.
-        Select View Page Source. That’s HTML, CSS and JavaScript!
-        
-        <br>
-        **Back-end languages** are used to store data and make dynamic changes and store data. These can’t see in the browser, like databases and servers. PHP is a back-end programming languages as well as Ruby, Java (totally different from JavaScript!) and Python.
-        
-        PHP can generate HTML, and HTML can pass information to PHP so if you view source on the Ladies Learning Code site, you cannot see the PHP code, even though it's being used to run the WordPress code base.
-
-        <!-- Some examples of dynamic sites are Facebook and blogs, sites that have content that is constantly changing and updated in real-time and/or stores information like user profiles. -->
-      </script>
-    </section>
+    
+    
     
     <section class="slide" data-markdown>
       <script type="text/template">
         ##Developing locally
         
-        Developing your website *locally*, whether it's HTML or WordPress means developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
+        Developing your website *locally*, whether it's HTML or WordPress, means developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
         
         Remember, since WordPress runs on PHP, a PHP file cannot be opened in a web browser. It needs to run on a server.
         
-        To be able make changes to your code *locally* rather than making changes on your live web server, you will need to set up a *local* server.
+        It's better to make changes to your code *locally* rather than on your live web server, so you get a chance to test it before the world sees it.
       </script>
     </section>
     
@@ -237,7 +245,7 @@
         
         1. A text editor to write & edit code. There are many free and paid options. Today we'll use [Atom](http://atom.io).
         1. A modern web browser. Today we'll use Chrome.
-        1. A local server setup. [Mamp](http://mamp.info) has been a go-to for many WordPress developers but today we'll be using the [DesktopServer](https://serverpress.com) app as this will reduce the need to manually create a database and streamline the process.
+        1. A local server setup. [Mamp](http://mamp.info) has been a go-to for many WordPress developers but today we'll be using the [DesktopServer](https://serverpress.com) app as this will reduce the need to manually create a database and streamline the WordPress installation process.
         
         If you're curious, read more about Mamp <!-- .element: class="footnote" --> [here](https://premium.wpmudev.org/blog/develop-wordpress-locally-mamp/).
           
@@ -248,25 +256,408 @@
       <script type="text/template">
         ## Installing WordPress with DesktopServer
         
-        Open DesktopServer and let's follow the steps outlined in the getting started video.
+        Open DesktopServer and let's follow the steps outlined in the getting started video.  
+        The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).  
+        The LLC test site is named **llc-wp-workshop.dev** but yours can be whatever you want. Just not that for the remainder of this workshop, **llc-wp-workshop.dev** will be used in all examples.
+        
+        Note that your initial WordPress site may look different depending on which default theme your version of WordPress has included. More on this later. <!-- .element: class="footnote" -->
         
         <iframe width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
         
-        The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).
-        
-        **Pro tip!**  If you closed the screen that listed your new WordPress URL, you can access all your local sites by clicking the **Sites** button at the bottom of the DeskServer app.
+        **Pro tip!** Once you've created a local site, you can also access it via the **Sites** button.
         
         ![](framework/img/workshop/desktopserver-sites.png)
       </script>
     </section>
     
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## celebratory gif here
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Intro to PHP (11am)
+        
+        The default theme could use a little pizzazz and some personal customizations.  But before we get into where to find themes and how to update them, let's just go over some PHP basics.
+        
+        **How much PHP do you need to know?**
+        
+        That depends on the complexity of the customization but being able to recognize PHP and have a general grasp of the PHP syntax will help. Especially when reading the WordPress documentation. 
+        
+        Let's go over some PHP basics.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## PHP Syntax
+
+        PHP code is enclosed in special start and end processing instructions `<?php` and `?>` to jump in and out of “PHP mode”. PHP executed on the server generates HTML which is then sent to the client. Anything outside of the opening and closing tags will be ignored by the PHP parser.
+        
+        ```php
+        <?php PHP code in between here. ?>
+        ```
+        ```
+        <?php 
+            Can also open & close the php tags on different lines.
+        ?>
+        ```
+
+        If you mix PHP with HTML, an opening and closing tag is required for each PHP code block that is separated by non-PHP code.
+        
+        ```xml
+        <p>This is just HTML and will be ignored by PHP.</p>
+        <?php PHP code here. ?>
+        <p>More HTML. Ignored by PHP.</p>
+        <?php More PHP code here. ?>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Outputting PHP
+        
+        There are two ways output content in PHP, `echo` and `print`.
+
+        `echo` – output one or more strings, separated by a comma
+
+        `print` – output only one string
+        
+        `string` - series of characters and needs to be contained in either single or double quotes.
+        
+        Add a semi-colon `;` after the string to end the command.
+        
+        ```
+        <?php echo "I'm one string"; ?>
+        <?php echo "I", "like", "pizza"; ?>
+        ```
+        ```
+        <?php print "I'm one string."; ?>
+        ```
+        
+        **Pro tip!**  In the previous example, if the single quotes were used, it would have a produced and error because PHP will think that the second quote closes the first one.  
+        ```
+        <?php print 'I'm one string.'; ?>
+        ````
+        
+        You can avoid that by using double quotes or *escaping* it with a backslash `\` like so:
+        ```
+        <?php print 'I\'m one string.'; ?>
+        ````
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Let's write some PHP!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Open Project files
+        
+        1. Open the Atom editor
+        1. Open your new WordPress site project folder.  Unless you changed the path during the ServerPress setup, it should be located under **Documents > Websites**.  Click on your project's folder *once* and select **open**. Once open, the folder will show in your sidebar.
+        
+          ![](framework/img/workshop/open-project.png)
+          
+          (All of the files listed in **llc-wp-workshop.dev** are the WordPress *core* files that were added during the installation process.)
+        1. Update the text wrapping option to make reading the code easier later on.  Go to **Preferences** and a tab will appear. Scroll down to **Soft Wrap** and make sure it's checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class exercise
+        
+        1. Create a new file in Atom - **File > New File**
+        1. save it as **test.php** - **File > Save**
+          It must end with a PHP extension (not .html) to be able to run PHP code.
+        1. Let's add a line of HTML and PHP to compare.
+          ```
+          <p>Hello!</p>
+          <?php echo "Hello!"; ?>
+          ```
+        1. Save it. To see this page we need to navigate to the **test.php** file but adding a forward slash `/` and the file name.
+          
+          ```
+          http://llc-wp-workshop.dev/test.php
+          ```
+        1. Right-click / two-finder tap > View source
+        
+        Where's the php?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class exercise
+        
+        1. Update the code wrapping a paragraph tag around the PHP script and view source again.
+          ```
+          <p>Hello!</p>
+          <p><?php echo "Hello!"; ?></p>
+          ```
+        1. Remember, with `echo`, you can output multiple strings by separating them with a comma.  
+          ```  
+          <p><?php echo "I", "like", "pizza."; ?></p>
+          ```
+        1. Let's make the output a little nicer by adding a space.  
+          ```  
+          <p><?php echo "I ", "like ", "pizza."; ?></p>
+          ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Creating Dynamic Content
+        
+        Ok, that's great but how is that different than just writing HTML? HTML is static, it doesn't change.
+        
+        On your WordPress site, when you're logged in, there's an admin bar showing the site title and username that you entered when first creating the site.  It couldn't do that with just HTML!
+        
+        ![](framework/img/workshop/wp-admin-bar.png)
+        
+        Variables can be used to store and retrieve this type of data.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## PHP Variables
+        
+        To create a variable, *declare* it first. You get to decide what to name it but it must start with the `$` symbol and cannot contain spaces. Use camelCase or underscores. An `=` symbol is used to *assign* a value to the variable.
+        
+        In the example below, each of these variables would be interpreted as 3 different variables.
+        
+        ```
+        $mygreeting = "Hello!";
+        $myGreeting = "Hi!";
+        $my_greeting = "Bonjour!";
+        ```
+        
+        Variables only *store* values so it just sits there, waiting, until it's needed. Just like with the previous examples, you can use `echo` to output the variable value. **BUT** you do not need the quotes.  That is only required for string types.
+        ```
+        <?php
+            $mygreeting = "Hello!";
+            echo $mygreeting;
+        ?>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Class exercise (11:45 to finish this exercise)
+        
+        create a $name variable & echo it
+        
+        Concatenate the greeting to it
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Functions (15mins - to 12pm)
+        
+        So far we've been outputting commands one line at a time but sometimes you need to group multiple commands together.
+        
+        [add everyday example/analogy]
+        
+        There are many functions built into the PHP language. For example, strlen() is used to return the length of a string.
+        
+        ```
+        <?php echo strlen("Hello class!"); ?>
+        ```
+        
+        This will return “12” since there are 12 characters, including the space, in the above string.
+
+        To create your own, you must declare it using the function keyword.
+        
+        ```
+        <?php 
+            function my_function($parameter){
+                //code to execute
+            }
+            
+            echo my_function();
+        ?>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## if statements?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## wordpress template tags
+        
+        Common template tags. Basically a bunch of functions.
+        Link to codex.
+
+        <?php the_title(); ?>
+
+        <?php if( has_post_thumbnail() ) ?>
+
+        <?php get_sidebar(); ?>
+
+        <?php get_template_directory_uri(); ?>
+        WordPress has a list of all template tags on the Codex.
+        
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        ## dashboard
+        use pic from other WP workshop
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## general overview of dashboard
+        
+        summary of stuff to do here, will come back to specific parts later
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## themes
+        
+        * what they are
+        * Where to find it in the UI
+        * where to find themes to download
+        * how to upload/add
+        * editing options
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Customization options
+        
+        deciding factors: skill, client needs, timing and budget
+      
+        Level 1: Free/Premium theme
+        Level 2: Premium/Child theme
+        Level 3: Custom theme
+      </script>
+    </section>
+      
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Add content (lunchtime 12:30)
+        
+        add content to existing default theme to have some content to work with later
+      </script>
+    </section>
+    
+    <!-- lunch? -->
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## wordpress template files
+        
+        list what each of them do
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise
+        
+        make sure they have content
+        add a note to each template file to see where in the site the template shows up
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## child theme
+        [~ 1hr for this section]
+        what it is, why use it, examples
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Create a child theme
+        use default twenty15
+        
+        create folder, update css theme info, etc
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##CSS crash course
+        
+        basic css examples
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## CSS exercise
+        
+        show where/how to update css in the theme
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## 
+        change some PHP stuff in child theme?
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Custom themes
+        and maybe some other customizations
+        The body_class() function
+        Custom fields
+        Post thumbnails (feature images)
+        Custom templates
+        Mastering the loop
+
+        Custom post types & taxonomies -- segue into plugins
+        [~ 45mins]
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #plugins
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## how to make it live
+      </script>
+    </section>
     
     <section class="slide last">
       <h2>Thank you!</h2>
 
       <h2 class="heading-bg">
-        <span>Data Insights with Python</span><br>
-        <span>for Beginners</span>
+        <span></span><br>
+        <span></span>
       </h2>
       <!-- <h3><span>with</span> Instructor Name</h3>
 
