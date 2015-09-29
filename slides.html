@@ -18,6 +18,13 @@
 
   <!-- Workshop-specific styles -->
   <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
+  <style>
+    /*temp*/
+    main .slide img {
+      width: 50%;
+      display: block;
+    }
+  </style>
 
   <!-- Takes care of CSS3 prefixes! -->
   <script src="framework/scripts/prefixfree.min.js"></script>
@@ -87,7 +94,7 @@
       <div class="col-2">
         <h3>Part One:</h3>
         <ul>
-          <li>What is a CMS? What is WordPress?</li>
+          <li>What is WordPress?</li>
           <li>WordPress.com vs WordPress.org</li>
           <li>Creating a local dev environment</li>
           <li>Intro to PHP
@@ -97,32 +104,29 @@
               <li>Functions</li>
             </ul>
           </li>
-          
-          
           <li>Getting to know the Dashboard
             <ul>
-              <li>General settings</li>
-              <li>Adding Content</li>
-              <li>WordPress options</li>
+              <li>Posts vs Pages</li>
+              <li>Media & Comments</li>
             </ul>
           </li>
-          <li>HTML Crash Course!</li>
-          <li>WordPress Themes</li>
+          <li>Adding content</li>
         </ul>
       </div>
       
       <div class="col-2">
         <h3>Part Two:</h3>
         <ul>
-          <li>Default menus & custom menus</li>
-          <li>Blogging tips &amp; tricks
+          <li>Free & Premium themes
             <ul>
-              <li>Finding a niche</li>
-              <li>Organizing content</li>
-              <li>Promoting your blog</li>
-              <li>Search Engine Optimization</li>
+              <li>Where to find</li>
+              <li>Template file structure</li>
+              <li>Making updates</li>
             </ul>
           </li>
+          <li>Child Themes</li>
+          <li>Custom Themes</li>
+          <li>Plugins</li>
           <li>Next steps &amp; resources</li>
         </ul>
       </div>
@@ -229,11 +233,11 @@
       <script type="text/template">
         ##Developing locally
         
-        Developing your website *locally*, whether it's HTML or WordPress, means developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
+        Developing your website *locally*, whether it's WordPress or any other programming language, means developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
         
-        Remember, since WordPress runs on PHP, a PHP file cannot be opened in a web browser. It needs to run on a server.
+        Since HTML is a *client-side* language, you can just open the file in your browser but since WordPress runs on PHP, the PHP files need to run on a *server* before you can view the content in a web browser.
         
-        It's better to make changes to your code *locally* rather than on your live web server, so you get a chance to test it before the world sees it.
+        It's better to develop your site & makde changes *locally* rather than on your live web server, so you get a chance to test it before the world sees it.
       </script>
     </section>
     
@@ -284,9 +288,12 @@
         
         **How much PHP do you need to know?**
         
-        That depends on the complexity of the customization but being able to recognize PHP and have a general grasp of the PHP syntax will help. Especially when reading the WordPress documentation. 
+        That depends on the complexity of the customization but being able to recognize PHP structures and having a general grasp of the PHP syntax will help. Especially when reading the WordPress documentation. 
         
-        Let's go over some PHP basics.
+        The [entire PHP manual](http://php.net/manual/en/index.php) is available online for your reference.
+        
+        <br>
+        Let's go over some PHP basics!
       </script>
     </section>
     
@@ -304,14 +311,26 @@
             Can also open & close the php tags on different lines.
         ?>
         ```
+      </script>
+      </section>
 
-        If you mix PHP with HTML, an opening and closing tag is required for each PHP code block that is separated by non-PHP code.
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## PHP Syntax & HTML 
+        
+        If you mix PHP with HTML, an opening and closing tag is required for each PHP code block that is separated by non-PHP code. This technique is used quite a bit in WordPress.
         
         ```xml
         <p>This is just HTML and will be ignored by PHP.</p>
         <?php PHP code here. ?>
         <p>More HTML. Ignored by PHP.</p>
         <?php More PHP code here. ?>
+        ```
+        
+        You can even mix PHP between HTML tags.
+        
+        ```xml
+        <p>More HTML. Dynamic code here: <?php PHP code here. ?></p>
         ```
       </script>
     </section>
@@ -366,7 +385,7 @@
           ![](framework/img/workshop/open-project.png)
           
           (All of the files listed in **llc-wp-workshop.dev** are the WordPress *core* files that were added during the installation process.)
-        1. Update the text wrapping option to make reading the code easier later on.  Go to **Preferences** and a tab will appear. Scroll down to **Soft Wrap** and make sure it's checked.
+        1. Update the text wrapping option in Atom to make reading the code easier later on.  Go to **Preferences** and a tab will appear. Scroll down to **Soft Wrap** and make sure it's checked.
         
         ![](framework/img/workshop/atom-soft-wrap.gif)
       </script>
@@ -419,11 +438,15 @@
       <script type="text/template">
         ## Creating Dynamic Content
         
-        Ok, that's great but how is that different than just writing HTML? HTML is static, it doesn't change.
+        Ok, that's great but how is that different than just writing HTML? 
         
-        On your WordPress site, when you're logged in, there's an admin bar showing the site title and username that you entered when first creating the site.  It couldn't do that with just HTML!
+        Remember, HTML is *static*, it doesn't change.
+        
+        On your WordPress site, when you're logged in, there's an admin bar showing the site title and username that you entered when first creating the site.  
         
         ![](framework/img/workshop/wp-admin-bar.png)
+        
+        It couldn't do that with just HTML! It changes *dynamically* based on which user is logged in and uses the user data inputted during setup.
         
         Variables can be used to store and retrieve this type of data.
       </script>
@@ -443,7 +466,7 @@
         $my_greeting = "Bonjour!";
         ```
         
-        Variables only *store* values so it just sits there, waiting, until it's needed. Just like with the previous examples, you can use `echo` to output the variable value. **BUT** you do not need the quotes.  That is only required for string types.
+        Variables only *store* values so it just sits there, waiting, until you need it. Just like with the previous examples, you can use `echo` to output the variable value. **BUT** you do not need the quotes.  That is only required for string types.
         ```
         <?php
             $mygreeting = "Hello!";
@@ -457,7 +480,7 @@
       <script type="text/template">
         ## Class exercise (11:45 to finish this exercise)
         
-        create a $name variable & echo it
+        create a $site_title & $username variable & echo it
         
         Concatenate the greeting to it
       </script>
@@ -492,76 +515,212 @@
         ```
       </script>
     </section>
-    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## if statements?
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## wordpress template tags
+        ## WordPress template tags
         
-        Common template tags. Basically a bunch of functions.
-        Link to codex.
-
+        The great thing about using WordPress is that many of the complex functions that would be needed to display content have already been created in the framework.  These are referred to as template tags. 
+        
+        Note the syntax is just like the function we just created because they are!  WordPress has extentive documentation in the [codex](https://codex.wordpress.org) for each tag.
+        
+        Here's some common ones we'll look at today:
+        
+        ```
         <?php the_title(); ?>
 
-        <?php if( has_post_thumbnail() ) ?>
+        <!-- <?php if( has_post_thumbnail() ) ?> -->
 
         <?php get_sidebar(); ?>
 
         <?php get_template_directory_uri(); ?>
-        WordPress has a list of all template tags on the Codex.
+        ```
         
-      </script>
-    </section>
-    
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        ## dashboard
-        use pic from other WP workshop
+        Let's get back into WordPress!
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## general overview of dashboard
+        ## if statements?
         
-        summary of stuff to do here, will come back to specific parts later
+        if/else Statements
+        Note that in PHP, the syntax is elseif. (Not if else like in JavaScript).
+
+        <?php
+            if ( condition ) {
+                //code to execute
+            } elseif ( condition2 ) {
+                //code to execute;
+            } else {
+                //code to execute
+            }
+        ?>
+        Alternative syntax:
+
+        <?php if ($a == 5): ?>
+            A is equal to 5
+        <?php endif; ?>
+        <?php
+            if ($a == 5):
+                echo "a equals 5";
+            elseif ($a == 6):
+                echo "a equals 6";
+            else:
+                echo "a is neither 5 nor 6";
+            endif;
+        ?>
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
+      <script type="text/template">
+        #Dashboard
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## themes
+        ##Accessing the dashboard
         
-        * what they are
-        * Where to find it in the UI
-        * where to find themes to download
-        * how to upload/add
-        * editing options
+        When using the DeskTop server app and a local server **http://llc-wp-workshop.dev** is your website's URL. To ge to the Dashboard, add `/wp-admin/` to the end of your URL like so:
+        
+        ```
+        http://llc-wp-workshop.dev/wp-admin/
+        ```
+        
+        or from the admin bar, select **Your site name > Dashboard**
+        
+        **Pro tip!**  Open a new browser tab and navigate to your Dashboard there.  That way you can have both your site and your Admin options open at the same time for easy access and testing.
+        
+        ![](framework/img/workshop/new-tab-dashboard.gif)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Customization options
+        ## Dashboard: Home
         
-        deciding factors: skill, client needs, timing and budget
-      
+        Logging into the admin area will automatically take you the the Dashboard Home page. Here, you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
+        
+        The Dashboard menus in the left sidebar allows access to additional settings such as adding blog posts (**Posts**), pages (**Pages**), changing themes (**Appearance**), uploading media (**Media**) and other general site settings.
+        
+        Let's go over some of these options in more detail.
+        
+        ![](framework/img/workshop/admin-menu.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Posts vs Pages
+        
+        Post and pages are both used for adding content to the site and the content is stored in the database.
+        
+        **Posts** are used for blog posts, which are display chronologically based on the post date. It can also be assigned categories and tags.
+        
+        **Pages** are used for single pages of static content such as an about or contact page. They are not assigned to categories and tags.
+        
+        ![](framework/img/workshop/admin-posts.png)
+        ![](framework/img/workshop/admin-pages.png)
+        
+        > What are some examples of what type of content can be a post or a page?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Media & Comments
+        
+        ###Media  
+        
+        This Media library allows you to see all the media files you've uploaded to your site.        This includes images, pdf, word docs, etc that have been added to your pages/posts, image galleries or for later use.
+        
+        ###Comments
+        When people leave comments on your site, you will find them listed under the **Comments** menu. You can edit comments, update, delete or mark them as spam.
+        If you decide to have comments on your site, it's strongly recommended to use a plugin like **Akismet** to fight spam. (More on plugins later.)
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Exercise: Add some content (15mins)
+        
+        When building a website, it's good to have some content to add context to your page layouts.  Take some time add 2-3 posts (anything you want!) and 1-2 pages (e.g. About, Contact) for your site.  Adding posts and pages are the same except the default **permalink** (URL of page or post) for posts will include the date.
+        
+        Make sure to have paragraphs, a couple headings, a featured image and an image in at least one post or page.  Must select **Update**.  Stick to **Standard format** for now.
+        
+        Use the Twenty Fifteen theme for now so we can see the same thing.
+        
+        https://codex.wordpress.org/Post_Formats
+        
+        Post: http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/  
+        Page: http://llc-wp-workshop.dev/about-us/
+        
+        [add numbered instructions to the image]
+        ![](framework/img/workshop/admin-add-post.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Appearance
+        
+        ![](framework/img/workshop/admin-appearance.png)
+        
+        This is where all the options for the look and feel of your WordPress site is contained. 
+        
+        Themes contain pre-written template files that include page structure as well as page styles. You can change & customize your theme from this section as well as add widgets and site menus.
+        
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Theme options
+        
+        There are three types of themes available for use. The deciding factors will depend on level of programming knowledge, client needs, timing and budget.
+
         Level 1: Free/Premium theme
-        Level 2: Premium/Child theme
+        These are pre-written themes that already define look, feel, page layouts and functionality and will usually contain some customization options that can be updated in the WordPress admin interface and will not require any coding.  Usually paid premium themes will offer more customizations and customer support.
+        
+        Level 2: Child theme
+        If you find a theme that you mostly like but just want to change a few details, a Child theme is great for making smaller changes without changing the core files of the parent theme.
+        
         Level 3: Custom theme
+        Totally built from scratch.  There are many bare-bones "starter templates" to help get you started with some basic functionality but still is mostly fully customized by you.
+        
+        We'll go over these in more detail throughout the remainder of the course.  Let's start with using Free/Premium themes.
+        The default WordPress themes are pre-install but you can add other themes.
+        
+        Let's look at the **Theme** option first.  
+        ![](framework/img/workshop/admin-themes.png)
       </script>
     </section>
-      
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Add content (lunchtime 12:30)
+        ## Finding Themes in the WordPress Directory
+        There are literally 1000s of free WordPress themes available for download in the WordPress directory.
         
-        add content to existing default theme to have some content to work with later
+        [make new gif showing only wp directory and remove address bar]
+        
+        ![](framework/img/workshop/admin-themes.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Finding Themes elsewhere
+        You can also find and add themes (free and paid) from outside of the WordPress directory as well.  But be careful about where you find them. Not all themes are created equal!
+        
+        Here's a [great resource](http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/) with some background about using free vs premium themes as well as where to find them.
+        
+        For the next exercise, lets install the **Sydney** theme.
+        Go to **Appearance > Themes**, select **Add New**.  Do a search for the "Sydney" theme.  Select **Install** and **activate** when it's done.
+        
+        ![](framework/img/workshop/admin-theme-add.gif)
       </script>
     </section>
     
@@ -585,10 +744,31 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
+        ## 
+        Once you've found a theme that you like and only want to make minor colour changes, it's best to use a CSS plugin and update the stylesheet. The stylesheet is the file that controls font colours, size and various style elements.
+        You can choose one of these plugins.
+        CSS plugin
+        Slim Jetpack
+        Jetpack
+
+      </script>
+    </section>
+    
+  
+    <section class="slide" data-markdown>
+      <script type="text/template">
         ## child theme
         [~ 1hr for this section]
         what it is, why use it, examples
         
+        When downloading themes outside of the WordPress directory, it will be provided as a zip file.  Go to **Appearance > Themes > Add new ** (Just like in the previous example) but not this time choose **Upload Theme** and update the zip file (don't unzip it!).
+        
+        ![](framework/img/workshop/admin-themes-upload-1.png)
+        ![](framework/img/workshop/admin-themes-upload-2.png)
+        
+        Any theme you upload, through the WordPress directory or manual upload will be added to your WordPress project files. 
+        
+        You can find it in **wp-content > themes** in your project folder.  You can also add or delete themes directly in this folder.  **BUT** if you add a theme here, then it needs to be unzipped first.
       </script>
     </section>
     
@@ -652,6 +832,15 @@
       </script>
     </section>
     
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Resources
+        
+        * Glossary [http://www.wpbeginner.com/glossary/](http://www.wpbeginner.com/glossary/)
+      </script>
+    </section>
+    
+    
     <section class="slide last">
       <h2>Thank you!</h2>
 
@@ -702,9 +891,17 @@
       new CSSSnippet(snippets[i]);
     }
 
-    // Adds "edit me" note to editable code areas
     jQuery(document).ready(function(){
+      // Adds "edit me" note to editable code areas
       jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+      
+      // adds full bg-images
+      var bgImg = jQuery('[data-bg]').attr("data-bg");
+      jQuery('[data-bg]').attr( "data-bg", function() {
+        jQuery(this).css({
+          "background-image": "url(framework/img/workshop/" + bgImg + ")"
+        });
+      });
     });
   </script>
 </body>
