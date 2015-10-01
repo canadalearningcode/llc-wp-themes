@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
 
   <!-- Theme-specific styles -->
-  <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix> -->
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
   <link rel="stylesheet" href="framework/css/font-awesome.min.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
@@ -272,58 +272,67 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
-      <script type="text/template">
-        #Dashboard
-      </script>
-    </section>
-    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Accessing the dashboard
+        ## WordPress Settings
         
-        When using the DeskTop server app and a local server **http://llc-wp-workshop.dev** is your website's URL. To ge to the Dashboard, add `/wp-admin/` to the end of your URL like so:
+        We're all set up!  But the default theme could use a little pizzazz.  Before getting into theme customization, let's first go over some of the general settings in your [Admin Area](http://www.wpbeginner.com/glossary/admin-area/).
+        
+        When using a local server, `http://llc-wp-workshop.dev` is your website's URL. To get to the Admin Area, just add `/wp-admin/` to the end of your URL.
         
         ```
         http://llc-wp-workshop.dev/wp-admin/
         ```
         
-        or from the admin bar, select **Your site name > Dashboard**
+        You can also access your live site's Admin Area this way as well.
         
-        **Pro tip!**  Open a new browser tab and navigate to your Dashboard there.  That way you can have both your site and your Admin options open at the same time for easy access and testing.
+        ```
+        http://mywebsite.com/wp-admin/
+        ```
         
-        ![](framework/img/workshop/new-tab-dashboard.gif)
+        If you're already logged in, you can also access it from the admin bar by clicking on your site name. Click on it again to get back to your site.
+        
+        ![](framework/img/workshop/admin-login.gif)
+        
+        **Pro tip!**  Open a new browser tab and navigate to your Admin area there.  That way you can have both your site and your Admin options open at the same time for easy access and testing.
+        
+        ![](framework/img/workshop/admin-login-tabs.gif)
       </script>
     </section>
-    
+        
+    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
+      <script type="text/template">
+        # The Dashboard
+      </script>
+    </section>
+
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Dashboard: Home
+        ## Dashboard > Home
         
-        Logging into the admin area will automatically take you the the Dashboard Home page. Here, you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
+        Logging into the admin area will automatically take you the the Dashboard Home page. 
         
-        The Dashboard menus in the left sidebar allows access to additional settings such as adding blog posts (**Posts**), pages (**Pages**), changing themes (**Appearance**), uploading media (**Media**) and other general site settings.
+        Here, you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
         
-        Let's go over some of these options in more detail.
-        
-        ![](framework/img/workshop/admin-menu.png)
+        The other menus in the left sidebar allows access to additional settings such as adding blog posts (**Posts**), pages (**Pages**), changing themes (**Appearance**), uploading media (**Media**) and other general site settings.
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide two-col-list post-pages" data-markdown>
       <script type="text/template">
         ## Posts vs Pages
         
-        Post and pages are both used for adding content to the site and the content is stored in the database.
-        
-        **Posts** are used for blog posts, which are display chronologically based on the post date. It can also be assigned categories and tags.
-        
-        **Pages** are used for single pages of static content such as an about or contact page. They are not assigned to categories and tags.
-        
-        ![](framework/img/workshop/admin-posts.png)
-        ![](framework/img/workshop/admin-pages.png)
-        
-        > What are some examples of what type of content can be a post or a page?
+        * ![](framework/img/workshop/admin-posts.png)  
+        **Posts**  
+          * used for timely content, part of a series
+          * listed chronologically by date
+          * can also be assigned categories and tags <br>(also referred to as **taxonomies**)
+        * ![](framework/img/workshop/admin-pages.png)  
+        **Pages**
+          * used for single pages of static content <br>(e.g. about or contact page)
+          * cannot have taxonomies
+          * can have a hierarchical structure  
+          (e.g. Vacation spots > Beach vacations, Vacation spots > Ski vacations)
       </script>
     </section>
     
@@ -346,33 +355,35 @@
       <script type="text/template">
         ## Exercise: Add some content (15mins)
         
-        When building a website, it's good to have some content to add context to your page layouts.  Take some time add 2-3 posts (anything you want!) and 1-2 pages (e.g. About, Contact) for your site.  Adding posts and pages are the same except the default **permalink** (URL of page or post) for posts will include the date.
+        When building a website, it's good to have some content before adding styles, to add context to your page layouts. See the instructions and diagram below.
         
-        Make sure to have paragraphs, a couple headings, a featured image and an image in at least one post or page.  Must select **Update**.  Stick to **Standard format** for now.
+        * add 2-3 posts (anything you want!)
+        * add 1-2 pages (e.g. About, Contact) 
+        * include some paragraphs, headings and at least one image 
+        * add a featured image
         
-        Use the Twenty Fifteen theme for now so we can see the same thing.
+        Also, note that a default **permalink** (URL) will be automatically generated. Posts will include the date, pages will not.
         
-        https://codex.wordpress.org/Post_Formats
-        
-        Post: http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/  
+        ```
+        Post: http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/ 
         Page: http://llc-wp-workshop.dev/about-us/
+        ```
         
-        [add numbered instructions to the image]
         ![](framework/img/workshop/admin-add-post.png)
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide appearance" data-markdown>
       <script type="text/template">
         ## Appearance
         
         ![](framework/img/workshop/admin-appearance.png)
         
-        This is where all the options for the look and feel of your WordPress site is contained. 
+        This is where all the options related to the look and feel of your WordPress site is contained including themes and page components like menus, widgets and the page header.
+        
+        When first installing a WordPress site, the default WordPress themes are included with the core files. The latest (and default) theme is **Twenty Fifteen**.  After adding in the content, you can now start to see where the content populates.
         
         Themes contain pre-written template files that include page structure as well as page styles. You can change & customize your theme from this section as well as add widgets and site menus.
-        
-        
       </script>
     </section>
     
@@ -382,26 +393,23 @@
         
         There are three types of themes available for use. The deciding factors will depend on level of programming knowledge, client needs, timing and budget.
 
-        Level 1: Free/Premium theme
+        Level 1: Free/Premium themes
         These are pre-written themes that already define look, feel, page layouts and functionality and will usually contain some customization options that can be updated in the WordPress admin interface and will not require any coding.  Usually paid premium themes will offer more customizations and customer support.
         
-        Level 2: Child theme
+        Level 2: Child themes
         If you find a theme that you mostly like but just want to change a few details, a Child theme is great for making smaller changes without changing the core files of the parent theme.
         
-        Level 3: Custom theme
+        Level 3: Custom themes
         Totally built from scratch.  There are many bare-bones "starter templates" to help get you started with some basic functionality but still is mostly fully customized by you.
         
-        We'll go over these in more detail throughout the remainder of the course.  Let's start with using Free/Premium themes.
-        The default WordPress themes are pre-install but you can add other themes.
-        
-        Let's look at the **Theme** option first.  
-        ![](framework/img/workshop/admin-themes.png)
+        Let's explore each option.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Finding Themes in the WordPress Directory
+        ## Free/Premium themes
+
         There are literally 1000s of free WordPress themes available for download in the WordPress directory.
         
         [make new gif showing only wp directory and remove address bar]
@@ -412,7 +420,8 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Finding Themes elsewhere
+        ## Finding themes elsewhere
+        
         You can also find and add themes (free and paid) from outside of the WordPress directory as well.  But be careful about where you find them. Not all themes are created equal!
         
         Here's a [great resource](http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/) with some background about using free vs premium themes as well as where to find them.
@@ -424,7 +433,6 @@
       </script>
     </section>
     
-    <!-- lunch? -->
     <section class="slide" data-markdown>
       <script type="text/template">
         ## wordpress template files
@@ -826,6 +834,8 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Resources
+        
+        https://codex.wordpress.org/Post_Formats
         
         * Glossary [http://www.wpbeginner.com/glossary/](http://www.wpbeginner.com/glossary/)
       </script>
