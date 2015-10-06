@@ -15,7 +15,21 @@
 .appearance {
   img {
     float: left;
-    width: 40%;
-    margin-right: 30px;
+    width: 325px;
+    margin: 0 30px 15px 0;
   }
 }
+.menu-widgets {
+  img.landing {
+    width: 31%;
+    margin-right: 2%;
+    float: left;
+  }
+  img.desktop {
+    width: 67%;
+  }
+  img.mobile {
+    width: 42%;
+  }
+}
+
