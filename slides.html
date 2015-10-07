@@ -335,12 +335,16 @@
           * used for timely content, part of a series
           * listed chronologically by date
           * can also be assigned categories and tags <br>(also referred to as **taxonomies**)
+          * default *permalink* will include the date  
+          `http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/`<!-- .element: class="footnote" -->
         * ![](framework/img/workshop/admin-pages.png)  
         **Pages**
           * used for single pages of static content <br>(e.g. about or contact page)
           * cannot have taxonomies
           * can have a hierarchical structure  
           (e.g. Vacation spots > Beach vacations)
+          * default *permalink* will not include the date
+          `http://llc-wp-workshop.dev/about-us/`<!-- .element: class="footnote" -->
       </script>
     </section>
     
@@ -380,23 +384,24 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise: Add some content (20mins) (11:15am)
+        ## Exercise: Add some content (20mins) (finish by 11:20am)
         
-        In general, when building a website, it's good to have some content before adding styles (or in this case, changing the theme), to add context to your page layouts. Follow the instructions below and see diagram for more info.
+        In general, when building a website, it's good to have some content before adding styles (or in this case, changing the theme), to add context to your page layouts. Follow the instructions below and refer to the [diagram](framework/img/workshop/admin-add-post.png) for more info.
         
-        * add 2-3 posts (anything you want!)
-        * add a Home page and another 1-2 pages (e.g. About, Contact) 
-        * include some paragraphs, headings and at least one image in your post or page content
-        * add a featured image
+        1. Add 2-3 **posts** (anything you want!)
+          * include some paragraphs, headings and at least one image
+        1. Add a `Home` **page** and another 1-2 pages (e.g. About, Contact) 
+          * include some paragraphs, headings and at least one image
+        1. Add a **featured image** in at least 1 post and 1 page
+        1. Create a *blank* `Blog` **page** - just add a page title and no content! We'll need this for later.
         
-        Also, note that a default **permalink** (URL) will be automatically generated. Posts will include the date, pages will not.
+        **Two posts**
         
-        ```
-        Post: http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/ 
-        Page: http://llc-wp-workshop.dev/about-us/
-        ```
+        ![](framework/img/workshop/posts-example.png)
         
-        ![](framework/img/workshop/admin-add-post.png)
+        **Home, Blog & About page**
+        
+        ![](framework/img/workshop/pages-example.png)
       </script>
     </section>
     
@@ -432,7 +437,7 @@
 
         There are literally 1000s of free WordPress themes available for download in the WordPress directory.
                 
-        For the next few exercises, let's use the **Sydney** theme to ensure we see the same customization options. (You can change your theme in a later exercise.)
+        For the next few exercises, let's all use the **Sydney** theme to ensure we see the same customization options.
         
         Go to **Appearance > Themes**, select **Add New**.  
         Do a search for the "Sydney" theme, select **Install** and **activate** when it's done.
@@ -445,7 +450,7 @@
       <script type="text/template">
         ## Free/Premium themes
         
-        This is what the site looks like with some basic content and the default settings. Let's look at the options available for customization.
+        This is what the site looks like with some basic content and the default settings. Let's look at the customization options.
         
         ![](framework/img/workshop/theme-new-example.gif)
       </script>
@@ -455,7 +460,7 @@
       <script type="text/template">
         ## Appearance > Customize
       
-        These options you see here will be specific to your active theme.  The options will vary based on the theme but will be similar to the examples we'll be looking at.  Let's look at some of these options together.  Navigate to the **Customize** menu. 
+        These options listed here will be specific to the active theme and will vary based on what features are available. Navigate to the **Customize** menu to view the options.
         
         ![](framework/img/workshop/admin-customize.gif)
       </script>
@@ -492,7 +497,7 @@
         
         ![](framework/img/workshop/menu-default.png) <!-- .element: class="landing" -->
         
-        By default, the homepage/landing page for all WordPress sites is a listing of your blog posts.
+        By default, the homepage/landing page for all WordPress sites is a listing of your blog posts (blog archive page).
         
         The items in the right sidebar (Recent Posts, Recent Comments, etc) are widgets and can be added or removed in the **Customize** option or directly under **Appearance > Widgets**.
         
@@ -506,31 +511,59 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Homepage and Menu
+        ## Custom Menu
         
-        Before adding a menu, lets look at the settings for choosing a homepage. Remember, it defaults on the blog archive page. If you want to change this to the **Home** page created in an earlier exercise (or any other page), change the setting in under **Settings > Reading** menu.
+        By default, all WordPress sites show the blog archive page as the home/landing page.
+        What if you wanted the navigation to show something like this:
         
+        `Home` - link to a page with some static content  
+        `About` - link to a page with some static info about you  
+        `Blog` - link to a page showing all blog posts  
+
+        These settings can be changed under the **Settings > Reading** menu. While we're here, also, make sure the SEO setting is unchecked to allow indexing of your site (once it goes live).
         
-        You can add/update the navigation menu in **Customize** option or **Appearance > Menus**.
-        ![](framework/img/workshop/admin-customize-menu.gif)
-        
-        
-        
-        Use this option to set specific blog posts, pages and even categories and tags to your menu.
-        
-        
+        ![](framework/img/workshop/admin-settings-reading.png)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Finding themes elsewhere (12pm)
+        ##Exercise: Custom Menu (15mins)
         
-        You can also find and add themes (free and paid) from outside of the WordPress directory as well.  But be careful about where you find them. Not all themes are created equal!
+        Create a menu to add pages to the menu and even specific blog posts, categories and tags to your menu.  Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.
         
-        Here's a [great resource](http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/) with some background about using free vs premium themes as well as where to find them.
+        Go to **Appearance > Menus** to add your menu.
         
-      
+        ![](framework/img/workshop/admin-menus.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Uploading Themes (12pm)
+        
+        You can also find and use themes from outside of the WordPress directory.  But note that not all themes are created equal!
+        
+        Here are a couple resources to read up on to get to know about the pro & cons of using free vs premium themes as well as things to look out for and where to find them.
+        
+        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes
+        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Uploading Themes
+        
+        To add themes from outside of the WordPress directory, go to **Appearance > Themes > Add New**.  Downloaded themes are packaged as a zip file.  Do **NOT** unzip them when uploading via the WordPress admin panel.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## directory
+        
+        show where theme files live, how to manually add & delete
       </script>
     </section>
     
@@ -538,18 +571,30 @@
       <script type="text/template">
         ## wordpress template files
         
-        list what each of them do
+        list what each of them do & core files
+        
+        show how to access in admin area
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise
+        ## Exercise (lunch?)
         
         make sure they have content
         add a note to each template file to see where in the site the template shows up
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## example WP PHP code 
+        
+        show to intro syntax and segue into php intro
+        </code>
+      </script>
+    </section>
+    
     
     <section class="slide" data-markdown>
       <script type="text/template">
