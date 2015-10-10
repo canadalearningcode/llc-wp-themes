@@ -4,23 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>Ladies Learning Code</title>
-  <!-- Don't alter slideshow.css, CSSS slide deck needs it to work 
-  https://github.com/LeaVerou/csss -->
   <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
-
-  <!-- Theme-specific styles -->
-<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700%7CQuicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
   <link rel="stylesheet" href="framework/css/font-awesome.min.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/fonts.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
   <link rel="stylesheet" href="framework/css/styles.css" data-noprefix>
   <link rel="shortcut icon" href="framework/img/favicon.ico">
 
-  <!-- Workshop-specific styles -->
-  <!-- <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix> -->
-  <!-- Takes care of CSS3 prefixes! -->
+  <!-- Takes care of CSS3 prefixes -->
   <script src="framework/scripts/prefixfree.min.js"></script>
-
   <!-- opens all links in a new window -->
   <base target="_blank">
 </head>
@@ -64,14 +57,14 @@
           <span>Create Your Own Theme</span>
         </h1>
         <!-- TODO: Fill in instructor details -->
-      <!--   <h2><span>with</span> Instructor Name</h2>
+        <!--<h2><span>with</span> Instructor Name</h2>
       
-      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
-      <ul>
-        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
-        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
-        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-      </ul> -->
+        <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+        <ul>
+          <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+          <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+          <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+        </ul> -->
         <div class="sponsor">
           <p>In partnership with</p>
           <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
@@ -130,8 +123,6 @@
       <script type="text/template">
         ##What is WordPress?
         
-        ![](framework/img/workshop/logo-wp.png)
-        
         * one of many types of blogging software and CMS
         * used by many individuals and companies (ladieslearningcode.com is powered by WordPress!)
         * an online, open source (a.k.a. free) website creation tool 
@@ -139,8 +130,33 @@
         * uses PHP templates & a database to create and store content
         * used to create **dynamic** websites
         
-        <br>
-      <!--   It's important to note that the learning curve may feel steep in comparison to HTML & CSS. However, the amount and complexity of the code editing will depend on your needs and level of customization. -->
+        ![](framework/img/workshop/logo-wp.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##WordPress.com vs WordPress.org
+        
+        [WordPress**.com**](http://wordpress.com)
+        
+        * hosted and all technical maintenance handled by WordPress
+        * has fewer options for customizing
+        * do not need to edit the code
+        * some paid upgrades available for some customization
+        * no plugins
+        
+        [WordPress**.org**](http://wordpress.org)
+        
+        * provides the codebase for free to download & edit
+        * requires you to purchase our own domain and hosting
+        * you are responsible for the site maintenance
+        * you have full control over theme files & code
+        * plugins!
+        
+        Today we'll be exploring the **.org** version.  
+        
+        More details available <!-- .element: class="footnote" -->[here](https://en.support.wordpress.com/com-vs-org/).  
       </script>
     </section>
     
@@ -189,37 +205,6 @@
         * has been around since mid-90s and originally stood for **Personal Home Page**, but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP.)
         * can be written on its own, mixed with HTML, or used in combination with templating engines and frameworks like Wordpress
         * used to make a website *dynamic* and generate HTML 
-        
-        <br>
-        If you **right-click / two-finger tap > view source** on the Ladies Learning Code site, you won't be able to see anyPHP code, only the generated HTML.
-      </script>
-    </section>
-    
-    
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##WordPress.com vs WordPress.org
-        
-        [WordPress**.com**](http://wordpress.com)
-        
-        * hosted and all technical maintenance handled by WordPress
-        * has fewer options for customizing
-        * do not need to edit the code
-        * some paid upgrades available for some customization
-        * no plugins
-        
-        [WordPress**.org**](http://wordpress.org)
-        
-        * provides the codebase for free to download & edit
-        * requires you to purchase our own domain and hosting
-        * you are responsible for the site maintenance
-        * you have full control over theme files & code
-        * plugins!
-        
-        Today we'll be exploring the **.org** version.  
-        
-        More details available <!-- .element: class="footnote" -->[here](https://en.support.wordpress.com/com-vs-org/).  
       </script>
     </section>
     
@@ -227,11 +212,11 @@
       <script type="text/template">
         ##Developing locally
         
-        Developing your website *locally*, whether it's WordPress or any other programming language, means developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
+        Developing your website *locally* refers to developing it on your computer.  It can only run and be seen on your computer (or whatever computer your files are on)!
         
-        Since HTML is a *client-side* language, you can just open the file in your browser but since WordPress runs on PHP, the PHP files need to run on a *server* before you can view the content in a web browser.
+        Since HTML is a *client-side* language, you can just open the file in your browser and swee your web page. But since WordPress runs on PHP, the PHP files need to run on a *server* before you can view the content in a web browser.
         
-        It's better to develop your site & makde changes *locally* rather than on your live web server, so you get a chance to test it before the world sees it.
+        It's better to develop your site & make changes *locally* rather than on your live web server, so you get a chance to test it before the world sees it.
       </script>
     </section>
     
@@ -247,7 +232,7 @@
         Using a [modern web browser](http://browsehappy.com/) will enhance your web experience as well as give you access to useful dev tools. Today we'll be using [Chrome](https://www.google.com/chrome/).
         
         ####Local Server
-        A local server setup will ensure that you can make edits locally. Today we'll be using the [DesktopServer](https://serverpress.com) app from ServerPress.  This app reduces the need to manually create a database, streamlines the WordPress installation process.
+        A local server setup will ensure that you can make edits locally. Today we'll be using the [DesktopServer](https://serverpress.com) app from ServerPress.  This app reduces the need to manually create a database and streamlines the WordPress installation process.
       </script>
     </section>
     
@@ -255,15 +240,13 @@
       <script type="text/template">
         ## Installing WordPress with DesktopServer
         
-        Open DesktopServer and let's follow the steps outlined in the getting started video.  
-        The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).  
-        The LLC test site is named **llc-wp-workshop.dev** but yours can be whatever you want. Just not that for the remainder of this workshop, **llc-wp-workshop.dev** will be used in all examples.
+        <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
         
-        Note that your initial WordPress site may look different depending on which default theme your version of WordPress has included. More on this later. <!-- .element: class="footnote" -->
+        Open DesktopServer and follow the steps outlined in the getting started video. The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).  
         
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
-        
-        **Pro tip!** Once you've created a local site, you can also access it via the **Sites** button.
+        The LLC test site is named **llc-wp-workshop.dev** but yours can be whatever you want. Just note that for the remainder of this workshop, **llc-wp-workshop.dev** will be used in all examples.
+
+        Once you've created a local site, you can also access it via the **Sites** button. **You will need to run this local server anytime you're developing WordPress locally.**
         
         ![](framework/img/workshop/desktopserver-sites.png)
       </script>
@@ -407,48 +390,67 @@
     
     <section class="slide title" data-markdown>
       <script type="text/template">
-        #WordPress Themes<br> & Templates
-      </script>
-    </section>
-    
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Theme options
-        
-        There are three ways to build and customize themes and will depend on a combination of your level of programming knowledge, client needs, timing and budget.
-
-        **Level 1: Free/Premium themes**  
-        These are pre-written, pre-packages themes that define the look, feel, page layouts and functionality. It will usually contain some customization options that can be updated in the WordPress admin area and will not require any coding. 
-        
-        **Level 2: Child themes**  
-        A Child theme is great for making smaller changes (outside of the WordPress Admin options) without changing the core files of the parent theme.  This will require some knowledge of HTML, CSS and PHP.
-        
-        **Level 3: Custom themes**  
-        Totally built from scratch.  There are many bare-bones "starter templates" that contain some basic functionality but is still mostly customized by you. This will require a deeper knowledge of the languages mentioned in Level 2 or just get really good at reading the WordPress documentation!
-        
-        Let's explore each option.
+        #WordPress Themes
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Free/Premium themes
+        ##Theme options 
+        
+        **Free Themes & Premium Themes** 
+        
+        * only pay for domain, hosting & cost of theme (varies)
+        * does not require any coding (though you still have access to the codebase)
+        * includes some theme options that can be updated in the WordPress admin area
+        
+        **Child themes**  
+        
+        * used to modify a theme without making any changes to the parent theme’s files
+        * inherits the features of its parent theme including updates
+        * will require some knowledge of HTML, CSS and PHP
+        
+        **Custom themes**  
+        
+        * built from scratch or from a "starter template"
+        * requires a deeper knowledge of HTML, CSS, PHP or get really good at following
+        the [WordPress documentation](https://codex.wordpress.org/)!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Free & Premium themes
 
-        There are literally 1000s of free WordPress themes available for download in the WordPress directory.
-                
-        For the next few exercises, let's all use the **Sydney** theme to ensure we see the same customization options.
+        There are literally 1000s of free WordPress themes available for download in the WordPress directory. For the next few exercises, let's all use the **Sydney** theme to ensure we see the same customization options.
         
         Go to **Appearance > Themes**, select **Add New**.  
         Do a search for the "Sydney" theme, select **Install** and **activate** when it's done.
         
         ![](framework/img/workshop/admin-themes-add.gif)
+    
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Free/Premium themes
+        ## Free & Premium themes
+        
+        You can also use themes from outside of the WordPress directory by using the **Upload Theme** option. Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when uploading via the WordPress admin panel.  
+
+        ![](framework/img/workshop/upload-theme-2.png)
+        
+        ####Extra resources:  
+        Get to know about the pro & cons of using free vs premium themes as well as things to look out for and where to find them.
+        
+        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes
+        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Free & Premium themes
         
         This is what the site looks like with some basic content and the default settings. Let's look at the customization options.
         
@@ -497,7 +499,7 @@
         
         ![](framework/img/workshop/menu-default.png) <!-- .element: class="landing" -->
         
-        By default, the homepage/landing page for all WordPress sites is a listing of your blog posts (blog archive page).
+        By default, the homepage for all WordPress sites is a listing of your blog posts (blog archive page).
         
         The items in the right sidebar (Recent Posts, Recent Comments, etc) are widgets and can be added or removed in the **Customize** option or directly under **Appearance > Widgets**.
         
@@ -513,14 +515,20 @@
       <script type="text/template">
         ## Custom Menu
         
-        By default, all WordPress sites show the blog archive page as the home/landing page.
-        What if you wanted the navigation to show something like this:
+        By default, all WordPress sites show the blog archive page as the home page.
+        But what if you wanted a navigation to look something like this:
+        
+        ![](framework/img/workshop/custom-menu.png)
         
         `Home` - link to a page with some static content  
-        `About` - link to a page with some static info about you  
+        `About Us` - link to a page with some static info about you  
         `Blog` - link to a page showing all blog posts  
 
-        These settings can be changed under the **Settings > Reading** menu. While we're here, also, make sure the SEO setting is unchecked to allow indexing of your site (once it goes live).
+        These settings can be changed! Before creating a navigation menu, you'll need to select a **page** to be display as the home page and the blog.  (Remember the pages we created earlier?)
+        
+        Go to **Settings > Reading** menu to update the settings. 
+        
+        While we're here, make sure the SEO setting is unchecked to allow indexing of your site (once it goes live).
         
         ![](framework/img/workshop/admin-settings-reading.png)
       </script>
@@ -530,52 +538,114 @@
       <script type="text/template">
         ##Exercise: Custom Menu (15mins)
         
-        Create a menu to add pages to the menu and even specific blog posts, categories and tags to your menu.  Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.
+        Go to **Appearance > Menus** to add a menu. 
         
-        Go to **Appearance > Menus** to add your menu.
+        Here you will see options to add pages, specific blog posts, categories and tags to your menu.  Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.  
         
+        The below example shows the settings for making the navigation in the [previous slide](framework/img/workshop/custom-menu.png) example.
+        
+        ![](framework/img/workshop/admin-menus.png)
         ![](framework/img/workshop/admin-menus.gif)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Uploading Themes (12pm)
+        ##Page templates
         
-        You can also find and use themes from outside of the WordPress directory.  But note that not all themes are created equal!
+        Themes usually include different templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
         
-        Here are a couple resources to read up on to get to know about the pro & cons of using free vs premium themes as well as things to look out for and where to find them.
+        But you may not want to show a sidebar on the homepage.  You can change that in your page settings by choosing a template option.
         
-        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes
-        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
+        ![](framework/img/workshop/template-change.png)
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #WordPress <br>Template Files
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Uploading Themes
+        ##Template Files
         
-        To add themes from outside of the WordPress directory, go to **Appearance > Themes > Add New**.  Downloaded themes are packaged as a zip file.  Do **NOT** unzip them when uploading via the WordPress admin panel.
+        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
+        Themes are a collection of template files. Often, these template files contain code for only a portion of a page and together, they make complete pages and websites.
+        
+        Since WordPress is based on PHP, the files are saved using a `.php` extension.
+        
+        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## directory
+        ##Uploading Themes 
         
-        show where theme files live, how to manually add & delete
+        You can also use themes from outside of the WordPress directory but note that not all themes are created equal!  
+        
+        Downloaded themes are packaged as a zip file.  Do **NOT** unzip them when uploading via the WordPress admin panel. Included in today's learner files is a zip file,   **skt-white.zip**, contained in the **exercise-files** folder. Let's use that for the next exercise.
+        
+      
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## wordpress template files
+        ## Exercise: Upload a theme
         
-        list what each of them do & core files
+        To upload a theme, go to **Appearance > Themes**, then **Add New**.  
         
-        show how to access in admin area
+        ![](framework/img/workshop/upload-theme-1.png)
+        ![](framework/img/workshop/upload-theme-2.png)
+        ![](framework/img/workshop/upload-theme-3.png)
+        ![](framework/img/workshop/upload-theme-4.png)
+        ![](framework/img/workshop/upload-theme-5.png)
+        ![](framework/img/workshop/upload-theme-6.png)
       </script>
     </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #WordPress Core Files <br>& Templates
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##WordPress Core files
+        
+        To view the WordPress core files, go to **Documents > Websites**. (The default directory created during the DesktopServer setup.) 
+        
+        All of the files listed in **llc-wp-workshop.dev** are the WordPress core files, added during the installation process.
+        
+        Though you can access all of the core files, there are some files that should never be edited.  The majority of your edits will be contained in the the **wp-content** folder.
+          
+        ![](framework/img/workshop/wp-core-files.png) 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## wp-content
+        
+        ![](framework/img/workshop/wp-content-files.png)<!-- .element: class="left" -->
+        **plugins** - uploaded plugins go here  
+        **themes** - all theme files are in here  
+        **upgrade** - no need to edit files here, will be used for WordPress updates to the core files, plugins, etc  
+        **uploads** - all media uploaded here
+        
+        When you upload plugins, themes & media files, they automatically get added to these folders.  You can also manage these files by directly adding or deleting files in the folders rather than using the WordPress admin area.
+        
+        **Important**: When adding themes or plugins directly to the folders, the zip files need to be unzipped first, but still need to be activated in the WordPress admin settings.  Also, media is uploaded by date and will automatically create date specific folders.
+        
+        > Take a look in each folder to familiarize yourself with the type of files included in each one.
+      </script>
+    </section>
+    
+  
     
     <section class="slide" data-markdown>
       <script type="text/template">
