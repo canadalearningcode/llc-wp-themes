@@ -104,6 +104,11 @@
       </script>
     </section>
     
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Intro to WordPress: <br> Part One
+      </script>
+    </section>
     
     <section class="slide wp-intro" data-markdown>
       <script type="text/template">
@@ -146,26 +151,9 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Blog vs Website
-        
-        How are blogs different from standard websites?
-        
-        * the term *blog* is an abbreviation for *weblog*
-        * blogs often contain an ongoing collection of posts and articles presented in date-based order
-        * blogs are often (but not always) written in a diary-style commentary or first-person narrative
-        * a website can contain both a blog section and standard informational web pages like an about or contact page
-        
-        WordPress started as a blogging platform but has since been a popular choice for many to create entire websites with.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
         ## What is a CMS?
         
-        A content management system (CMS) is an application used to edit content and manage a website using a graphical user interface.
-        
-        Web content can be modified and published without editing the code or database.
+        A content management system (CMS) is an application used to edit content and manage a website using a graphical user interface. Web content can be modified and published without editing the code or database.
         
         A CMS like WordPress also includes features such as:
         
@@ -372,13 +360,11 @@
     
     <section class="slide appearance" data-markdown>
       <script type="text/template">
-        ## Appearance
+        ## Appearance options
         
         ![](framework/img/workshop/admin-appearance.png)
         
-        [Themes](https://codex.wordpress.org/Appearance_Themes_Screen) are the overall design of the site a can be changed without changing the underlying CMS functionality. 
-        
-        You can choose from 1000s of free and premium themes or create your own.
+        [Themes](https://codex.wordpress.org/Appearance_Themes_Screen) are the overall design of the site a can be changed without changing the underlying CMS functionality. Included in every version of WordPress (and named after the year they were released in), are the default WordPress themes. However, you can choose from 1000s of free and premium themes or create your own.
         
         [Customize](https://codex.wordpress.org/Appearance_Customize_Screen) displays the custom options for a specific theme and will only be present if the theme author has configured the theme to allow this capability.
         
@@ -388,7 +374,7 @@
     
     <section class="slide appearance" data-markdown>
       <script type="text/template">
-        ## Appearance
+        ## Appearance options
         
         ![](framework/img/workshop/admin-appearance.png)
 
@@ -396,74 +382,76 @@
         
         The **Header** & **Background** feature allows you to manage what image is displayed in the header and the look of background for your theme.  This option will only be present if the theme author has configured these options to allow for this capability.
       
-
         The content added in the previous exercise using the default Twenty Fifteen theme will look similar to [this](framework/img/workshop/theme-default-example.png).
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Theme options 
+        ##Theme Development options
         
-        **Free Themes & Premium Themes** 
+        **Option 1: Free Themes & Premium Themes** 
         
-        * only pay for domain, hosting & cost of theme (varies)
+        * only pay for domain, hosting & cost of theme (from free to a few hundred)
         * does not require any coding (though you still have access to the codebase)
         * includes some theme options that can be updated in the WordPress admin area
         
-        **Child themes**  
+        **Option 2: Child themes**  
         
         * used to modify a theme without making any changes to the parent theme’s files
         * inherits the features of its parent theme including updates
         * will require some knowledge of HTML, CSS and PHP
         
-        **Custom themes**  
+        **Option 3: Custom themes**  
         
         * built from scratch or from a "starter template"
         * requires a deeper knowledge of HTML, CSS, PHP or get really good at following
         the [WordPress documentation](https://codex.wordpress.org/)!
+        
+        Let's explore option 1 first.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Free & Premium themes
+        ##Adding Themes from the WordPress directory
 
-        There are literally 1000s of free WordPress themes available for download in the WordPress directory. For the next few exercises, use the **Sydney** theme to see the same customization options referred to in the examples.
+        There are literally 1000s of free WordPress themes available for download in the WordPress directory found under **Appearance > Themes**, **Add New**. Click on the thumbnail to see a preview, get info or install a new theme.
+      
+        For the next exercise, use the **Sydney** theme to see the same customization options referred to in the examples.
         
-        Go to **Appearance > Themes**, select **Add New**.  
-        Do a search for the "Sydney" theme, select **Install** and **activate** when it's done.
+        Go to **Appearance > Themes**, select **Add New**. Search for the "Sydney" theme, select **Install** and **activate** when the installation is complete.
         
-        ![](framework/img/workshop/admin-themes-add.gif)
+        ![](framework/img/workshop/admin-themes-add.gif)<!-- .element: width="80%" -->
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Free & Premium themes
-        
-        You can also use themes from outside of the WordPress directory by using the **Upload Theme** option. Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when uploading via the WordPress admin panel.  
-
-        ![](framework/img/workshop/upload-theme-2.png)
-        
-        ####Extra resources:  
-        Get to know about the pro & cons of using free vs premium themes as well as things to look out for and where to find them.
-        
-        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes
-        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Free & Premium themes
+        ## Sydney Theme
         
         This is what the site looks like with some basic content and the default settings. Much different from the Twenty Fifteen theme!
         
         ![](framework/img/workshop/theme-new-example.gif)
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Other Themes
+        
+        Themes from outside of the WordPress directory can also be used and added by selecting the **Upload Theme** option. Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when using this option; upload the entire zip file.  
 
+        ![](framework/img/workshop/upload-theme-2.png)<!-- .element: width="80%" -->
+
+        Get to know the pro & cons of using free vs premium themes as well as things to look out for and where to find them. Not all themes are created equal!
+        
+        ####Extra resources:
+        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes <!-- .element: class="footnote" -->
+        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/<!-- .element: class="footnote" -->
+      </script>
+    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Appearance > Customize
@@ -523,7 +511,7 @@
       <script type="text/template">
         ## Custom Menu
         
-        By default, all WordPress sites show the blog archive page as the home page (a listing of your blog posts). But what if you wanted a navigation to look something like this:
+        By default, all WordPress sites show your latest blog posts as the home page. But what if you wanted a navigation to look something like this:
         
         ![](framework/img/workshop/custom-menu.png)
         
@@ -572,48 +560,11 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Templates
-        
-        Themes usually include different templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
-        
-        But you may not want to show a sidebar on the homepage.  You can change that in your page settings by choosing a template option.
-        
-        ![](framework/img/workshop/template-change.png)
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Template Files
-        
-        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
-        Themes are a collection of template files. Often, these template files contain code for only a portion of a page and fit together like a puzzle to generate full web pages.
-        
-        Since WordPress is based on PHP, the files are saved using a `.php` extension.
-        
-        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
-        
-        These template files are needed to develop child or custom WordPress themes.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Template Files 
-        
-        
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
         ##WordPress Core files
         
-        To view all of the WordPress core files, go to **Documents > Websites**. (The default directory created during the DesktopServer setup.) 
+        To view all of the WordPress core files, go to **Documents > Websites**. (The default directory created during the DesktopServer setup.) All of the files listed in **llc-wp-workshop.dev** are the WordPress core files, added during the installation process.
         
-        All of the files listed in **llc-wp-workshop.dev** are the WordPress core files, added during the installation process.
-        
-        Though you can access all of the core files, there are some files that should never be edited.  The majority of your edits will be contained in the the **wp-content** folder.
+        Though you can access all of these files, there are some that should never be edited.  The majority of your edits will be contained in the the **wp-content** folder.
           
         ![](framework/img/workshop/wp-core-files.png) 
       </script>
@@ -621,7 +572,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## wp-content (12:15)
+        ##What's in wp-content?
         
         ![](framework/img/workshop/wp-content-files.png)<!-- .element: class="left" -->
         **plugins** - uploaded plugins go here  
@@ -637,17 +588,65 @@
       </script>
     </section>
     
-  
-    <!-- http://codex.wordpress.org/First_Steps_With_WordPress -->
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Theme Templates
+        
+        Themes include multiple templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
+        
+        But you may not want to show a sidebar on the homepage.  You can change that in your page settings by choosing a template option.
+        
+        ![](framework/img/workshop/template-change.png)<!-- .element: width="80%" -->
+        
+        Where are these templates and how do they work?
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Template Files
+        
+        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
+        Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often, these templates are partial files and contain code for only a portion of a page. These partials fit together like a puzzle to generate full web pages.
+        
+        Since WordPress is based on PHP, the files are saved using a `.php` extension.
+        
+        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##WordPress template files 
+        
+        Here are some common template theme files recognized by WordPress, based on the filename. See full list [here](https://codex.wordpress.org/Theme_Development#Template_Files_List).
+        
+        * `index.php` - main template file and required in all themes
+        * `style.css` - main CSS stylesheet and required in all themes
+        * `comments.php` - template for display comments
+        * `front-page.php` - used for a static front page / home page
+        * `home.php` - If you do not set WordPress to use a static front page, this template is used to show latest blog posts
+        * header.php - usually contains the  meta information, links to stylesheets and scripts and sometimes the site navigation.
+        * single.php - template for a single post (not page). `index.php` is used if this template is not present.
+        * page.php - template for single page
+        * 404.php - used when WordPress cannot find a post, page, or other content that matches the visitor’s request
+        
+        All of these files are contained within the **wp-content** folder under **themes > theme-name**.
+      </script>
+    </section>
+
     <section class="slide" data-markdown>
       <script type="text/template">
         ##Child Themes 
         
+        We've already look at customizing themes via the WordPress admin options. Let's now explore digging into the code with child themes.
+        
         Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
         
-        * great way to learn about WordPress theme development
-        * recommended for modifying existing theme
-        * inherits the functionality and styling of parent theme to make development faster and to leverage existing code
+        * great way to learn about WordPress theme development by reverse engineering existing code
+        * recommended for modifying an existing theme
+        * inherits the functionality and styling of parent theme and leverages existing code
+        * make development faster since the main functionality, templates, etc, are already created
         
         If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme you will ensure that your modifications are preserved.
       </script>
@@ -655,11 +654,11 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Adding a new theme
+        ##Exercise: Add a new theme
         
-        Let's try out a new theme for the upcoming exercises. Included in today's learner files, in the **exercise-files** folder, locate our new [sample theme's]((https://en-ca.wordpress.org/themes/skt-white/) zip file, **skt-white.zip**.  
+        Let's try out a new theme for the upcoming child theming exercises. Included in today's learner files, in the **exercise-files** folder, locate our new [example theme's]((https://en-ca.wordpress.org/themes/skt-white/) zip file, **skt-white.zip**.  
         
-        You can unzip (and extract all on a PC) the theme and drag the folder into your **wp-content > themes** folder.  (Or advance to the next slide to view instructions for uploading a theme from the **Appearance** menu.) 
+        Unzip the theme file (PC users: extract all) and drag the folder into your **wp-content > themes** folder.  (Or advance to the next slide to view instructions for uploading a theme from the **Appearance** menu.) 
         
         ![](framework/img/workshop/theme-add.png)
         
@@ -671,9 +670,9 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Adding a new theme (12:30 - lunch)
+        ##Exercise: Adding a new theme (12:30 - lunch)
         
-        If you are adding the theme via the Admin panel, do **NOT** unzip the **skt-white.zip** file. It must be uploaded as a zip file.
+        If you are adding the theme using the Appearance menu, do **NOT** unzip the **skt-white.zip** file. It must be uploaded as a zip file.
         
         Go to **Appearance > Themes**, then **Add New**.  
         
@@ -686,49 +685,33 @@
       </script>
     </section>
     
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Break!
+        
+        Make sure the theme is uploaded and activated.
+        Optional to update content.
+      </script>
+    </section> -->
+    
     <section class="slide title" data-markdown>
       <script type="text/template">
-        #PHP, HTML & CSS 
-        ##Crash course!
+        #Intro to WordPress: <br>Part Two
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## example WP PHP code 
-        
-        show to intro syntax and segue into php intro
-        </code>
-      </script>
-    </section>
-    
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## 
-        Once you've found a theme that you like and only want to make minor colour changes, it's best to use a CSS plugin and update the stylesheet. The stylesheet is the file that controls font colours, size and various style elements.
-        You can choose one of these plugins.
-        CSS plugin
-        Slim Jetpack
-        Jetpack
-
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Intro to PHP (11am)
-        
-        The default theme could use a little pizzazz and some personal customizations.  But before we get into where to find themes and how to update them, let's just go over some PHP basics.
-        
+        ##Intro to PHP (1:15)
+                
         **How much PHP do you need to know?**
         
-        That depends on the complexity of the customization but being able to recognize PHP structures and having a general grasp of the PHP syntax will help. Especially when reading the WordPress documentation. 
+        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  However, being able to recognize PHP structures and having a general grasp of the PHP syntax will help a lot. 
         
-        The [entire PHP manual](http://php.net/manual/en/index.php) is available online for your reference.
+        The [entire PHP manual](http://php.net/manual/en/index.php) is available online and the WordPress documentation can be found here: https://codex.wordpress.org/
         
         <br>
-        Let's go over some PHP basics!
+        Before we get into the child themes, let's go over some PHP basics.
       </script>
     </section>
     
@@ -782,7 +765,7 @@
         
         `string` - series of characters and needs to be contained in either single or double quotes.
         
-        Add a semi-colon `;` after the string to end the command.
+        Add a semi-colon `;` at the end of the command.
         
         ```
         <?php echo "I'm one string"; ?>
@@ -792,15 +775,15 @@
         <?php print "I'm one string."; ?>
         ```
         
-        **Pro tip!**  In the previous example, if the single quotes were used, it would have a produced and error because PHP will think that the second quote closes the first one.  
+        **Pro tip!**  In the previous example, if single quotes were used, it would have a produced an error because PHP will think that the second quote closes the first one.  
         ```
         <?php print 'I'm one string.'; ?>
-        ````
+        ```
         
         You can avoid that by using double quotes or *escaping* it with a backslash `\` like so:
         ```
-        <?php print 'I\'m one string.'; ?>
-        ````
+        <?php print 'I\'m escaping this string.'; ?>
+        ```
       </script>
     </section>
     
@@ -814,13 +797,20 @@
       <script type="text/template">
         ## Open Project files
         
-        1. Open the Atom editor
-        1. Open your new WordPress site project folder.  Unless you changed the path during the ServerPress setup, it should be located under **Documents > Websites**.  Click on your project's folder *once* and select **open**. Once open, the folder will show in your sidebar.
+        Open the Atom editor and add your new WordPress site project folder.  Unless you changed the path during the ServerPress setup, it should be located under **Documents > Websites**.  
         
-          ![](framework/img/workshop/open-project.png)
+        **File > Add Project Folder** and click on your project's folder *once* and select **open**. Once open, the folders and all it's content will show in your sidebar.
+        
+          <!-- ![](framework/img/workshop/open-project.png) -->
+          ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Open Project files
           
-          (All of the files listed in **llc-wp-workshop.dev** are the WordPress *core* files that were added during the installation process.)
-        1. Update the text wrapping option in Atom to make reading the code easier later on.  Go to **Preferences** and a tab will appear. Scroll down to **Soft Wrap** and make sure it's checked.
+        Update the text wrapping option in Atom to make reading the code easier to read later on.  Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
         
         ![](framework/img/workshop/atom-soft-wrap.gif)
       </script>
@@ -828,9 +818,9 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise
+        ## Class exercise (1:45)
         
-        1. Create a new file in Atom - **File > New File**
+        1. Create a new test file in Atom - **File > New File**
         1. save it as **test.php** - **File > Save**
           It must end with a PHP extension (not .html) to be able to run PHP code.
         1. Let's add a line of HTML and PHP to compare.
@@ -851,7 +841,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise
+        ## Class exercise (2:00)
         
         1. Update the code wrapping a paragraph tag around the PHP script and view source again.
           ```
@@ -913,7 +903,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise (11:45 to finish this exercise)
+        ## Class exercise
         
         create a $site_title & $username variable & echo it
         
@@ -923,7 +913,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Functions (15mins - to 12pm)
+        ## Functions (2:30pm)
         
         So far we've been outputting commands one line at a time but sometimes you need to group multiple commands together.
         
@@ -950,27 +940,43 @@
         ```
       </script>
     </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## WordPress template tags
+        ##Template Tags
         
         The great thing about using WordPress is that many of the complex functions that would be needed to display content have already been created in the framework.  These are referred to as template tags. 
         
         Note the syntax is just like the function we just created because they are!  WordPress has extentive documentation in the [codex](https://codex.wordpress.org) for each tag.
         
-        Here's some common ones we'll look at today:
+        Any content added in the WordPress backend Admin menus goes right into your database.  This includes content like your site title, blog post or page content to your menu settings and pretty much everything else you see on your site.
         
-        ```
-        <?php the_title(); ?>
-
-        <!-- <?php if( has_post_thumbnail() ) ?> -->
-
-        <?php get_sidebar(); ?>
-
-        <?php get_template_directory_uri(); ?>
-        ```
+        **Template tags** are used within themes to retrieve specific pieces of content from your database or to call output the contents of another theme file onto the page.
         
-        Let's get back into WordPress!
+        Some common template tags are:
+        
+        * `get_header()` gets the header.php file and includes it in the current theme file. 
+        * `get_footer()` tells WordPress to get the footer.php file
+        * `the_title()` – tells WordPress to get the title of the page or post from the database
+        * `bloginfo('name')` – tells WordPress to get the blog/website title from the database
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Template tags & template files
+        
+        How do the template tags and files all work together?
+        
+        In the **skt-white** theme folder, the **header.php** contains a line of code that looks like this:
+        
+            <h1><?php bloginfo('name'); ?></h1>
+            
+        Remember, the `bloginfo('name')` template tag is used to get the site title from the database.  By including it between an HTML heading tag, it outputs the title into the HTML tag to creating a heading on the page and the data from the database.  The output look like this in the browser:
+        
+            <h1>Ladies Learning Code</h1>
+            
+        ![](framework/img/workshop/template-tag-html.png)
       </script>
     </section>
     
@@ -1021,15 +1027,6 @@
         Any theme you upload, through the WordPress directory or manual upload will be added to your WordPress project files. 
         
         You can find it in **wp-content > themes** in your project folder.  You can also add or delete themes directly in this folder.  **BUT** if you add a theme here, then it needs to be unzipped first.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Create a child theme
-        use default twenty15
-        
-        create folder, update css theme info, etc
       </script>
     </section>
     
