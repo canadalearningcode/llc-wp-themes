@@ -72,49 +72,35 @@
       </div>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide two-col-list" data-markdown>
       <script type="text/template">
       ##Course Outline
       
-      <div class="col-2">
-        <h3>Part One:</h3>
-        <ul>
-          <li>What is WordPress?</li>
-          <li>WordPress.com vs WordPress.org</li>
-          <li>Creating a local dev environment</li>
-          <li>Intro to PHP
-            <ul>
-              <li>Syntax</li>
-              <li>Variables</li>
-              <li>Functions</li>
-            </ul>
-          </li>
-          <li>Getting to know the Dashboard
-            <ul>
-              <li>Posts vs Pages</li>
-              <li>Media & Comments</li>
-            </ul>
-          </li>
-          <li>Adding content</li>
-        </ul>
-      </div>
-      
-      <div class="col-2">
-        <h3>Part Two:</h3>
-        <ul>
-          <li>Free & Premium themes
-            <ul>
-              <li>Where to find</li>
-              <li>Template file structure</li>
-              <li>Making updates</li>
-            </ul>
-          </li>
-          <li>Child Themes</li>
-          <li>Custom Themes</li>
-          <li>Plugins</li>
-          <li>Next steps &amp; resources</li>
-        </ul>
-      </div>
+      * Part One:
+        * What is WordPress?
+        * WordPress.com vs WordPress.org
+        * Creating a local dev environment
+        * Intro to PHP
+        * Syntax
+        * Variables
+        * Functions
+        * Getting to know the Dashboard
+        * Posts vs Pages
+        * Media & Comments
+        * Adding content
+        
+      * Part Two:
+        * Free & Premium themes
+        * Where to find
+        * Template file structure
+        * Making updates
+        * Child Themes
+        * Custom Themes
+        * Plugins
+        * Next steps & resources
+        
+        
+        <div class="table-of-contents"></div>
       </script>
     </section>
     
@@ -123,40 +109,38 @@
       <script type="text/template">
         ##What is WordPress?
         
-        * one of many types of blogging software and CMS
+        * free, open source content management system (CMS)
+        * started as a blog publishing platform but can now be used to power any time of website
         * used by many individuals and companies (ladieslearningcode.com is powered by WordPress!)
-        * an online, open source (a.k.a. free) website creation tool 
         * written primarily in [PHP](http://www.php.net) and [MySQL](http://www.mysql.com)
-        * uses PHP templates & a database to create and store content
-        * used to create **dynamic** websites
+        * customizable core, can be extended and modified in anyway
+        * large community of support
+        * and much [more](https://codex.wordpress.org/WordPress_Features)!
         
         ![](framework/img/workshop/logo-wp.png)
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide two-col-list" data-markdown>
       <script type="text/template">
         ##WordPress.com vs WordPress.org
         
-        [WordPress**.com**](http://wordpress.com)
+        * [WordPress**.com**](http://wordpress.com)
+          * hosted and all technical maintenance handled by WordPress
+          * has fewer options for customizing
+          * do not need to edit the code
+          * some paid upgrades available for some customization
+          * no plugins
         
-        * hosted and all technical maintenance handled by WordPress
-        * has fewer options for customizing
-        * do not need to edit the code
-        * some paid upgrades available for some customization
-        * no plugins
-        
-        [WordPress**.org**](http://wordpress.org)
-        
-        * provides the codebase for free to download & edit
-        * requires you to purchase our own domain and hosting
-        * you are responsible for the site maintenance
-        * you have full control over theme files & code
-        * plugins!
+        * [WordPress**.org**](http://wordpress.org)
+          * provides the codebase for free to download & edit
+          * must purchase your own domain and hosting 
+          * you have full control over theme files & code
+          * plugins!
         
         Today we'll be exploring the **.org** version.  
         
-        More details available <!-- .element: class="footnote" -->[here](https://en.support.wordpress.com/com-vs-org/).  
+        **Extra resource:**<!-- .element: class="footnote" --> https://en.support.wordpress.com/com-vs-org/<!-- .element: class="footnote" -->
       </script>
     </section>
     
@@ -197,14 +181,16 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## What is PHP?
-        
-        <!-- HTML, CSS & JavaScript are examples of *client-side* languages. They run in the *browser*. -->
 
-        * PHP is a *server-side* language
-        * requires a *server* to run the commands so you can't just simply open a PHP page in your browser like an HTML page
+        * PHP requires a *server* to run so you can't just simply open a PHP page in your browser like an HTML page
         * has been around since mid-90s and originally stood for **Personal Home Page**, but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP.)
-        * can be written on its own, mixed with HTML, or used in combination with templating engines and frameworks like Wordpress
+        * can be written on its own or mixed with HTML
         * used to make a website *dynamic* and generate HTML 
+        
+        <br>
+        **How much PHP do you need to know?**  
+        
+        This really depends on the level of customization required. However, much of the customizations can be achieved using WordPress [template tags](http://codex.wordpress.org/Template_Tags) and are all documented in the Codex.
       </script>
     </section>
     
@@ -242,7 +228,7 @@
         
         <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
         
-        Open DesktopServer and follow the steps outlined in the getting started video. The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).  
+        Open DesktopServer and follow the steps outlined in the [getting started video](https://www.youtube.com/watch?v=Po0MkaL8Fgc). The step by step written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/).  
         
         The LLC test site is named **llc-wp-workshop.dev** but yours can be whatever you want. Just note that for the remainder of this workshop, **llc-wp-workshop.dev** will be used in all examples.
 
@@ -258,19 +244,27 @@
       </script>
     </section>
     
+    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
+      <script type="text/template">
+        #WordPress <br>Administration
+      </script>
+    </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
         ## WordPress Settings
         
-        We're all set up!  But the default theme and site settings could use a little personalization. Getting to know the site settings is key to theme customization.  Let's look at the options in the [Admin Area](http://www.wpbeginner.com/glossary/admin-area/).
+        We're all set up!  
         
-        When using a local server, `http://llc-wp-workshop.dev` is the website URL. To get to the Admin Area, just add `/wp-admin/` to the end of your URL.
+        Now let's look at the options in the [WordPress Admin](http://www.wpbeginner.com/glossary/admin-area/) area and familiarize ourselves with the backend. Getting to know the site settings is key to theme customization.  
+        
+        When using a local server, `http://llc-wp-workshop.dev` is the website URL.   
+        
+        To get to the Admin Area, just add `/wp-admin/` to the end of your URL. This works for any WordPress site you have admin access to, whether it's a live site or local site.
         
         ```
         http://llc-wp-workshop.dev/wp-admin/
         ```
-        
-        This works for any WordPress site you have admin access to, whether it's a live site or local site.
 
         If you're already logged in, you can also access it from the top admin bar by clicking on your site name. Click on it again to get back to your site.
         
@@ -279,12 +273,6 @@
         **Pro tip!**  Open a new browser tab and navigate to your Admin area there.  That way you can have both your site and your Admin options open at the same time for easy access and testing.
         
         ![](framework/img/workshop/admin-login-tabs.gif)
-      </script>
-    </section>
-        
-    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
-      <script type="text/template">
-        # The Dashboard
       </script>
     </section>
 
@@ -317,7 +305,7 @@
         **Posts**  
           * used for timely content, part of a series
           * listed chronologically by date
-          * can also be assigned categories and tags <br>(also referred to as **taxonomies**)
+          * can also be assigned *categories* and *tags* <br>(also referred to as **taxonomies**)
           * default *permalink* will include the date  
           `http://llc-wp-workshop.dev/2015/09/28/my-catchy-title/`<!-- .element: class="footnote" -->
         * ![](framework/img/workshop/admin-pages.png)  
@@ -333,35 +321,22 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Media & Comments
+        ##Media & Comments Menus
         
         ###Media  
         
-        The Media menu contains the option to add new media as well as view a library of all the media files you've uploaded to your site. This includes images, pdf, word docs, etc that have been added to your pages and posts. 
+        * add new media (images, pdf, word docs)
+        * view a library of all uploaded media
+        * includes media added in this menu or from your pages and posts
         
         ###Comments
-        This is where you can see and manage all the comments left on your site. You can edit, update, delete or mark the comments as spam. If you decide to have comments on your site, it's strongly recommended to use a plugin like **Akismet** to fight spam. (More on plugins later.)
         
-        If you'd like to disable or add specific restrictions to comments on your site, go to **Settings > Discussion** to see all the various options.
+        * manage all the comments left on your site
+        * edit, update, delete or mark comments as spam. 
+        * strongly recommended to use the **Akismet** plugin to fight spam.   
+        (More on plugins later.) 
         
-      </script>
-    </section>
-    
-    <section class="slide appearance" data-markdown>
-      <script type="text/template">
-        ## Appearance
-        
-        ![](framework/img/workshop/admin-appearance.png)
-        
-        This is where all the options related to the look and feel of your WordPress site is contained including themes and page components like menus, widgets and the page header.
-        
-        When first installing a WordPress site, the default WordPress themes are included with the core files. The latest (and default) theme is **Twenty Fifteen**. Themes contain pre-written template files that include page structure as well as page styles so layout can vary greatly based on the theme. 
-        
-        Adding content will help to visualize where each bit of content populates on the page.
-        
-        You can change & customize your theme from this section as well as add widgets and site menus.
-        
-        Basic content using the default Twenty Fifteen theme will look similar to  [this](framework/img/workshop/theme-default-example.png).
+        If you'd like to disable or add restrictions to how users can comment on your site, go to **Settings > Discussion** to see all the various options.
       </script>
     </section>
     
@@ -390,7 +365,39 @@
     
     <section class="slide title" data-markdown>
       <script type="text/template">
-        #WordPress Themes
+        #Appearance 
+        ##Themes, Widgets, Menus
+      </script>
+    </section>
+    
+    <section class="slide appearance" data-markdown>
+      <script type="text/template">
+        ## Appearance
+        
+        ![](framework/img/workshop/admin-appearance.png)
+        
+        [Themes](https://codex.wordpress.org/Appearance_Themes_Screen) are the overall design of the site a can be changed without changing the underlying CMS functionality. 
+        
+        You can choose from 1000s of free and premium themes or create your own.
+        
+        [Customize](https://codex.wordpress.org/Appearance_Customize_Screen) displays the custom options for a specific theme and will only be present if the theme author has configured the theme to allow this capability.
+        
+        [Widgets](https://codex.wordpress.org/Appearance_Widgets_Screen) are used to add various pieces of information to your theme's sidebar. (i.e. Categories, Archives, Recent Posts, etc.) 
+      </script>
+    </section>
+    
+    <section class="slide appearance" data-markdown>
+      <script type="text/template">
+        ## Appearance
+        
+        ![](framework/img/workshop/admin-appearance.png)
+
+        **Menus** are used to  create a navigation menu of pages, categories, custom links, tags, etc.
+        
+        The **Header** & **Background** feature allows you to manage what image is displayed in the header and the look of background for your theme.  This option will only be present if the theme author has configured these options to allow for this capability.
+      
+
+        The content added in the previous exercise using the default Twenty Fifteen theme will look similar to [this](framework/img/workshop/theme-default-example.png).
       </script>
     </section>
     
@@ -422,13 +429,12 @@
       <script type="text/template">
         ## Free & Premium themes
 
-        There are literally 1000s of free WordPress themes available for download in the WordPress directory. For the next few exercises, let's all use the **Sydney** theme to ensure we see the same customization options.
+        There are literally 1000s of free WordPress themes available for download in the WordPress directory. For the next few exercises, use the **Sydney** theme to see the same customization options referred to in the examples.
         
         Go to **Appearance > Themes**, select **Add New**.  
         Do a search for the "Sydney" theme, select **Install** and **activate** when it's done.
         
         ![](framework/img/workshop/admin-themes-add.gif)
-    
       </script>
     </section>
     
@@ -452,7 +458,7 @@
       <script type="text/template">
         ## Free & Premium themes
         
-        This is what the site looks like with some basic content and the default settings. Let's look at the customization options.
+        This is what the site looks like with some basic content and the default settings. Much different from the Twenty Fifteen theme!
         
         ![](framework/img/workshop/theme-new-example.gif)
       </script>
@@ -462,7 +468,9 @@
       <script type="text/template">
         ## Appearance > Customize
       
-        These options listed here will be specific to the active theme and will vary based on what features are available. Navigate to the **Customize** menu to view the options.
+        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. 
+        
+        Navigate to the **Customize** menu to view the options.
         
         ![](framework/img/workshop/admin-customize.gif)
       </script>
@@ -481,27 +489,27 @@
         ![](framework/img/workshop/admin-general-title.png)
       </script>
     </section>
+    
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Appearance > Customize: Header & Blog options
+        ##Appearance > Customize
         
-        These two options features layout customizations for how the header and blog posts are displayed.  Changing these options here updates the codebase without manually updating it.
+        Note that some of the options listed under **Customize** can also be accessed directly under the **Appearance** menu.  
         
-        ![](framework/img/workshop/admin-customize-header-blog.gif)
-        
-        There are more options for changing the look of the site such as fonts & site colours. When activating a new theme, it doesn't hurt to check out all these different options to see what's available. 
+        The Customize options are specific to the theme and will vary among themes but the options under Appearance are available for any theme.
+
+        ![](framework/img/workshop/appearance-customize.png)
+        ![](framework/img/workshop/admin-appearance.png)
       </script>
     </section>
     
-    <section class="slide menu-widgets" data-markdown>
+    <section id="menus" class="slide menu-widgets" data-markdown>
       <script type="text/template">
-        ##Menus & Widgets
+        ##Default Homepage
         
         ![](framework/img/workshop/menu-default.png) <!-- .element: class="landing" -->
         
-        By default, the homepage for all WordPress sites is a listing of your blog posts (blog archive page).
-        
-        The items in the right sidebar (Recent Posts, Recent Comments, etc) are widgets and can be added or removed in the **Customize** option or directly under **Appearance > Widgets**.
+        By default, the homepage for all WordPress sites is a listing of your blog posts (blog archive page). Blog page templates generally include a sidebar with widgets (Recent Posts, Recent Comments, etc).
         
         Also, in this theme, the menu & header area will look different depending on your browser window size because this is a *responsive* theme.  For example, a bigger screen size will show a menu link, the smaller screen size will show an icon.
         
@@ -515,16 +523,23 @@
       <script type="text/template">
         ## Custom Menu
         
-        By default, all WordPress sites show the blog archive page as the home page.
-        But what if you wanted a navigation to look something like this:
+        By default, all WordPress sites show the blog archive page as the home page (a listing of your blog posts). But what if you wanted a navigation to look something like this:
         
         ![](framework/img/workshop/custom-menu.png)
         
         `Home` - link to a page with some static content  
         `About Us` - link to a page with some static info about you  
         `Blog` - link to a page showing all blog posts  
+        
+        These settings can be changed!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Custom Menu
 
-        These settings can be changed! Before creating a navigation menu, you'll need to select a **page** to be display as the home page and the blog.  (Remember the pages we created earlier?)
+        Before creating a navigation menu, you'll need to select a **page** to be displayed as the home page. You'll also need to assign a new page for the blog since it won't be the default home page anymore.  (Remember the pages we created earlier?)
         
         Go to **Settings > Reading** menu to update the settings. 
         
@@ -536,74 +551,16 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Exercise: Custom Menu (15mins)
+        ##Exercise: Custom Menu (15mins) (finish at 12pm)
         
         Go to **Appearance > Menus** to add a menu. 
         
         Here you will see options to add pages, specific blog posts, categories and tags to your menu.  Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.  
         
-        The below example shows the settings for making the navigation in the [previous slide](framework/img/workshop/custom-menu.png) example.
+        The below example shows the settings for the navigation in the [previous](framework/img/workshop/custom-menu.png) example.
         
         ![](framework/img/workshop/admin-menus.png)
         ![](framework/img/workshop/admin-menus.gif)
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Page templates
-        
-        Themes usually include different templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
-        
-        But you may not want to show a sidebar on the homepage.  You can change that in your page settings by choosing a template option.
-        
-        ![](framework/img/workshop/template-change.png)
-      </script>
-    </section>
-    
-    <section class="slide title" data-markdown>
-      <script type="text/template">
-        #WordPress <br>Template Files
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Template Files
-        
-        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
-        Themes are a collection of template files. Often, these template files contain code for only a portion of a page and together, they make complete pages and websites.
-        
-        Since WordPress is based on PHP, the files are saved using a `.php` extension.
-        
-        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Uploading Themes 
-        
-        You can also use themes from outside of the WordPress directory but note that not all themes are created equal!  
-        
-        Downloaded themes are packaged as a zip file.  Do **NOT** unzip them when uploading via the WordPress admin panel. Included in today's learner files is a zip file,   **skt-white.zip**, contained in the **exercise-files** folder. Let's use that for the next exercise.
-        
-      
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Exercise: Upload a theme
-        
-        To upload a theme, go to **Appearance > Themes**, then **Add New**.  
-        
-        ![](framework/img/workshop/upload-theme-1.png)
-        ![](framework/img/workshop/upload-theme-2.png)
-        ![](framework/img/workshop/upload-theme-3.png)
-        ![](framework/img/workshop/upload-theme-4.png)
-        ![](framework/img/workshop/upload-theme-5.png)
-        ![](framework/img/workshop/upload-theme-6.png)
       </script>
     </section>
     
@@ -615,9 +572,44 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
+        ##Templates
+        
+        Themes usually include different templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
+        
+        But you may not want to show a sidebar on the homepage.  You can change that in your page settings by choosing a template option.
+        
+        ![](framework/img/workshop/template-change.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Template Files
+        
+        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
+        Themes are a collection of template files. Often, these template files contain code for only a portion of a page and fit together like a puzzle to generate full web pages.
+        
+        Since WordPress is based on PHP, the files are saved using a `.php` extension.
+        
+        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
+        
+        These template files are needed to develop child or custom WordPress themes.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Template Files 
+        
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
         ##WordPress Core files
         
-        To view the WordPress core files, go to **Documents > Websites**. (The default directory created during the DesktopServer setup.) 
+        To view all of the WordPress core files, go to **Documents > Websites**. (The default directory created during the DesktopServer setup.) 
         
         All of the files listed in **llc-wp-workshop.dev** are the WordPress core files, added during the installation process.
         
@@ -629,7 +621,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## wp-content
+        ## wp-content (12:15)
         
         ![](framework/img/workshop/wp-content-files.png)<!-- .element: class="left" -->
         **plugins** - uploaded plugins go here  
@@ -646,13 +638,58 @@
     </section>
     
   
+    <!-- http://codex.wordpress.org/First_Steps_With_WordPress -->
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Child Themes 
+        
+        Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
+        
+        * great way to learn about WordPress theme development
+        * recommended for modifying existing theme
+        * inherits the functionality and styling of parent theme to make development faster and to leverage existing code
+        
+        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme you will ensure that your modifications are preserved.
+      </script>
+    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Exercise (lunch?)
+        ##Adding a new theme
         
-        make sure they have content
-        add a note to each template file to see where in the site the template shows up
+        Let's try out a new theme for the upcoming exercises. Included in today's learner files, in the **exercise-files** folder, locate our new [sample theme's]((https://en-ca.wordpress.org/themes/skt-white/) zip file, **skt-white.zip**.  
+        
+        You can unzip (and extract all on a PC) the theme and drag the folder into your **wp-content > themes** folder.  (Or advance to the next slide to view instructions for uploading a theme from the **Appearance** menu.) 
+        
+        ![](framework/img/workshop/theme-add.png)
+        
+        Then go to **Appearance > Themes** and Activate the theme.
+        
+        ![](framework/img/workshop/theme-activate.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Adding a new theme (12:30 - lunch)
+        
+        If you are adding the theme via the Admin panel, do **NOT** unzip the **skt-white.zip** file. It must be uploaded as a zip file.
+        
+        Go to **Appearance > Themes**, then **Add New**.  
+        
+        ![](framework/img/workshop/upload-theme-1.png)
+        ![](framework/img/workshop/upload-theme-2.png)
+        ![](framework/img/workshop/upload-theme-3.png)
+        ![](framework/img/workshop/upload-theme-4.png)
+        ![](framework/img/workshop/upload-theme-5.png)
+        ![](framework/img/workshop/upload-theme-6.png)
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #PHP, HTML & CSS 
+        ##Crash course!
       </script>
     </section>
     
@@ -1052,6 +1089,7 @@
         ## Resources
         
         https://codex.wordpress.org/Post_Formats
+        https://wordpress.org/support/
         
         * Glossary [http://www.wpbeginner.com/glossary/](http://www.wpbeginner.com/glossary/)
         
@@ -1124,6 +1162,28 @@
           "background-image": "url(framework/img/workshop/" + bgImg + ")"
         });
       });
+      
+      // Table of Contents
+      var ToC = "<ul>";
+      var newLine, el, title, link;
+
+      jQuery(".slide > h2").each(function() {
+        el = jQuery(this);
+        title = el.text();
+        link = "#" + el.parent().attr("id");
+
+        newLine =
+          "<li>" +
+            "<a href='" + link + "'>" +
+              title +
+            "</a>" +
+          "</li>";
+
+        ToC += newLine;
+      });
+      
+      ToC +="</ul>";
+      jQuery(".table-of-contents").append(ToC);
     });
   </script>
 </body>
