@@ -1,0 +1,673 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SKT White\n"
+"POT-Creation-Date: 2015-09-04 16:42+0530\n"
+"PO-Revision-Date: 2015-03-09 11:12+0530\n"
+"Last-Translator: SKT Themes <support@sktthemes.com>\n"
+"Language-Team: SKT Themes <support@sktthemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: 404.php:14
+msgid "<strong>404</strong> Not Found"
+msgstr ""
+
+#: 404.php:17
+msgid ""
+"Looks like you have taken a wrong turn.....<br />Don't worry... it happens "
+"to the best of us."
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:38
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:41
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:44
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:47
+msgid "Asides"
+msgstr ""
+
+#: archive.php:50
+msgid "Images"
+msgstr ""
+
+#: archive.php:53
+msgid "Videos"
+msgstr ""
+
+#: archive.php:56
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:59
+msgid "Links"
+msgstr ""
+
+#: archive.php:62 sidebar.php:15
+msgid "Archives"
+msgstr ""
+
+#: comments.php:36 comments.php:56
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:37 comments.php:57
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:38 comments.php:58
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:18 content-single.php:28 content.php:36 image.php:59
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:23 content-single.php:40 content.php:70 image.php:33
+#: image.php:65 inc/template-tags.php:70 inc/template-tags.php:89
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:33 content.php:14 content.php:47 content.php:57
+msgid ", "
+msgstr ""
+
+#: content.php:29
+msgid "Read More &raquo"
+msgstr ""
+
+#: content.php:33
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:51
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:61
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:67
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:67
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:67
+msgid "% Comments"
+msgstr ""
+
+#: footer.php:13
+msgid "We Are Everywhere!"
+msgstr ""
+
+#: footer.php:49
+msgid "About SKT White"
+msgstr ""
+
+#: footer.php:50
+msgid ""
+"Donec ut ex ac nulla pellentesque mollis in a enim. Praesent placerat sapien "
+"mauris, vitae sodales tellus venenatis ac. Suspendisse suscipit velit id "
+"ultricies auctor. Duis turpis arcu, aliquet sed sollicitudin sed, porta quis "
+"urna. Quisque velit nibh, egestas et erat a, vehicula interdum augue. Morbi "
+"ut elementum justo. Sed eu nibh orci. Vivamus elementum erat orci. Curabitur "
+"consequat convallis dapibus."
+msgstr ""
+
+#: footer.php:54
+msgid "Recent Posts"
+msgstr ""
+
+#: footer.php:59
+msgid "Read more..."
+msgstr ""
+
+#: footer.php:66
+msgid "SKT White"
+msgstr ""
+
+#: footer.php:67
+msgid ""
+"Street 238,52 tempor Donec ultricies mattis nulla, suscipit risus tristique "
+"ut."
+msgstr ""
+
+#: footer.php:70
+msgid "Phone:"
+msgstr ""
+
+#: footer.php:73
+msgid "E-mail:"
+msgstr ""
+
+#: footer.php:76
+msgid "Website:"
+msgstr ""
+
+#: footer.php:85
+msgid "&copy; 2014 SKT White. All Rights Reserved"
+msgstr ""
+
+#: footer.php:86
+msgid "Design by SKT  Themes"
+msgstr ""
+
+#: functions.php:38
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:48
+msgid "Blog Sidebar"
+msgstr ""
+
+#: functions.php:49
+msgid "Appears on blog page sidebar"
+msgstr ""
+
+#: header.php:76
+msgid "Menu"
+msgstr ""
+
+#: image.php:23
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span> at <a href=\"%3$s\">%4$s &times; %5$s</a> in <a "
+"href=\"%6$s\" rel=\"gallery\">%7$s</a>"
+msgstr ""
+
+#: image.php:38
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:39
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: index.php:173
+msgid "Latest News"
+msgstr ""
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: options.php:751
+msgid "Basic Settings"
+msgstr ""
+
+#: options.php:755
+msgid "Logo"
+msgstr ""
+
+#: options.php:756
+msgid "Upload your main logo here"
+msgstr ""
+
+#: options.php:763
+msgid "Favicon"
+msgstr ""
+
+#: options.php:764
+msgid "Upload favicon for website"
+msgstr ""
+
+#: options.php:774
+msgid "Color Scheme"
+msgstr ""
+
+#: options.php:775
+msgid "Select color scheme."
+msgstr ""
+
+#: options.php:784
+msgid "Sections"
+msgstr ""
+
+#: options.php:788
+msgid "Number of Sections"
+msgstr ""
+
+#: options.php:789
+msgid "Select number of sections"
+msgstr ""
+
+#: options.php:804
+msgid "Section Title"
+msgstr ""
+
+#: options.php:810
+msgid "Section ID"
+msgstr ""
+
+#: options.php:811
+msgid ""
+"Enter your section ID here. SECTION ID MUST BE IN SMALL LETTERS ONLY AND DO "
+"NOT ADD SPACE OR SYMBOL."
+msgstr ""
+
+#: options.php:817
+msgid "Section Background Color"
+msgstr ""
+
+#: options.php:818
+msgid "Select background color for section"
+msgstr ""
+
+#: options.php:824
+msgid "Background Image"
+msgstr ""
+
+#: options.php:831
+msgid "Section CSS Class"
+msgstr ""
+
+#: options.php:832
+msgid "Set class for this section."
+msgstr ""
+
+#: options.php:838
+msgid "Hide Section"
+msgstr ""
+
+#: options.php:839
+msgid "Check to hide this section"
+msgstr ""
+
+#: options.php:845
+msgid "Section Content"
+msgstr ""
+
+#: options.php:854
+msgid "Homepage Slider"
+msgstr ""
+
+#: options.php:858
+msgid "Inner Page Slider"
+msgstr ""
+
+#: options.php:859
+msgid "Show / Hide inner page slider"
+msgstr ""
+
+#: options.php:866
+msgid "Slider Title"
+msgstr ""
+
+#: options.php:874
+msgid "Slider Image 1"
+msgstr ""
+
+#: options.php:875
+msgid "Upload / select image for slide 1"
+msgstr ""
+
+#: options.php:883
+msgid "Slider Image 2"
+msgstr ""
+
+#: options.php:884
+msgid "Upload / select image for slide 2"
+msgstr ""
+
+#: options.php:891
+msgid "Slider Image 3"
+msgstr ""
+
+#: options.php:892
+msgid "Upload / select image for slide 3"
+msgstr ""
+
+#: options.php:899
+msgid "Slider Image 4"
+msgstr ""
+
+#: options.php:900
+msgid "Upload / select image for slide 4"
+msgstr ""
+
+#: options.php:907
+msgid "Slider Image 5"
+msgstr ""
+
+#: options.php:908
+msgid "Upload / select image for slide 5"
+msgstr ""
+
+#: options.php:917
+msgid "Social Settings"
+msgstr ""
+
+#: options.php:921
+msgid "Social Title"
+msgstr ""
+
+#: options.php:922
+msgid "Add social section title here"
+msgstr ""
+
+#: options.php:928
+msgid "Facebook Url with \"http://\""
+msgstr ""
+
+#: options.php:935
+msgid "Twitter Url with \"http://\""
+msgstr ""
+
+#: options.php:942
+msgid "Google Plus Url with \"http://\""
+msgstr ""
+
+#: options.php:949
+msgid "LinkedIn Url with \"http://\""
+msgstr ""
+
+#: options.php:956
+msgid "Pinterest Url with \"http://\""
+msgstr ""
+
+#: options.php:963
+msgid "YouTube Url with \"http://\""
+msgstr ""
+
+#: options.php:970
+msgid "Vimeo Url with \"http://\""
+msgstr ""
+
+#: options.php:977
+msgid "RSS Url with \"http://\""
+msgstr ""
+
+#: options.php:984
+msgid "Instagram Url with \"http://\""
+msgstr ""
+
+#: options.php:993
+msgid "Footer"
+msgstr ""
+
+#: options.php:997
+msgid "Footer About Section"
+msgstr ""
+
+#: options.php:998
+msgid "About text title."
+msgstr ""
+
+#: options.php:1004
+msgid ""
+"Some text for footer of your site, you would like to display in the footer."
+msgstr ""
+
+#: options.php:1010
+msgid "Footer Recent Posts"
+msgstr ""
+
+#: options.php:1011
+msgid "Footer recent post title."
+msgstr ""
+
+#: options.php:1017
+msgid "Footer Address Title"
+msgstr ""
+
+#: options.php:1018
+msgid "Footer Address title."
+msgstr ""
+
+#: options.php:1024
+msgid "Add company address here."
+msgstr ""
+
+#: options.php:1030
+msgid "Add phone number here."
+msgstr ""
+
+#: options.php:1036
+msgid "Add email address here."
+msgstr ""
+
+#: options.php:1042
+msgid "Add company url here with http://."
+msgstr ""
+
+#: options.php:1048
+msgid "Footer Copyright"
+msgstr ""
+
+#: options.php:1049
+msgid "Copyright Text for your site."
+msgstr ""
+
+#: options.php:1055
+msgid "Footer Text Link"
+msgstr ""
+
+#: options.php:1063 inc/includes/class-options-framework-admin.php:219
+msgid "Our Themes"
+msgstr ""
+
+#: options.php:1067
+msgid "SKT White WordPress theme has been Designed and Created by SKT Themes."
+msgstr ""
+
+#: options.php:1071 inc/includes/class-options-framework-admin.php:188
+msgid "Buy PRO version for only $30 with more features."
+msgstr ""
+
+#: search.php:15
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: sidebar.php:21
+msgid "Meta"
+msgstr ""
+
+#: inc/template-tags.php:33
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:47
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/template-tags.php:70
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:93
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:184
+#, php-format
+msgid ""
+"<span class=\"posted-on\">Published %1$s</span><span class=\"byline\"> by "
+"%2$s</span>"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:85
+#: inc/includes/class-options-framework-admin.php:86
+msgid "Theme Options"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:211
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:225
+msgid "Need more features?"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:227
+msgid "Buy PRO version for only $30 with more features"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:231
+msgid "Documentation"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:233
+msgid "For documentation and support check this link"
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:265
+msgid "Default options restored."
+msgstr ""
+
+#: inc/includes/class-options-framework-admin.php:319
+msgid "Options saved."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:55
+msgid "No file chosen"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:58
+#: inc/includes/class-options-media-uploader.php:111
+msgid "Upload"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:60
+#: inc/includes/class-options-media-uploader.php:112
+msgid "Remove"
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:63
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: inc/includes/class-options-media-uploader.php:87
+msgid "View File"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:311
+msgid "No Repeat"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:312
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:313
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:314
+msgid "Repeat All"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:326
+msgid "Top Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:327
+msgid "Top Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:328
+msgid "Top Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:329
+msgid "Middle Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:330
+msgid "Middle Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:331
+msgid "Middle Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:332
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:333
+msgid "Bottom Center"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:334
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:346
+msgid "Scroll Normally"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:347
+msgid "Fixed in Place"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:419
+msgid "Normal"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:420
+msgid "Italic"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:421
+msgid "Bold"
+msgstr ""
+
+#: inc/includes/class-options-sanitize.php:422
+msgid "Bold Italic"
+msgstr ""

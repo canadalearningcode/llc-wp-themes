@@ -1,0 +1,75 @@
+Version 1.0
+i) Intial version Release.
+
+Version 1.1
+i) Resolved issues as asked by reviewer.
+
+Version 1.2
+i) Added default content in homepage.
+
+Version 1.3
+i) Resolved issues as asked by reviewer.
+
+Version 1.4
+i) Resolved spelling error.
+
+Version 1.4.1
+i) Resolved issues as asked by reviewer.
+
+Version 1.4.2
+i) Resolved issues as asked by reviewer.
+
+Version 1.5
+i) Resolved homepage slider default images issue.
+
+Version 1.5.1
+i) Added pagination in homepage posts.
+
+Version 1.5.2
+i) Responsive layout issue resolved.
+
+Version 1.5.3
+i) Removed unused script.
+
+Version 1.5.4
+i) Slider script loading rectified.
+
+Version 1.5.5
+i) Resolved tablet resolution issues in responsive css.
+
+Version 1.5.6
+i) Added tagline.
+
+Version 1.5.7
+i) Images in services section updated and pagination color enabled.
+
+Version 1.5.8
+i) Line height and section h2 font size in mobile mode rectified.
+
+Version 1.5.9
+i) Resolved slide title line height issues.
+
+Version 1.6.0
+i) Reduced size of the theme and rectified pricing in theme options.
+
+Version 1.6.1
+i) Resolved double tagline issue and navigation second line issue.
+
+Version 1.6.2
+i) Resolved URLS
+
+Version 1.6.3
+i)   Resolved padding of textual logo.
+ii)  Resolved min height of services box.
+iii) Changed bounce animation to pulse to better the look and feel.
+iv)  Removed logo upload option.
+
+Version 1.6.4
+i)   Resolved line height of lengthy section title.
+ii)  Resolved statistics visual to text mode error.
+
+Version 1.6.5
+i)   Footer credit link restored.
+
+Version 1.6.6
+i)   Photo Gallery Hover Effect and Client Section Hover Effect
