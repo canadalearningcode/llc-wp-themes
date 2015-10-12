@@ -20,7 +20,7 @@
 
 <!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
 <body class="en" data-duration="360">
-
+<hr class="temp-line">
   <!-- Welcome slide -->
   <header class="slide">
     <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
@@ -407,8 +407,12 @@
         * built from scratch or from a "starter template"
         * requires a deeper knowledge of HTML, CSS, PHP or get really good at following
         the [WordPress documentation](https://codex.wordpress.org/)!
-        
-        Let's explore option 1 first.
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #Free & Premium <br>Themes
       </script>
     </section>
     
@@ -634,29 +638,12 @@
         All of these files are contained within the **wp-content** folder under **themes > theme-name**.
       </script>
     </section>
-
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ##Child Themes 
-        
-        We've already look at customizing themes via the WordPress admin options. Let's now explore digging into the code with child themes.
-        
-        Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
-        
-        * great way to learn about WordPress theme development by reverse engineering existing code
-        * recommended for modifying an existing theme
-        * inherits the functionality and styling of parent theme and leverages existing code
-        * make development faster since the main functionality, templates, etc, are already created
-        
-        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme you will ensure that your modifications are preserved.
-      </script>
-    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         ##Exercise: Add a new theme
         
-        Let's try out a new theme for the upcoming child theming exercises. Included in today's learner files, in the **exercise-files** folder, locate our new [example theme's]((https://en-ca.wordpress.org/themes/skt-white/) zip file, **skt-white.zip**.  
+        Let's try out a new theme for the upcoming exercises in part two of today's workshop. Included in today's learner files, in the **exercise-files** folder, locate our new [example theme's]((https://en-ca.wordpress.org/themes/skt-white/) zip file, **skt-white.zip**.  
         
         Unzip the theme file (PC users: extract all) and drag the folder into your **wp-content > themes** folder.  (Or advance to the next slide to view instructions for uploading a theme from the **Appearance** menu.) 
         
@@ -685,6 +672,12 @@
       </script>
     </section>
     
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Editor option
+      </script>
+    </section>
+    
     <!-- <section class="slide" data-markdown>
       <script type="text/template">
         ## Break!
@@ -706,12 +699,12 @@
                 
         **How much PHP do you need to know?**
         
-        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  However, being able to recognize PHP structures and having a general grasp of the PHP syntax will help a lot. 
+        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  However, being able to recognize PHP tags and having a general grasp of the PHP syntax will help a lot. 
         
         The [entire PHP manual](http://php.net/manual/en/index.php) is available online and the WordPress documentation can be found here: https://codex.wordpress.org/
         
         <br>
-        Before we get into the child themes, let's go over some PHP basics.
+        Before we get into the child themes, let's go over some PHP basics and get familiar with how the language works.
       </script>
     </section>
     
@@ -726,7 +719,7 @@
         ```
         ```
         <?php 
-            Can also open & close the php tags on different lines.
+        Can also open & close the php tags on different lines.
         ?>
         ```
       </script>
@@ -741,6 +734,7 @@
         ```xml
         <p>This is just HTML and will be ignored by PHP.</p>
         <?php PHP code here. ?>
+        
         <p>More HTML. Ignored by PHP.</p>
         <?php More PHP code here. ?>
         ```
@@ -756,33 +750,25 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ## Outputting PHP
-        
-        There are two ways output content in PHP, `echo` and `print`.
 
-        `echo` – output one or more strings, separated by a comma
-
-        `print` – output only one string
-        
-        `string` - series of characters and needs to be contained in either single or double quotes.
+        `string` - series of characters, contained in either single or double quotes  
+        `echo` – output one or more strings, separated by a comma  
         
         Add a semi-colon `;` at the end of the command.
         
         ```
         <?php echo "I'm one string"; ?>
-        <?php echo "I", "like", "pizza"; ?>
-        ```
-        ```
-        <?php print "I'm one string."; ?>
+        <?php echo "I'm", "mutliple", "strings."; ?>
         ```
         
         **Pro tip!**  In the previous example, if single quotes were used, it would have a produced an error because PHP will think that the second quote closes the first one.  
         ```
-        <?php print 'I'm one string.'; ?>
+        <?php echo 'I'm one string.'; ?>
         ```
         
         You can avoid that by using double quotes or *escaping* it with a backslash `\` like so:
         ```
-        <?php print 'I\'m escaping this string.'; ?>
+        <?php echo 'I\'m escaping this string.'; ?>
         ```
       </script>
     </section>
@@ -799,7 +785,8 @@
         
         Open the Atom editor and add your new WordPress site project folder.  Unless you changed the path during the ServerPress setup, it should be located under **Documents > Websites**.  
         
-        **File > Add Project Folder** and click on your project's folder *once* and select **open**. Once open, the folders and all it's content will show in your sidebar.
+        **File > Add Project Folder** and click on your project's folder *once* and select **Open**.  
+        Once open, the folders and all its content will show in the sidebar.
         
           <!-- ![](framework/img/workshop/open-project.png) -->
           ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
@@ -810,7 +797,9 @@
       <script type="text/template">
         ## Open Project files
           
-        Update the text wrapping option in Atom to make reading the code easier to read later on.  Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
+        In Atom, update the text wrapping option to make the code easier to read later on.  
+        
+        Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
         
         ![](framework/img/workshop/atom-soft-wrap.gif)
       </script>
@@ -818,32 +807,34 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise (1:45)
+        ##Class exercise: Write some PHP (1:45)
         
-        1. Create a new test file in Atom - **File > New File**
-        1. save it as **test.php** - **File > Save**
-          It must end with a PHP extension (not .html) to be able to run PHP code.
-        1. Let's add a line of HTML and PHP to compare.
+        1. Create a new test file in Atom - **File > New File** and save it as **test.php**  
+           It must end with a PHP file extension.
+        1. Let's add a line of HTML and PHP to see how it renders in the browser.
           ```
           <p>Hello!</p>
           <?php echo "Hello!"; ?>
           ```
-        1. Save it. To see this page we need to navigate to the **test.php** file but adding a forward slash `/` and the file name.
-          
+        1. Save it. (**File > Save**)
+        1. To see this page, navigate to the **test.php** file but adding a forward slash `/` and the file name.
           ```
           http://llc-wp-workshop.dev/test.php
           ```
-        1. Right-click / two-finder tap > View source
+        1. Notice that the output looks the same in the browser (two lines of text).  
+        **Right-click / two-finder tap > View source** in the browser to view the code.
         
-        Where's the php?
+        What's the difference between how the HTML and PHP gets rendered in the browser?
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise (2:00)
+        ##Class exercise: Write some PHP  (2:00)
         
-        1. Update the code wrapping a paragraph tag around the PHP script and view source again.
+        All web page content should be written using HTML tags so when using PHP to generate content, be sure to include the generated content with the appropriate HTML tag.
+        
+        1. Update the code and add a paragraph tag around the PHP script. Your code won't look any different in the browser but if you view the source again, you'll now see both example text wrapped in HTML tags.
           ```
           <p>Hello!</p>
           <p><?php echo "Hello!"; ?></p>
@@ -867,11 +858,11 @@
         
         Remember, HTML is *static*, it doesn't change.
         
-        On your WordPress site, when you're logged in, there's an admin bar showing the site title and username that you entered when first creating the site.  
+        When you're logged into WordPress, the admin toolbar appears and also shows your site title and username, using the data saved in the database.  
         
         ![](framework/img/workshop/wp-admin-bar.png)
         
-        It couldn't do that with just HTML! It changes *dynamically* based on which user is logged in and uses the user data inputted during setup.
+        It couldn't do that with just HTML! It changes *dynamically* based on which user is logged in or if and update has been made to that data (e.g. changed your site title).
         
         Variables can be used to store and retrieve this type of data.
       </script>
@@ -881,7 +872,11 @@
       <script type="text/template">
         ## PHP Variables
         
-        To create a variable, *declare* it first. You get to decide what to name it but it must start with the `$` symbol and cannot contain spaces. Use camelCase or underscores. An `=` symbol is used to *assign* a value to the variable.
+        To create a variable, *declare* it (name it) and give it a value. 
+        
+        You can name it whatever you want but it must start with the `$` symbol and cannot contain spaces. WordPress uses underscores, though PHP also accepts camelCase.
+        
+        An `=` symbol is used to *assign* a value to the variable.
         
         In the example below, each of these variables would be interpreted as 3 different variables.
         
@@ -891,11 +886,22 @@
         $my_greeting = "Bonjour!";
         ```
         
-        Variables only *store* values so it just sits there, waiting, until you need it. Just like with the previous examples, you can use `echo` to output the variable value. **BUT** you do not need the quotes.  That is only required for string types.
+        **Extra resource:** [Wordpress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) documentation
+        
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##PHP Variables
+        
+        Variables only *store* values so it just sits there, waiting, until you need it. 
+        
+        Just like the previous examples, you can use `echo` to output the variable value. But you do **not** need the quotes.  That is only required for string types.
         ```
         <?php
-            $mygreeting = "Hello!";
-            echo $mygreeting;
+        $mygreeting = "Hello!";
+        echo $mygreeting;
         ?>
         ```
       </script>
@@ -903,39 +909,50 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Class exercise
+        ## Class exercise: Variables
         
-        create a $site_title & $username variable & echo it
+        Let's pretend we're creating the code for the Admin toolbar and create two variables for the website title and username.  
         
-        Concatenate the greeting to it
+        Back in `test.php`, add your variables.  We won't be grabbing the actual database values for this example so just assign the value to the variable using a *string* value.
+        
+        ```php
+        <?php 
+        $site_title = "Ladies Learning Code";
+        $username = "ladieslearningcode";
+        ?>
+        ```
+
+        Now let's add some HTML with the PHP variables, to output these values onto the page.
+        
+        ```
+        <a href="#"><?php echo $site_title; ?></a>
+        <a href="#">Howdy, <?php echo $username; ?></a>
+        ```
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## Functions (2:30pm)
+        ## Functions
         
-        So far we've been outputting commands one line at a time but sometimes you need to group multiple commands together.
-        
-        [add everyday example/analogy]
-        
-        There are many functions built into the PHP language. For example, strlen() is used to return the length of a string.
+        A function is a reusable block of code, designed to accomplish a single task. Functions are useful because you can use it to execute repetitive tasks. There are many functions already built into the PHP language. For example, `strlen()` is used to return the length of a string.
         
         ```
         <?php echo strlen("Hello class!"); ?>
         ```
         
-        This will return “12” since there are 12 characters, including the space, in the above string.
-
-        To create your own, you must declare it using the function keyword.
+        This will return “12” since there are 12 characters, including the space, in the above string. 
+        
+        You can also create your own, by declaring it with the `function` keyword.
         
         ```
-        <?php 
-            function my_function($parameter){
-                //code to execute
-            }
-            
-            echo my_function();
+        <?php
+        function greeting() {
+          //code to be executed
+          echo "Hello!";
+        }
+        
+        greeting(); // call the function
         ?>
         ```
       </script>
@@ -943,22 +960,41 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##Template Tags
+        ##Function arguments (2:30pm)
         
-        The great thing about using WordPress is that many of the complex functions that would be needed to display content have already been created in the framework.  These are referred to as template tags. 
+        You can pass information into functions using arguments.  Use a *parameter*, kind of like a placeholder, for the information that you want to manipulate. The syntax for the parameter is just like a variable.  Use the `$` symbol!
         
-        Note the syntax is just like the function we just created because they are!  WordPress has extentive documentation in the [codex](https://codex.wordpress.org) for each tag.
+        Let's revise the previous function and add a parameter to hold a value for a name.
         
-        Any content added in the WordPress backend Admin menus goes right into your database.  This includes content like your site title, blog post or page content to your menu settings and pretty much everything else you see on your site.
+        ```
+        <?php
+        function greeting($name) {
+          //code to be executed
+          echo "Hello $name!";
+        }
+
+        greeting("Beyonce"); // call the function with an argument
+        greeting("Blue Ivy");
+        ?>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Wordpress Template Tags
         
-        **Template tags** are used within themes to retrieve specific pieces of content from your database or to call output the contents of another theme file onto the page.
-        
-        Some common template tags are:
+        The great thing about WordPress is that many of the complexities required for displaying content have already been created in the framework.  These are referred to as **template tags**. Some common template tags are:
         
         * `get_header()` gets the header.php file and includes it in the current theme file. 
         * `get_footer()` tells WordPress to get the footer.php file
         * `the_title()` – tells WordPress to get the title of the page or post from the database
         * `bloginfo('name')` – tells WordPress to get the blog/website title from the database
+        
+        Notice that the syntax is just like the previous examples for calling a function because they are functions!  WordPress has extensive documentation in the [codex](https://codex.wordpress.org) for each tag.
+        
+        **Template tags** are used within themes to retrieve specific pieces of content from your database or to call output the contents of another theme file onto the page.
+        
       </script>
     </section>
     
@@ -966,27 +1002,31 @@
       <script type="text/template">
         ##Template tags & template files
         
-        How do the template tags and files all work together?
-        
-        In the **skt-white** theme folder, the **header.php** contains a line of code that looks like this:
+        How do the template tags and files all work together? In the **skt-white** theme folder, the **header.php** contains a line of code that looks like this:
         
             <h1><?php bloginfo('name'); ?></h1>
             
-        Remember, the `bloginfo('name')` template tag is used to get the site title from the database.  By including it between an HTML heading tag, it outputs the title into the HTML tag to creating a heading on the page and the data from the database.  The output look like this in the browser:
+        `bloginfo('name')` will get the Site Title from the database, entered in your General Settings. 
+        
+        ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="50%" -->
+        
+        Adding the template tag between an HTML tag outputs the title into the browser with the appropriate HTML and the data from the database.  The output will look like this in the browser:
         
             <h1>Ladies Learning Code</h1>
             
         ![](framework/img/workshop/template-tag-html.png)
+        
+        Extra resource:<!-- .element: class="footnote" --> http://codex.wordpress.org/Function_Reference/bloginfo
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <!-- <section class="slide" data-markdown>
       <script type="text/template">
         ## if statements?
         
         if/else Statements
         Note that in PHP, the syntax is elseif. (Not if else like in JavaScript).
-
+    
         <?php
             if ( condition ) {
                 //code to execute
@@ -997,7 +1037,7 @@
             }
         ?>
         Alternative syntax:
-
+    
         <?php if ($a == 5): ?>
             A is equal to 5
         <?php endif; ?>
@@ -1011,22 +1051,109 @@
             endif;
         ?>
       </script>
+    </section> -->
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #WordPress <br>Child Themes
+      </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## child theme
-        [~ 1hr for this section]
-        what it is, why use it, examples
+        ##Child Themes 
         
-        When downloading themes outside of the WordPress directory, it will be provided as a zip file.  Go to **Appearance > Themes > Add new ** (Just like in the previous example) but not this time choose **Upload Theme** and update the zip file (don't unzip it!).
+        Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
         
-        ![](framework/img/workshop/admin-themes-upload-1.png)
-        ![](framework/img/workshop/admin-themes-upload-2.png)
+        * great way to learn about WordPress theme development by reverse engineering existing code
+        * recommended for modifying an existing theme
+        * inherits the functionality and styling of parent theme and leverages existing code
+        * make development faster since the main functionality, templates, etc, are already created
         
-        Any theme you upload, through the WordPress directory or manual upload will be added to your WordPress project files. 
+        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme you will ensure that your modifications are preserved.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Making a child theme: Step 1
         
-        You can find it in **wp-content > themes** in your project folder.  You can also add or delete themes directly in this folder.  **BUT** if you add a theme here, then it needs to be unzipped first.
+        In your theme folder, create a new folder for your child theme's files.
+        
+        It’s best practice to name the folder the same name as the parent, but with `-child` appended to it.
+          
+          ![](framework/img/workshop/child-theme-folder.png)
+        
+        </script>
+      </section>
+      
+      <section class="slide" data-markdown>
+        <script type="text/template">
+          ##Making a child theme: Step 2
+          
+          Create a CSS file named **style.css**. 
+          
+          Your stylesheet **must** contain specific header comments at the very top of the file. This tells WordPress basic info about the theme, including the parent/child theme relationship.
+            
+          ```css
+          /*
+          Theme Name: The name of your theme
+          Theme URI: http://www.yourthemewebsite.com/
+          Description: A short description about your theme.
+          Author: Name
+          Author URI: http://www.authorwebsite.com
+          Template: The parent folder name
+          Version: 0.1
+          */
+          ```
+        
+          Only the **Theme Name** and **Template** is required. All of the other information is optional.
+        </script>
+      </section>
+      
+      <section class="slide" data-markdown>
+        <script type="text/template">
+          ##Making a child theme: Step 3
+          
+          Create a **functions.php** file. This file is used for adding features and functionality to a WordPress site. 
+          
+          In a child theme, a script is needed to enqueue the parent and child theme stylesheets.  Add the below script to your **functions.php** file.
+          
+          ```
+          add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+          function theme_enqueue_styles() {
+              wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+          }
+          ```
+          
+          And that's it!
+          
+          Reference: http://codex.wordpress.org/Child_Themes
+      </script>
+    </section>
+    
+    <section class="slide side-by-side" data-markdown>
+      <script type="text/template">
+        ##Activate your Child Theme 
+        
+        Your new child theme should now be available under the **Appearance > Themes** menu.   
+        Hover over the theme to activate it. The header comment information from the **styles.css** is used here to provide details about your child theme.
+        
+        ![](framework/img/workshop/child-theme.png)
+        ![](framework/img/workshop/child-theme-details.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Custom Theme Screenshot (3pm)
+        
+        To create a screenshot for your theme, create an image named `screenshot.png` and place it your theme folder.
+        
+        ![](framework/img/workshop/theme-screenshot.png)
+        ![](framework/img/workshop/theme-screenshot-admin.png)
+        
+        Reference: https://codex.wordpress.org/Theme_Development#Screenshot
       </script>
     </section>
     
@@ -1072,6 +1199,15 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         #plugins
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ## Custom themes
+        
+        http://underscores.me/
+        https://github.com/murtaugh/HTML5-Reset-WordPress-Theme
       </script>
     </section>
     
