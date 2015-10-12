@@ -21,31 +21,36 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #ecf0f1;
 }
-h1, h2 {
+h2 {
+  margin: 0;
+}
+h1 {
   font-family: $heading-font;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  margin: 0;
+  margin: 0 0 25px;
   color: $llc-pink;
-}
-h1 {
-  font-weight: 400;
-  font-size: $font-size-h1;
-}
-h2 {
-  font-size: $font-size-h2;
-
+  font-size: $font-sz-heading;
+  
+  .title & {
+    font-size: $font-sz-heading-lg;
+    font-weight: 400;
+  }
   code {
     font-size: inherit;
     font-weight: normal;
     background: none;
     text-transform: lowercase;
   }
-  + table {
-    margin-top: 15px;
-  }
-  + iframe {
-    margin-top: 32px;
+}
+h2 {
+  font-size: $font-sz-heading-sm;
+  
+  + p, 
+  + pre,
+  + ul,
+  + ol {
+    margin-top: 6px;
   }
 }
 h3, h4 {
@@ -73,37 +78,60 @@ a {
 }
 hr {
   border: none;
+  border-top: 1px solid $gray-light;
 }
-ul {
-  padding-left: 25px;
-  
+ul, ol {
+  padding: 0;
+    
   li {
-    margin-bottom: 8px;
-    line-height: 1.15;
+    margin-bottom: 6px;
+    margin-left: 24px;
   }
-}
-ul, p + {
   ol, ul {
     font-size: $font-size-sm;
     width: 90%;
-    margin-bottom: 10px;
+    margin: 4px 0 10px;
   }
 }
+ul {
+  list-style-type: none;
+  
+  li:before {
+    content: "\203A"; // › symbol
+    font-family: $quicksand;
+    font-weight: bold;
+    margin-left: -18px;
+    padding-right: 10px;
+  }
+}
+
 .two-col-list > {
   ul, ol {
     overflow: hidden;
-    list-style-type: none;
-    padding: 0;
+    padding-left: 8px;
     
     > li {
       width: 50%;
       float: left;
+      margin-left: 0;
+      
+      &:before {
+        content: "";
+      }
     }
     ul, ol {
-      padding-left: 24px;
+      margin-top: 10px;
     }
-    ul li, ol li {
-      list-style-type: disc;
+  }
+  .resources + ul {
+    > li {
+      width: 100%;
+      margin-left: 20px;
+      
+      &:before {
+        content: "\203A";
+        padding-right: 8px;
+      }
     }
   }
 }
@@ -162,18 +190,21 @@ td {
   }
 }
 
-
-.footnote {
+.note,
+.resources,
+.resources + * {
   line-height: 1.25;
   font-size: $font-size-xsm;
+  margin-top: 2px;
 }
 .left {
   float: left;
   margin-right: 25px;
+  
+  + ul {
+    padding-left: 10px;
+  }
 }
-/* img.left {
-  margin-right: 20px;
-} */
 .right {
   float: right;
 }
@@ -276,8 +307,15 @@ a.highlight {
     top: 40%;
     transform: translateY(-40%);
   }
+  h1 {
+    margin-bottom: 0px;
+  }
   h2 {
     color: $gray;
+    font-size: $font-sz-heading;
+    font-family: "Quicksand",sans-serif;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
   }
 }
 
@@ -437,14 +475,11 @@ header {
   background-size: cover;
   color: $white;
   
-  h1.heading-bg {
-    font-size: $font-size-h1;
+  h1 {
+    font-size: $font-sz-heading-lg;
     margin: 5px 0 35px;
     color: $white;
-    
-    .dark {
-      font-size: 55px;
-    }
+    font-weight: 400;
   }
   .connected {  
     font-size: 30px;
@@ -485,7 +520,7 @@ header {
       margin-right: 4px;
       font-size: 3rem;
       text-transform: lowercase;
-      font-weight: $normal;
+      font-weight: 400;
     }
   }
 }
@@ -540,7 +575,7 @@ header {
       margin-right: 4px;
       font-size: 3rem;
       text-transform: lowercase;
-      font-weight: $normal;
+      font-weight: 400;
     }
   }
   .attribution {
@@ -579,7 +614,6 @@ header {
     margin-top: 0;
   }
 }
-
 
 footer {
   position: fixed;

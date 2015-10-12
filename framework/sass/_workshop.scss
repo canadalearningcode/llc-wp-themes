@@ -8,31 +8,29 @@
 }
 .post-pages {
   img {
-    width: 80%;
-    margin: 10px 0;
+    width: 60%;
+    margin-bottom: 10px;
   }
-  .footnote {
+  .note {
     font-size: 14px;
   }
 }
-.appearance {
+.appearance-customize {
   img {
-    float: left;
-    width: 325px;
-    margin: 0 30px 15px 0;
+    margin-right: 20px;
+    
+    &:first-child{
+      width: 240px;
+      float: left;
+    }
+    &:last-child {
+      width: 350px;
+    }
   }
 }
-.menu-widgets {
-  img.landing {
-    width: 31%;
-    margin-right: 2%;
-    float: left;
-  }
-  img.desktop {
-    width: 67%;
-  }
-  img.mobile {
-    width: 42%;
+.wp-content {
+  ul {
+    margin-left: 50px;
   }
 }
 

@@ -25,17 +25,17 @@ $cursive:             $pacifico;
 
 // Fixed font sizes
 // No slide scaling based on window size
-$font-size-base:      25px;
-$font-size-sm:        $font-size-base - 2;
-$font-size-xsm:       $font-size-base - 4;
-$font-size-h1:        75px;
-$font-size-h2:        40px;
-$font-size-h3:        28px;
-$font-size-code:      20px;
-$line-height:         1.25;
+$font-size-base:        27px;
+$font-size-sm:          $font-size-base - 2;
+$font-size-xsm:         $font-size-base - 10;
+$font-sz-heading:       40px;
+$font-sz-heading-lg:    75px;
+$font-sz-heading-sm:    28px;
+$font-size-code:        20px;
+$line-height:           1.25;
 
-// Font weights
-$light:   300;
-$normal:  400;
-$bold:    700;
+//replace with above
+$font-size-h1:          75px;
+$font-size-h2:          40px;
+$font-size-h3:          28px;
 
