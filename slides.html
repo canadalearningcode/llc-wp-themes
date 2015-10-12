@@ -244,10 +244,10 @@
         
         Let's get acquainted with the WordPress Admin area. Getting to know the backend is key to theme customization.  
         
-        When using a local server, `http://your-local-site.dev` is the domain. To access the Admin Area, just add `/wp-admin/` to the end. 
+        When using a local server, `http://your-project-name.dev` is the domain. To access the Admin Area, just add `/wp-admin/` to the end. 
         
         ```
-        http://your-local-site.dev/wp-admin/
+        http://your-project-name.dev/wp-admin/
         ```
         This works for any WordPress site you have admin access to, whether it's a live or local site.<!-- .element: class="note" -->
         
@@ -297,14 +297,14 @@
           * posts are listed chronologically
           * can also be assigned *categories* and *tags* (also referred to as **taxonomies**)
           * *permalink* will include the date (can change this in the settings)
-          `http://your-local-site.dev/2015/09/28/my-catchy-title/`<!-- .element: class="note" -->
+          `http://your-project-name.dev/2015/09/28/my-catchy-title/`<!-- .element: class="note" -->
         * ![](framework/img/workshop/admin-pages.png)  
         **Pages**
           * used for single pages of static content (e.g. about or contact page)
           * cannot have taxonomies
           * can have a hierarchical structure (e.g. Travel > Beach vacations)
           * *permalink* will not include the date
-          `http://your-local-site.dev/about/`<!-- .element: class="note" -->
+          `http://your-project-name.dev/about/`<!-- .element: class="note" -->
           
         ---
         ###Resources
@@ -743,14 +743,18 @@
       <script type="text/template">
         #Intro to PHP (1:15)
                 
-        **How much PHP do you need to know?**
+        How much PHP do you need to know?
         
-        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  However, being able to recognize PHP tags and having a general grasp of the PHP syntax will help a lot. 
+        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  
         
-        The [entire PHP manual](http://php.net/manual/en/index.php) is available online and the WordPress documentation can be found here: https://codex.wordpress.org/
+        However, being able to recognize PHP tags and having a general grasp of the PHP syntax will help a lot. 
         
-        <br>
         Before we get into the child themes, let's go over some PHP basics and get familiar with how the language works.
+        
+        ---
+        ###Resources
+        * [PHP manual](http://php.net/manual/en/index.php)
+        * [WordPress Codex](https://codex.wordpress.org/)
       </script>
     </section>
     
@@ -758,7 +762,11 @@
       <script type="text/template">
         # PHP Syntax
 
-        PHP code is enclosed in special start and end processing instructions `<?php` and `?>` to jump in and out of “PHP mode”. PHP executed on the server generates HTML which is then sent to the client. Anything outside of the opening and closing tags will be ignored by the PHP parser.
+        PHP code is enclosed in special start and end processing instructions `<?php` and `?>` to jump in and out of “PHP mode”. 
+        
+        PHP executed on the server generates HTML which is then sent to the client (the browser). 
+        
+        Anything outside of the opening and closing tags will be ignored by the PHP parser.
         
         ```php
         <?php PHP code in between here. ?>
@@ -798,18 +806,19 @@
         # Outputting PHP
 
         `string` - series of characters, contained in either single or double quotes  
-        `echo` – output one or more strings, separated by a comma  
+        `echo` – output one string or more, separated by a comma  
         
         Add a semi-colon `;` at the end of the command.
         
         ```
         <?php echo "I'm one string"; ?>
-        <?php echo "I'm", "mutliple", "strings."; ?>
+        <?php echo "I'm", "multiple", "strings."; ?>
         ```
         
-        **Pro tip!**  In the previous example, if single quotes were used, it would have a produced an error because PHP will think that the second quote closes the first one.  
-        ```
-        <?php echo 'I'm one string.'; ?>
+        **Pro tip!**  In the previous example, if single quotes were used, it would produce an error because PHP will think the second quote closes the first one. 
+        
+        ```xml
+        <?php echo 'I'm one string.'; ?> /* this will produce an error */
         ```
         
         You can avoid that by using double quotes or *escaping* it with a backslash `\` like so:
@@ -829,13 +838,14 @@
       <script type="text/template">
         # Open Project files
         
-        Open the Atom editor and add your new WordPress site project folder.  Unless you changed the path during the ServerPress setup, it should be located under **Documents > Websites**.  
+        Open the Atom editor and add your new WordPress site project folder.  
         
-        **File > Add Project Folder** and click on your project's folder *once* and select **Open**.  
+        Go to **File > Add Project Folder** and click on your project's folder (your-project-name.dev) *once* and select **Open**. Unless you changed the default path during the ServerPress setup, it should be located under **Documents > Websites**.  
+        
         Once open, the folders and all its content will show in the sidebar.
         
-          <!-- ![](framework/img/workshop/open-project.png) -->
-          ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
+        <!-- ![](framework/img/workshop/open-project.png) -->
+        ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
       </script>
     </section>
     
@@ -856,18 +866,16 @@
         #Class exercise: Write some PHP (1:45)
         
         1. Create a new test file in Atom - **File > New File** and save it as **test.php**  
-           It must end with a PHP file extension.
-        1. Let's add a line of HTML and PHP to see how it renders in the browser.
+          * It must end with a PHP file extension.<!-- .element: class="note" -->
+        1. Add a line of HTML and PHP to see how each renders in the browser.
           ```
           <p>Hello!</p>
           <?php echo "Hello!"; ?>
           ```
         1. Save it. (**File > Save**)
-        1. To see this page, navigate to the **test.php** file but adding a forward slash `/` and the file name.
-          ```
-          http://your-local-site.dev/test.php
-          ```
-        1. Notice that the output looks the same in the browser (two lines of text).  
+        1. To view this page, navigate to **test.php** by adding a forward slash `/` and the file name to the end of the URL. `http://your-project-name.dev/test.php`
+        
+        Notice that the output looks the same in the browser (two lines of text)?  
         **Right-click / two-finder tap > View source** in the browser to view the code.
         
         What's the difference between how the HTML and PHP gets rendered in the browser?
@@ -878,18 +886,20 @@
       <script type="text/template">
         #Class exercise: Write some PHP  (2:00)
         
-        All web page content should be written using HTML tags so when using PHP to generate content, be sure to include the generated content with the appropriate HTML tag.
+        All web page content should be contained with HTML tags for proper page structure. When using PHP to generate content, be sure to include the generated content with the appropriate HTML tag.
         
-        1. Update the code and add a paragraph tag around the PHP script. Your code won't look any different in the browser but if you view the source again, you'll now see both example text wrapped in HTML tags.
+        1. Update the code and add a paragraph tag around the PHP script.
           ```
           <p>Hello!</p>
           <p><?php echo "Hello!"; ?></p>
           ```
-        1. Remember, with `echo`, you can output multiple strings by separating them with a comma.  
+          
+          This change won't look different in the browser but view the source to  see that the rendered PHP code is wrapped in HTML. <!-- .element: class="note" -->
+        1. Remember, with `echo`, you can output multiple strings using commas.  
           ```  
           <p><?php echo "I", "like", "pizza."; ?></p>
           ```
-        1. Let's make the output a little nicer by adding a space.  
+        1. Let's make the output a little nicer by adding a space after "I" and "like".  
           ```  
           <p><?php echo "I ", "like ", "pizza."; ?></p>
           ```
@@ -900,7 +910,7 @@
       <script type="text/template">
         # Creating Dynamic Content
         
-        Ok, that's great but how is that different than just writing HTML? 
+        Ok, that's great but how is that different from just writing HTML? 
         
         Remember, HTML is *static*, it doesn't change.
         
@@ -908,7 +918,7 @@
         
         ![](framework/img/workshop/wp-admin-bar.png)
         
-        It couldn't do that with just HTML! It changes *dynamically* based on which user is logged in or if and update has been made to that data (e.g. changed your site title).
+        It couldn't do that with just HTML! It changes *dynamically* based on the information added by the user and stored in the database.
         
         Variables can be used to store and retrieve this type of data.
       </script>
@@ -920,20 +930,23 @@
         
         To create a variable, *declare* it (name it) and give it a value. 
         
-        You can name it whatever you want but it must start with the `$` symbol and cannot contain spaces. WordPress uses underscores, though PHP also accepts camelCase.
+        You can name it whatever you want but it must start with the `$` symbol and cannot contain spaces. WordPress uses underscores to separate words, though PHP also accepts camelCase.
         
         An `=` symbol is used to *assign* a value to the variable.
         
-        In the example below, each of these variables would be interpreted as 3 different variables.
+        Variables are case sensitive so the below example would be interpreted as three different variables.
         
         ```
         $mygreeting = "Hello!";
         $myGreeting = "Hi!";
         $my_greeting = "Bonjour!";
         ```
+
+        ---
+        ###Resources
         
-        **Extra resource:** [Wordpress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) documentation
-        
+        * [Wordpress Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards) 
+        * [PHP Variables](http://www.tutorialrepublic.com/php-tutorial/php-variables-and-constants.php)
       </script>
     </section>
     
@@ -968,7 +981,7 @@
         ?>
         ```
 
-        Now let's add some HTML with the PHP variables, to output these values onto the page.
+        Now add some HTML with the PHP variables, to output these values onto the page.
         
         ```
         <a href="#"><?php echo $site_title; ?></a>
@@ -987,12 +1000,13 @@
         <?php echo strlen("Hello class!"); ?>
         ```
         
-        This will return “12” since there are 12 characters, including the space, in the above string. 
+        This will return “12” since there are 12 characters, including the space.
         
         You can also create your own, by declaring it with the `function` keyword.
         
         ```
         <?php
+        // declaring the function
         function greeting() {
           //code to be executed
           echo "Hello!";
@@ -1008,7 +1022,9 @@
       <script type="text/template">
         #Function arguments (2:30pm)
         
-        You can pass information into functions using arguments.  Use a *parameter*, kind of like a placeholder, for the information that you want to manipulate. The syntax for the parameter is just like a variable.  Use the `$` symbol!
+        You can pass information into functions with *arguments*.  
+        
+        Use a *parameter*, kind of like a placeholder, for the information you want to manipulate. The syntax for the parameter is just like a variable.  Use the `$` symbol.
         
         Let's revise the previous function and add a parameter to hold a value for a name.
         
@@ -1020,7 +1036,7 @@
         }
 
         greeting("Beyonce"); // call the function with an argument
-        greeting("Blue Ivy");
+        greeting("Blue Ivy"); // call the function with a different argument
         ?>
         ```
       </script>
@@ -1033,14 +1049,15 @@
         The great thing about WordPress is that many of the complexities required for displaying content have already been created in the framework.  These are referred to as **template tags**. Some common template tags are:
         
         * `get_header()` gets the header.php file and includes it in the current theme file. 
-        * `get_footer()` tells WordPress to get the footer.php file
         * `the_title()` – tells WordPress to get the title of the page or post from the database
         * `bloginfo('name')` – tells WordPress to get the blog/website title from the database
         
-        Notice that the syntax is just like the previous examples for calling a function because they are functions!  WordPress has extensive documentation in the [codex](https://codex.wordpress.org) for each tag.
+        Notice that the syntax is just like the previous examples for calling a function? That's because they are functions! 
         
-        **Template tags** are used within themes to retrieve specific pieces of content from your database or to call output the contents of another theme file onto the page.
+        ---
+        ###Resources
         
+        * Complete listing & documentation of [WordPress template tags](https://codex.wordpress.org/Template_Tags)
       </script>
     </section>
     
@@ -1052,9 +1069,9 @@
         
             <h1><?php bloginfo('name'); ?></h1>
             
-        `bloginfo('name')` will get the Site Title from the database, entered in your General Settings. 
+        `bloginfo('name')` will get the **Site Title**, entered in your **General Settings**.
         
-        ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="50%" -->
+        ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="60%" -->
         
         Adding the template tag between an HTML tag outputs the title into the browser with the appropriate HTML and the data from the database.  The output will look like this in the browser:
         
@@ -1062,7 +1079,10 @@
             
         ![](framework/img/workshop/template-tag-html.png)
         
-        Extra resource:<!-- .element: class="footnote" --> http://codex.wordpress.org/Function_Reference/bloginfo
+        ---
+        ###Resource
+        
+        * [Function Reference/bloginfo](http://codex.wordpress.org/Function_Reference/bloginfo)
       </script>
     </section>
     
@@ -1111,7 +1131,7 @@
         
         Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
         
-        * great way to learn about WordPress theme development by reverse engineering existing code
+        * learn about WordPress theme development by reverse engineering existing code
         * recommended for modifying an existing theme
         * inherits the functionality and styling of parent theme and leverages existing code
         * make development faster since the main functionality, templates, etc, are already created
@@ -1139,7 +1159,7 @@
           
           Create a CSS file named **style.css**. 
           
-          Your stylesheet **must** contain specific header comments at the very top of the file. This tells WordPress basic info about the theme, including the parent/child theme relationship.
+          Your stylesheet **must** contain specific header comments at the top of the file to tell WordPress info about the theme, including the parent/child theme relationship.
             
           ```css
           /*
@@ -1153,7 +1173,7 @@
           */
           ```
         
-          Only the **Theme Name** and **Template** is required. All of the other information is optional.
+          Only the **Theme Name** and **Template** comments are required. All of the other information is optional but commonly added.
         </script>
       </section>
       
@@ -1174,7 +1194,10 @@
           
           And that's it!
           
-          Reference: http://codex.wordpress.org/Child_Themes
+          ---
+          ###Resource
+          
+          * [WordPress Codex: Child Themes](http://codex.wordpress.org/Child_Themes)
       </script>
     </section>
     
@@ -1182,7 +1205,8 @@
       <script type="text/template">
         #Activate your Child Theme 
         
-        Your new child theme should now be available under the **Appearance > Themes** menu.   
+        Your new child theme is now available under the **Appearance > Themes** menu.   
+        
         Hover over the theme to activate it. The header comment information from the **styles.css** is used here to provide details about your child theme.
         
         ![](framework/img/workshop/child-theme.png)
@@ -1342,7 +1366,7 @@
         });
       });
       
-      jQuery( "h3:contains('Resources')" ).addClass("resources");
+      jQuery( "h3:contains('Resources'), h3:contains('Resource')" ).addClass("resources");
       
       // Table of Contents
       var ToC = "<ul>";
