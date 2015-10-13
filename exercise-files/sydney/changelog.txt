@@ -1,0 +1,90 @@
+Changelog
+
+3 October 2015 - 1.17
+--------------------------------------
+- changed menu bar bevahiour due to users demand;
+- updated .pot file to include string changes from previouos versions;
+- removed favicon option and added backwards compatibility.
+
+24 September 2015 - 1.16
+--------------------------------------
+- loseless compression for the bundled images;
+- reworked menu bar for small screens;
+- reworked header image for small screens;
+
+
+9 September 2015 - 1.15
+--------------------------------------
+- added featured images support for services + new image size;
+- medium thumbs image size is now cropped;
+- fixed WooCommerce tabs incompatibility;
+- minor CSS addition;
+- reworked jQuery row colors setting.
+
+26 August 2015 - 1.14
+--------------------------------------
+- changed PHP 4 constructors in widgets.
+
+14 August 2015 - 1.13
+--------------------------------------
+- moved preloader into timeout function;
+- added carousel speed option - testimonials widget;
+- added theme info page.
+
+24 July 2015 - 1.12
+--------------------------------------
+- updated the TGM Plugin Activation class to the latest version;
+
+7 July 2015 - 1.11
+--------------------------------------
+Just an addition to the previous update:
+- regenerated pot file;
+
+30 June 2015 - 1.10
+--------------------------------------
+- added Polylang compatibility;
+- added new option for text slider;
+- add new option in employees widget;
+- reworked search page.
+
+9 June 2015 - 1.09
+--------------------------------------
+- fixed list styling;
+- CSS improvements;
+- add new option for header overlay;
+
+
+29 May 2015 - 1.08
+--------------------------------------
+- added antispambot protection for the contact widget;
+- added IE9 fix;
+- added new option for the Page Builder;
+- new slider options;
+- mobile menu adjustments;
+- fixed services overflow issue.
+
+
+20 May 2015 - 1.07
+--------------------------------------
+- fixed employees carousel for larger screens;
+- fixed menu font type;
+
+14 May 2015 - 1.06
+--------------------------------------
+- added new options for the Page Builder;
+- fixed menu font size bug;
+- small CSS changes;
+- changed priority for Bootstrap;
+- changed $content_width;
+- added slider speed option.
+
+3 May 2015 - 1.05
+--------------------------------------
+- minor CSS fix.
+
+1 May 2015 - 1.04
+--------------------------------------
+- updated TGM Plugin Activation to the latest version;
+- social menu links now open in a new tab;
+- removed duplicate license info for imagesLoaded;
+- fixed issue in Safari.

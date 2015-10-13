@@ -173,7 +173,8 @@
         # What is PHP?
 
         * PHP requires a *server* to run so you can't just simply open a PHP file in your browser to see the content
-        * has been around since 90s and originally stood for **Personal Home Page**, but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP.)
+        * has been around since the 90s
+        * originally stood for **Personal Home Page** but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP.)
         * can be written on its own or mixed with HTML
         * used to make a website *dynamic* and generate HTML 
         
@@ -272,7 +273,7 @@
         
         The admin area defaults on the Dashboard Home page. 
         
-        Here, you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
+        Here you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
         
         The other menus in the left sidebar allows access to additional settings such as adding blog posts (**Posts**), pages (**Pages**), changing themes (**Appearance**), uploading media (**Media**) and other general site settings.
         
@@ -445,7 +446,7 @@
 
         There are literally 1000s of free WordPress themes available for download in the WordPress directory found under **Appearance > Themes**, **Add New**. Click on the thumbnail to see a preview, get info or install a new theme.
       
-        For the next exercise, use the **Sydney** theme to see the same customization options referred to in the examples.
+        For today's exercises, use the **Sydney** theme to see the same customization options & files that will be referred to in the examples.
         
         Go to **Appearance > Themes**, select **Add New**. Search for the "Sydney" theme, select **Install** and **activate** when the installation is complete.
         
@@ -489,7 +490,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section id="heading-options" class="slide" data-markdown>
       <script type="text/template">
         #Appearance > Customize: Site title/tagline/logo
         
@@ -540,7 +541,7 @@
         
         Also, blog page templates generally include a sidebar with widgets (Recent Posts, Recent Comments, etc).
         
-        Both of these default settings and styles can be changed and will be covered in the next few slides.
+        Both of these default settings and styles can be changed and will be covered in the next upcoming exercises.
       </script>
     </section>
     
@@ -576,7 +577,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Custom Menu (15mins) (finish at 12pm)
+        #Exercise: Custom Menu (15mins) (finish at 12:10pm)
         
         Go to **Appearance > Menus** to add a menu. 
         
@@ -650,19 +651,22 @@
         #Theme Template Files
         
         ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
-        Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often, these templates are partial files and contain code for only a portion of a page. These partials fit together like a puzzle to generate full web pages.
         
-        Since WordPress is based on PHP, the files are saved using a `.php` extension.
+        Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often, these templates contain code for only a portion of a page. These partials fit together like a puzzle to generate full web pages.
         
-        Everything you enter into the Admin area (post content, site title, uploaded media, etc) gets stored in the *database* allowing you to update and modify themes without losing your content.
+        Some of the templates can also be used across multiple pages, like the header and footer. Using partials makes it easier to update shared content.
+        
+        WordPress is based on PHP so the files must use a `.php` extension.
+        
+        Content entered in the backend (posts, site title, media, etc) is stored in the *database* allowing you to update themes and keep your content.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Theme Template Files
+        #Theme Template Files (12:25)
         
-        Here are some common template files recognized by WordPress, based on the filename and template hierarchy. 
+        Here are some common template files recognized by WordPress, based on the filename and a  template hierarchy. 
                 
         * **index.php** - main template file and required in all themes
         * **style.css** - main CSS stylesheet and required in all themes
@@ -687,6 +691,33 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
+        #Setting Up Your Project
+        
+        Open the Atom editor and add your new WordPress site project folder.  
+        
+        Go to **File > Add Project Folder** and click on your project's folder (your-project-name.dev) *once* and select **Open**. Unless you changed the default path during the ServerPress setup, it should be located under **Documents > Websites**.  
+        
+        Once open, the folders and all its content will show in the sidebar.
+        
+        <!-- ![](framework/img/workshop/open-project.png) -->
+        ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Setting Up Your Project (12:35)
+          
+        In Atom, update the text wrapping option to make the code easier to read later on.  
+        
+        Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
+        
+        ![](framework/img/workshop/atom-soft-wrap.gif)
+      </script>
+    </section>
+    
+    <!-- <section class="slide" data-markdown>
+      <script type="text/template">
         #Exercise: Add a new theme
         
         Let's try out a new theme for the upcoming exercises in part two of today's workshop. Included in today's learner files, in the **exercise-files** folder, locate the SKT White theme zip file, **skt-white.zip**.  
@@ -695,7 +726,7 @@
         <span class="note">(Or advance to the next slide to view instructions for uploading a theme from the **Appearance** menu.</span>
         
         ![](framework/img/workshop/theme-add.png)
-
+    
         ![](framework/img/workshop/theme-activate.png)
       </script>
     </section>
@@ -713,16 +744,16 @@
         Then upload the zip file. Browse for the file and install.
         
         ![](framework/img/workshop/upload-theme-2.png)
-        <!-- ![](framework/img/workshop/upload-theme-3.png)
-        ![](framework/img/workshop/upload-theme-4.png) -->
+        ![](framework/img/workshop/upload-theme-3.png)
+        ![](framework/img/workshop/upload-theme-4.png)
         
         Once it's installed, *Activate* the theme.
         
         ![](framework/img/workshop/upload-theme-5.png)
-        <!-- ![](framework/img/workshop/upload-theme-6.png) -->
+        ![](framework/img/workshop/upload-theme-6.png)
       </script>
     </section>
-
+     -->
     
     <!-- <section class="slide" data-markdown>
       <script type="text/template">
@@ -741,7 +772,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Intro to PHP (1:15)
+        #Intro to PHP (1:20)
                 
         How much PHP do you need to know?
         
@@ -836,38 +867,11 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Open Project files
+        #Class exercise: Write some PHP (finish at 1:45)
         
-        Open the Atom editor and add your new WordPress site project folder.  
-        
-        Go to **File > Add Project Folder** and click on your project's folder (your-project-name.dev) *once* and select **Open**. Unless you changed the default path during the ServerPress setup, it should be located under **Documents > Websites**.  
-        
-        Once open, the folders and all its content will show in the sidebar.
-        
-        <!-- ![](framework/img/workshop/open-project.png) -->
-        ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Open Project files
-          
-        In Atom, update the text wrapping option to make the code easier to read later on.  
-        
-        Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
-        
-        ![](framework/img/workshop/atom-soft-wrap.gif)
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Class exercise: Write some PHP (1:45)
-        
-        1. Create a new test file in Atom - **File > New File** and save it as **test.php**  
+        1. Create a new file (**File > New File**) in your editor and save it as **test.php**  
           * It must end with a PHP file extension.<!-- .element: class="note" -->
-        1. Add a line of HTML and PHP to see how each renders in the browser.
+        1. Add a line of HTML and a line of PHP to see how each renders in the browser.
           ```
           <p>Hello!</p>
           <?php echo "Hello!"; ?>
@@ -884,7 +888,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class exercise: Write some PHP  (2:00)
+        #Class exercise: Write some PHP  ( finish at 2:00)
         
         All web page content should be contained with HTML tags for proper page structure. When using PHP to generate content, be sure to include the generated content with the appropriate HTML tag.
         
@@ -1008,8 +1012,7 @@
         <?php
         // declaring the function
         function greeting() {
-          //code to be executed
-          echo "Hello!";
+          echo "Hello!"; // code to be executed
         }
         
         greeting(); // call the function
@@ -1026,19 +1029,86 @@
         
         Use a *parameter*, kind of like a placeholder, for the information you want to manipulate. The syntax for the parameter is just like a variable.  Use the `$` symbol.
         
+        ##Class Exercise
+        
         Let's revise the previous function and add a parameter to hold a value for a name.
         
         ```
         <?php
         function greeting($name) {
-          //code to be executed
-          echo "Hello $name!";
+          echo "Hello $name!"; // code to be executed
         }
 
         greeting("Beyonce"); // call the function with an argument
         greeting("Blue Ivy"); // call the function with a different argument
         ?>
         ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Conditional statements
+        
+        Often you'll want to show certain bits of content based on specific conditions. 
+        
+        For example, in the current [Sydney theme header](slides.html#heading-options), you could show the site title & tagline OR just the logo. The if statement's logic might look something like this:
+        
+        ```
+        <?php
+        if ( logo image has been added ) {
+            show the logo
+        } else {
+            show the site title and tagline
+        }
+        ?>
+        ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Conditional statements: Syntax
+        
+        ```php
+        <?php
+        if ( condition ) {
+            // code to execute if condition is true
+        } else {
+            // code to execute if condition is false
+        }
+        ?>
+        ```
+        
+        Alternative syntax:
+        
+        ```php
+        <?php
+        if (condition):
+            //code to execute if condition is true
+        else:
+            //code to execute if condition is false
+        endif;
+        ?>
+        ```
+        
+        You can mix HTML in between the conditional statement too but remember to open & close the PHP tags to exit out of "PHP mode."
+        
+        ```php
+        <?php if (condition): ?>
+            <img src="logo.png" alt="logo">
+        <?php else: ?>
+            <h1>Site Title</h1>
+        <?php endif; ?>
+        ```
+        
+        Note that `else` is not required.  Use it to provide an alternative option if the condition is not met.
+        
+        ---
+        ###Resources
+        
+        * [PHP Manual: if](http://php.net/manual/en/control-structures.if.php)
+        * [PHP Manual: elseif](http://php.net/manual/en/control-structures.elseif.php)
       </script>
     </section>
     
@@ -1065,19 +1135,15 @@
       <script type="text/template">
         #Template tags & template files
         
-        How do the template tags and files all work together? In the **skt-white** theme folder, the **header.php** contains a line of code that looks like this:
+        How do the template tags and files all work together? In the **sydney** theme folder, the **header.php** file contains a line of code that looks like this:
         
-            <h1><?php bloginfo('name'); ?></h1>
+            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             
-        `bloginfo('name')` will get the **Site Title**, entered in your **General Settings**.
+        `bloginfo('description')` will get the **Tagline** value, entered in your general settings.
         
-        ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="60%" -->
+        ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="70%" -->
         
-        Adding the template tag between an HTML tag outputs the title into the browser with the appropriate HTML and the data from the database.  The output will look like this in the browser:
-        
-            <h1>Ladies Learning Code</h1>
-            
-        ![](framework/img/workshop/template-tag-html.png)
+        Adding the template tag between an HTML tag outputs the title into the browser with the appropriate HTML and the data from the database.
         
         ---
         ###Resource
@@ -1085,40 +1151,7 @@
         * [Function Reference/bloginfo](http://codex.wordpress.org/Function_Reference/bloginfo)
       </script>
     </section>
-    
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        # if statements?
-        
-        if/else Statements
-        Note that in PHP, the syntax is elseif. (Not if else like in JavaScript).
-    
-        <?php
-            if ( condition ) {
-                //code to execute
-            } elseif ( condition2 ) {
-                //code to execute;
-            } else {
-                //code to execute
-            }
-        ?>
-        Alternative syntax:
-    
-        <?php if ($a == 5): ?>
-            A is equal to 5
-        <?php endif; ?>
-        <?php
-            if ($a == 5):
-                echo "a equals 5";
-            elseif ($a == 6):
-                echo "a equals 6";
-            else:
-                echo "a is neither 5 nor 6";
-            endif;
-        ?>
-      </script>
-    </section> -->
-    
+
     <section class="slide title" data-markdown>
       <script type="text/template">
         #WordPress <br>Child Themes
@@ -1134,9 +1167,9 @@
         * learn about WordPress theme development by reverse engineering existing code
         * recommended for modifying an existing theme
         * inherits the functionality and styling of parent theme and leverages existing code
-        * make development faster since the main functionality, templates, etc, are already created
+        * can make development faster since the main functionality, templates, etc, are already created
         
-        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme you will ensure that your modifications are preserved.
+        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme your modifications will be preserved.
       </script>
     </section>
     
@@ -1157,9 +1190,9 @@
         <script type="text/template">
           #Making a child theme: Step 2
           
-          Create a CSS file named **style.css**. 
+          In your text editor, create a new file (**File > New File** or command/control + N) and save it as **style.css**. It has to be named exactly as **style.css** and saved in your child theme folder, **sydney-child**.
           
-          Your stylesheet **must** contain specific header comments at the top of the file to tell WordPress info about the theme, including the parent/child theme relationship.
+          Your stylesheet **must** also contain specific header comments, at the top of the file, to tell WordPress information about the theme, including defining the parent theme.
             
           ```css
           /*
@@ -1173,7 +1206,23 @@
           */
           ```
         
-          Only the **Theme Name** and **Template** comments are required. All of the other information is optional but commonly added.
+          Only the **Theme Name** and **Template** comments are required. The **Template** has to be the exact name of the parent theme's folder.  
+          
+          All of the other information is optional but commonly added.
+          
+          Here's the LLC project example:
+          
+          ```css
+          /*
+          Theme Name: LLC WordPress Workshop Project
+          Theme URI: http://ladieslearningcode.com
+          Description: This theme is used for demonstration purposes.
+          Author: Ladies Learning Code
+          Author URI: http://ladieslearningcode.com
+          Template: sydney
+          Version: 0.1
+          */
+          ```
         </script>
       </section>
       
@@ -1181,15 +1230,19 @@
         <script type="text/template">
           #Making a child theme: Step 3
           
-          Create a **functions.php** file. This file is used for adding features and functionality to a WordPress site. 
+          Create a **functions.php** file. This file is generally used for adding features and functionality to a WordPress site. 
           
-          In a child theme, a script is needed to enqueue the parent and child theme stylesheets.  Add the below script to your **functions.php** file.
+          For a child theme, a script is needed to enqueue the parent and child theme stylesheets. This will ensure that both the parent and child theme's CSS will load properly. Add the below script to your **functions.php** file.
           
           ```
+          <?php
+          
           add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
           function theme_enqueue_styles() {
               wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
           }
+          
+          ?>
           ```
           
           And that's it!
@@ -1209,27 +1262,152 @@
         
         Hover over the theme to activate it. The header comment information from the **styles.css** is used here to provide details about your child theme.
         
-        ![](framework/img/workshop/child-theme.png)
+        ![](framework/img/workshop/child-theme-activate.png)
         ![](framework/img/workshop/child-theme-details.png)
+        
+        If there was anything missed when setting up your child theme, you'll see an error message like this one below:
+        
+        ![](framework/img/workshop/theme-broken.png)
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide side-by-side" data-markdown>
       <script type="text/template">
         #Custom Theme Screenshot (3pm)
         
-        To create a screenshot for your theme, create an image named `screenshot.png` and place it your theme folder.
+        To create a thumbnail screenshot for your theme, create an image and name it `screenshot.png`. Place it in the root of your theme folder.
         
         ![](framework/img/workshop/theme-screenshot.png)
         ![](framework/img/workshop/theme-screenshot-admin.png)
         
-        Reference: https://codex.wordpress.org/Theme_Development#Screenshot
+        ---
+        ###Resource
+        
+        * https://codex.wordpress.org/Theme_Development#Screenshot
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ##CSS crash course
+        # Making Changes
+        
+        Now that your child theme is all set up, how do you make changes?  Using pre-made themes are great because everything you need is already done.
+        
+        However, if you need to make changes, there's a little detective work required to figure out where to make the changes.
+        
+        Getting familiar with the various [template files](https://codex.wordpress.org/Theme_Development#Template_Files_List) and using the browser developer tools will help with narrowing down the search for content and making CSS updates.
+        
+        When getting started, be prepared to continuously refer to the [Codex](https://codex.wordpress.org/) and a lot of trial & error!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Finding the right template
+        
+        Template hierarchy & custom templates
+        
+        ![](framework/img/workshop/template-options.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Update the header
+        
+        In our current theme, the header area contains some default text and a slide show.
+        
+        ![](framework/img/workshop/child-theme-header.png)
+        
+        We can assume that the code for this portion of the page is contained in `header.php` since it contains content that would normally be included in the header of a web page.  
+        
+        Let's open `header.php`, contained in the parent theme folder, in our text editor and look at the code to make sure we have the correct template file. 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # Update the header
+        
+        You can do a simple test by adding some content into the template file and seeing if it appears on the page.
+        
+        The code **header.php** looks like the below code snippet.  Add a note, like the template name, anywhere after the `<body>` HTML tag.
+          
+        ```
+        <?php
+        /**
+         * The Header for our theme.
+         *
+         * Displays all of the <head> section and everything up till <div id="content">
+         *
+         * @package SKT White
+         */
+        ?><!DOCTYPE html>
+        <html <?php language_attributes(); ?>>
+        <head>
+        	<meta charset="<?php bloginfo( 'charset' ); ?>">
+        	<meta name="viewport" content="width=device-width">
+        	<link rel="profile" href="http://gmpg.org/xfn/11">
+        	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        	<?php wp_head(); ?>
+        </head>
+        
+        <body <?php body_class(); ?>>
+        <?php if ( (of_get_option('innerpageslider', true) != 'hide') || is_home() || is_front_page() ) { ?>
+        	
+        	<div class="slider-main">
+        	<?php $slide_title = '<h1>SKT White</h1><p>Aliquam vitae nunc nibh. Nam sollicitudin orci vel eros vulputate vestibulum.</p><a href="#">Contact Us</a>'; ?>
+        ```
+        
+        Here's a sample note. Save and refresh your browser.
+        ```
+        <body <?php body_class(); ?>>
+          header.php!
+        <?php if ( (of_get_option('innerpageslider', true) != 'hide') || is_home() || is_front_page() ) { ?>
+        ```
+        
+        There's the note! Confirmed this is the correct file.
+        
+        ![](framework/img/workshop/child-theme-header-test.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Update the header in the child theme
+
+        The child theme can override any file in the parent theme: simply include a file of the same name in the child theme directory to override the matched file in the parent theme directory. 
+
+        This way, you can make changes without modifying the original files.
+        
+        Make a copy of `header.php` and add it to the `skt-white-child` folder.
+        
+        ![](framework/img/workshop/child-theme-header-file.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Update header.php
+        
+        Let's look at the code snippet starting on line 23:
+        
+        ```
+        <?php $slide_title = '<h1>SKT White</h1><p>Aliquam vitae nunc nibh. Nam sollicitudin orci vel eros vulputate vestibulum.</p><a href="#">Contact Us</a>'; ?>
+      
+          <div class="top-bar">
+            <?php echo of_get_option( 'header_title', $slide_title ); ?>
+          </div><!-- top-bar -->
+        ```
+        The value of the `$slide_title` variable matches the default text seen in the page header.  Update it to whatever you want to personalize the page.
+        
+        For example, if 
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #CSS crash course
         
         basic css examples
       </script>
@@ -1237,7 +1415,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## CSS exercise
+        # CSS exercise
         
         show where/how to update css in the theme
       </script>
@@ -1245,15 +1423,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        ## 
-        change some PHP stuff in child theme?
-        
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        ## Custom themes
+        # Custom themes
         and maybe some other customizations
         The body_class() function
         Custom fields
