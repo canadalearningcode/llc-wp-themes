@@ -135,6 +135,17 @@ ul {
     }
   }
 }
+.no-bullet-list {
+  > ul > li {
+    margin-left: 0;
+    
+    &:before {
+      content: "";
+      margin-left: -9px;
+    }
+    ul { margin-left: 10px; }
+  }
+}
 
 iframe {
   margin-bottom: 20px;
