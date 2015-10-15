@@ -33,4 +33,8 @@
     margin-left: 50px;
   }
 }
-
+.css-review {
+  pre:nth-of-type(2n+2){  
+    margin-top: -10px;
+  }
+}

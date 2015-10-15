@@ -1,0 +1,65 @@
+<section class="slide" data-markdown>
+  <script type="text/template">
+    #Conditional statements
+    
+    Often you'll want to show certain bits of content based on specific conditions. 
+    
+    For example, in the current [Sydney theme header](slides.html#heading-options), you could show the site title & tagline OR just the logo. The if statement's logic might look something like this:
+    
+    ```
+    <?php
+    if ( logo image has been added ) {
+        show the logo
+    } else {
+        show the site title and tagline
+    }
+    ?>
+    ```
+  </script>
+</section>
+
+<section class="slide" data-markdown>
+  <script type="text/template">
+    #Conditional statements: Syntax
+    
+    ```php
+    <?php
+    if ( condition ) {
+        // code to execute if condition is true
+    } else {
+        // code to execute if condition is false
+    }
+    ?>
+    ```
+    
+    Alternative syntax:
+    
+    ```php
+    <?php
+    if (condition):
+        //code to execute if condition is true
+    else:
+        //code to execute if condition is false
+    endif;
+    ?>
+    ```
+    
+    You can mix HTML in between the conditional statement too but remember to open & close the PHP tags to exit out of "PHP mode."
+    
+    ```php
+    <?php if (condition): ?>
+        <img src="logo.png" alt="logo">
+    <?php else: ?>
+        <h1>Site Title</h1>
+    <?php endif; ?>
+    ```
+    
+    Note that `else` is not required.  Use it to provide an alternative option if the condition is not met.
+    
+    ---
+    ###Resources
+    
+    * [PHP Manual: if](http://php.net/manual/en/control-structures.if.php)
+    * [PHP Manual: elseif](http://php.net/manual/en/control-structures.elseif.php)
+  </script>
+</section>

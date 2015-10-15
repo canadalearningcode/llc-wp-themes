@@ -337,7 +337,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Add some content (20mins) (finish by 11:20am)
+        # Exercise: Add some content (15mins) (finish by 11:15am)
         
         When designing a website, it's good to have some content before adding styles to add context to your page layouts. Follow the instructions below and refer to the [diagram](framework/img/workshop/admin-add-post.png) for more info.
         
@@ -456,7 +456,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Sydney Theme
+        # Sydney Theme (11:30)
         
         This is what the site looks like with some basic content and the default settings. Much different from the Twenty Fifteen theme!
         
@@ -632,21 +632,21 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Theme Templates
-        
-        Themes include multiple templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
-        
-        But you may not want to show a sidebar on the homepage.  You can change that by not including the sidebar code in your page template file or by creating additional custom page templates. 
-        
-        In the current theme, there are currently two custom options to choose from in additional to the default. Stick with the default template for now. 
-        
-        ![](framework/img/workshop/template-change.png)<!-- .element: width="80%" -->
-        
-        Where are these templates and how do they work?
-      </script>
-    </section>
+<!--     <section class="slide" data-markdown>
+  <script type="text/template">
+    #Theme Templates
+    
+    Themes include multiple templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
+    
+    But you may not want to show a sidebar on the homepage.  You can change that by not including the sidebar code in your page template file or by creating additional custom page templates. 
+    
+    In the current theme, there are currently two custom options to choose from in additional to the default. Stick with the default template for now. 
+    
+    ![](framework/img/workshop/template-change.png).element: width="80%"
+    
+    Where are these templates and how do they work?
+  </script>
+</section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -664,7 +664,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <!-- <section class="slide" data-markdown>
       <script type="text/template">
         #Theme Template Files (12:25)
         
@@ -689,7 +689,7 @@
         * [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
         * [The Anatomy of a WordPress Theme](https://yoast.com/wordpress-theme-anatomy/)
       </script>
-    </section>
+    </section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -873,34 +873,12 @@
         
         1. Create a new file (**File > New File**) in your editor and save it as **test.php**  
           * It must end with a PHP file extension.<!-- .element: class="note" -->
-        1. Add a line of HTML and a line of PHP to see how each renders in the browser.
+        1. Use an HTML to enclose the PHP content.
           ```
-          <p>Hello!</p>
-          <?php echo "Hello!"; ?>
+          <p><?php echo "Hello!"; ?></p>
           ```
         1. Save it. (**File > Save**)
         1. To view this page, navigate to **test.php** by adding a forward slash `/` and the file name to the end of the URL. `http://your-project-name.dev/test.php`
-        
-        Notice that the output looks the same in the browser (two lines of text)?  
-        **Right-click / two-finder tap > View source** in the browser to view the code.
-        
-        What's the difference between how the HTML and PHP gets rendered in the browser?
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        #Class exercise: Write some PHP  ( finish at 2:00)
-        
-        All web page content should be contained with HTML tags for proper page structure. When using PHP to generate content, be sure to include the generated content with the appropriate HTML tag.
-        
-        1. Update the code and add a paragraph tag around the PHP script.
-          ```
-          <p>Hello!</p>
-          <p><?php echo "Hello!"; ?></p>
-          ```
-          
-          This change won't look different in the browser but view the source to  see that the rendered PHP code is wrapped in HTML. <!-- .element: class="note" -->
         1. Remember, with `echo`, you can output multiple strings using commas.  
           ```  
           <p><?php echo "I", "like", "pizza."; ?></p>
@@ -909,6 +887,8 @@
           ```  
           <p><?php echo "I ", "like ", "pizza."; ?></p>
           ```
+        
+        Note that the output in the browser only shows the string and the HTML, not the PHP tags.
       </script>
     </section>
     
@@ -1025,7 +1005,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Function arguments (2:30pm)
+        #Function arguments (2:10pm)
         
         You can pass information into functions with *arguments*.  
         
@@ -1192,7 +1172,7 @@
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Activate your Child Theme 
+        #Activate your Child Theme (2:30)
         
         Your new child theme is now available under the **Appearance > Themes** menu.   
         
@@ -1318,7 +1298,7 @@
     
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Editing Template files
+        #Editing Template files (3pm)
         
         `page.php` is the template for single (static) page type. Though `index.php` can be used as well, but if `page.php` exists, it will take precedence in this hierarchy.
         
@@ -1407,7 +1387,7 @@
             <?php while ( have_posts() ) : the_post(); ?>
               ... Display post content
             <?php endwhile; ?>
-        endif; ?>
+        <?php endif; ?>
         ```
 
         * the `have_posts()` function checks whether there are any posts (true/false)
@@ -1424,7 +1404,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Editing Templates (3:30)
+        #Editing Templates (3:20)
         
         Back in our `page.php`, within the loop, let's look at this line:
         
@@ -1438,7 +1418,7 @@
 
         >Load a template part into a template. Makes it easy for a theme to reuse sections of code and an easy way for child themes to replace sections of their parent theme. 
         
-        Looking further into the documentation, this basically means, look for template file called `content-page.php`. This template tag allows you to create template files outside of the WordPress defined template files (`page.php`, `home.php`, etc). 
+        Looking further into the documentation, this basically means, look for a template file called `content-page.php`. This template tag allows you to create template files outside of the WordPress defined template files (`page.php`, `home.php`, etc). 
       </script>
     </section>
     
@@ -1496,30 +1476,193 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #CSS crash course
+        #Child Theme: Editing Templates recap
         
-        basic css examples
+        There is so much more you can do with theme customizations but the process is pretty similar to the process shown in the past examples.  
+        
+        1. decide what change to make 
+        1. find the template file where content is being outputted
+        1. make a copy and save it in your child theme folder
+        1. revise the HTML & template tags as necessary
+        
+        To make CSS changes, getting to know the browser development tools will be super handy.  The good news is, you can make all your revisions in your `style.css` file and don't have to search for template files!
+      </script>
+    </section>
+    
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+        #CSS Crash Course!
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # CSS exercise
+        #CSS Crash Course (3:35)
         
-        show where/how to update css in the theme
+        When using a child theme, you'll mostly be make revisions to existing styles so much of your CSS changes will need to override the parent theme's styles.  Let's go over some CSS syntax & terminology.
+        
+        **Selectors** are used to determine which HTML element(s) to apply the styles to.
+        
+        **Properties** determine the type of style to be applied to the element (e.g. color). Values are specific to the property (e.g. red). 
+        
+        **Declarations** are style rules, written using `property:value` pairs, are wrapped by curly brackets `{}` and each must end with a semi-colon `;` to indicate that the instruction is complete.
+        
+        ```
+        selector {
+          property: value;
+        }
+        ```
+      </script>
+    </section>
+    
+    <section class="slide css-review" data-markdown>
+      <script type="text/template">
+        #CSS Examples
+        
+        ```xml
+        <h1>Heading</h1>
+        ```
+        ```css
+        h1 {
+            font-size: 24px; /* selects all matching HTML elements */
+        }
+        ```
+        ```xml
+        <h1 class="site-title">Heading</h1>
+        ```
+        ```css
+        .site-title {
+            margin: 0px; /* selects all matching HTML elements with this class */
+        }
+        ```
+        ```xml
+        <h1 id="site-title">Heading</h1>
+        ```
+        ```css
+        #page {
+            color: #444; /* selects all matching HTML elements with this id */
+        }
+        ```
+      </script>
+    </section>    
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #"Cascading" Style Sheets
+        
+        In CSS, they style rules "cascade" and are executed from top to bottom.
+        
+        For example, if you have use the same selector for two different declarations, the one that comes after will override the one that comes before.
+        
+        ```
+        h1 {
+          color: red;
+        }
+        
+        h1 {
+          color: blue;  /* this style will be override the previous declaration */
+        }
+        ```
+
+        When setting up the child theme, the script used to enqueue the parent and child theme stylesheets not only connected the parent stylesheet to the child theme but also to ensure that the child theme stylesheet would load after to be able to override the parent styles as needed.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Inheritance and specificity
+        
+        One of the strengths of CSS is styles can be inherited from parent to child elements using the family tree relationship between the elements.
+        
+        ```
+        <body>
+          <h1>My Website</h1><!-- child of body -->
+          <p>This is a paragraph.</p><!-- sibling of h1 -->
+        </body>
+        ```
+        ```
+        body {
+          color: blue;
+          font-family: Helvetica, Arial, sans-serif;
+        }
+        h1 {
+          color: black;
+        }
+        ```
+        In the above example, the CSS properties in the body selector is inherited by the descendants elements (all nested elements). However, when a more specific selector is used (e.g. h1), it overrides the inherited values because it's more specific.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Change some CSS!
+        
+        Let's look at our blog page and change the font size and colour of the headings and paragraph.  You will need to open the browser developer tools to most effectively find the right selector to use.
+        
+        **Right-click > Inspect Element** to open the console.  Use the top left pointer icon to navigate and select the element and see the corresponding CSS on the right.
+        
+        ![](framework/img/workshop/inspect-element-css.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Change some CSS!
+        
+        For the title, there is a specific selector for that element, `.hentry .title-post`. We can use this selector to change the `font-size` (as well as the other properties).
+        
+        ![](framework/img/workshop/inspect-css-h1.png)
+        
+        <!-- For the paragraphs, the styles are being *inherited* from the `body` selector.
+        
+        ![](framework/img/workshop/inspect-css-p.png) -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Update style.css
+        
+        Open `style.css` from your child theme folder, **sydney-child**, in the text editor.
+        
+        Using the identified selectors, make some changes!  Here's a few examples:
+        
+        ```css
+        body {
+          color: #222222; /* dark gray, almost black */
+          font-size: 18px;
+        }
+        .hentry .title-post {
+          font-size; 40px;
+          color: #B109AA; /* LLC purply pink! */
+        }
+        ```
+        
+        ---
+        ###Resources
+        
+        * Colour values: http://colours.neilorangepeel.com/
+        * [Mozilla Developer Network: CSS Text Styles](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Text_styles)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         # Custom themes
+        
+        
+        The main difference between using a child theme vs a custom theme is you'll have to make all those template files yourself! Or use a starter theme to get some basic functionality to start with.
+        
+        Recap: Use a child theme if you only want to make some basic changes. Use a custom theme if you need a lot of customization.
+        
         and maybe some other customizations
         The body_class() function
         Custom fields
         Post thumbnails (feature images)
         Custom templates
         Mastering the loop
-
+        http://underscores.me/
+        https://github.com/murtaugh/HTML5-Reset-WordPress-Theme
         Custom post types & taxonomies -- segue into plugins
         [~ 45mins]
       </script>
@@ -1535,8 +1678,7 @@
       <script type="text/template">
         # Custom themes
         
-        http://underscores.me/
-        https://github.com/murtaugh/HTML5-Reset-WordPress-Theme
+        
       </script>
     </section>
     
