@@ -113,15 +113,16 @@
       <script type="text/template">
         #What is WordPress?
         
+        ![](framework/img/workshop/logo-wp.png)
+        
         * free, open source content management system (CMS)
-        * started as a blog publishing platform but can now be used to power any type of website
+        * can edit, publish content and manage the website using a graphical user interface, without editing the code or database (though you can!)
+        * started as a blog publishing platform but can now be used for any type of website
         * used by many individuals and companies (ladieslearningcode.com is powered by WordPress!)
         * written primarily in [PHP](http://www.php.net) and [MySQL](http://www.mysql.com)
         * customizable core, can be extended and modified in anyway
         * large community of support
         * and much [more](https://codex.wordpress.org/WordPress_Features)!
-        
-        ![](framework/img/workshop/logo-wp.png)
       </script>
     </section>
     
@@ -145,28 +146,28 @@
         
         ---
         ###Resources
-        * https://en.support.wordpress.com/com-vs-org/
+        * [WordPress.com and WordPress.org](https://en.support.wordpress.com/com-vs-org/)
         * http://wordpress.com
         * http://wordpress.org
       </script>
     </section>
     
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # What is a CMS?
-        
-        A content management system (CMS) is an application used to edit content and manage a website using a graphical user interface. Web content can therefore be modified and published without editing the code or database.
-        
-        A CMS like WordPress also includes features such as:
-        
-        * database management 
-        * themes and templates for page layouts
-        * making content searchable and indexable
-        * and much more!
-        
-        In addition to WordPress, there are many other CMS platforms as well, such as [Drupal](https://www.drupal.org) and [Joomla](https://www.joomla.org).
-      </script>
-    </section>
+<!--     <section class="slide" data-markdown>
+  <script type="text/template">
+    # What is a CMS?
+    
+    A content management system (CMS) is an application used to edit content and manage a website using a graphical user interface. Web content can therefore be modified and published without editing the code or database.
+    
+    A CMS like WordPress also includes features such as:
+    
+    * database management 
+    * themes and templates for page layouts
+    * making content searchable and indexable
+    * and much more!
+    
+    In addition to WordPress, there are many other CMS platforms as well, such as [Drupal](https://www.drupal.org) and [Joomla](https://www.joomla.org).
+  </script>
+</section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -217,7 +218,7 @@
       <script type="text/template">
         # Setting up your local server
         
-        Open the DesktopServer app and follow the steps outlined in the getting started video below. The written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/). Once you've created a local WordPress site, you can access it with the **Sites** button. 
+        Open the DesktopServer app and let's follow the steps outlined in the getting started video below. The written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/). Once you've created a local WordPress site, you can access it with the **Sites** button. 
         
         <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
 
@@ -297,7 +298,7 @@
           * used for date-based content
           * posts are listed chronologically
           * can also be assigned *categories* and *tags* (also referred to as **taxonomies**)
-          * *permalink* will include the date (can change this in the settings)
+          * *permalink* will include the date (can change this in the settings)  
           `http://your-project-name.dev/2015/09/28/my-catchy-title/`<!-- .element: class="note" -->
         * ![](framework/img/workshop/admin-pages.png)  
         **Pages**
@@ -339,7 +340,7 @@
       <script type="text/template">
         # Exercise: Add some content (15mins) (finish by 11:15am)
         
-        When designing a website, it's good to have some content before adding styles to add context to your page layouts. Follow the instructions below and refer to the [diagram](framework/img/workshop/admin-add-post.png) for more info.
+        When designing a website, it's good to have some content before adding styles to add context to your page layouts. Follow the instructions below and [refer to the diagram](framework/img/workshop/admin-add-post.png) for more info.
         
         1. Add 2-3 **posts** (anything you want!)
           * include some paragraphs, headings and at least one image
@@ -349,11 +350,13 @@
           * add a **featured image** to at least 1 page
         1. Add a *blank* `Blog` **page** - just a page title and no content! We'll need this later.
         
-        **Two posts**
+        Need some placeholder text or images?<br><!-- .element: class="note" -->
+        [meettheipsums.com](http://meettheipsums.com), [thewireipsum.com](http://thewireipsum.com), [placeimg.com](https://placeimg.com/), [dummy-image-generator.com](http://dummy-image-generator.com/)  
+        
+        ##Examples
+        Using the default Twenty Fifteen theme, the content will look similar to [this](framework/img/workshop/theme-default-example.png).
         
         ![](framework/img/workshop/posts-example.png)
-        
-        **Home, Blog & About page**
         
         ![](framework/img/workshop/pages-example.png)
       </script>
@@ -366,9 +369,9 @@
       </script>
     </section>
     
-    <section class="slide appearance" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        # Appearance options
+        # Appearance Menus Overview
         
         ![](framework/img/workshop/admin-appearance.png)<!-- .element: class="left" -->
         
@@ -390,19 +393,15 @@
     
     <section class="slide appearance" data-markdown>
       <script type="text/template">
-        # Appearance options
+        # Appearance Menus Overview
         
         ![](framework/img/workshop/admin-appearance.png)<!-- .element: class="left" -->
 
-        **Menus** are used to create site navigation links to pages, categories, custom links, tags, etc.
+        **Menus** are used to create site navigation links to pages, categories, tags, etc.
         
-        The **Header** & **Background** feature allows you to manage images  displayed in the header and the look of the background for your theme.  
+        The **Header** & **Background** feature allows you to manage images  displayed in the header and the look of the background for your theme.  This option will only be present if the theme author has configured these options to allow for this capability.
         
-        This option will only be present if the theme author has configured these options to allow for this capability.
-        
-        The **Editor** menu gives you access to edit the theme's PHP and CSS files but isn't the best way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
-        
-        The content added in the previous exercise using the default Twenty Fifteen theme will look similar to [this](framework/img/workshop/theme-default-example.png).
+        The **Editor** menu gives you access to edit the theme's PHP and CSS files but isn't the most intuitive way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
         
         ---
         ###Resources
@@ -428,7 +427,7 @@
         * will require some knowledge of HTML, CSS and PHP 
         
         ##Option 3: Custom themes
-        * built from scratch or from a "starter template"
+        * built from scratch or from a [starter template](https://www.google.ca/search?q=wordpress+starter+theme)
         * requires a deeper knowledge of HTML, CSS, PHP or get really good at following
         the [WordPress documentation](https://codex.wordpress.org/)!
     </script>
@@ -533,15 +532,15 @@
 
     <section id="menus" class="slide" data-markdown>
       <script type="text/template">
-        #Default Homepage
+        #Default settings & templates
         
         ![](framework/img/workshop/menu-default.png)<!-- .element: class="left" height="600" -->
         
-        By default, the homepage for all WordPress sites is a listing of your blog posts. 
+        Blog page templates generally default to include a sidebar with widgets (Recent Posts, Recent Comments, etc).
         
-        Also, blog page templates generally include a sidebar with widgets (Recent Posts, Recent Comments, etc).
+        Also by default, the homepage for all WordPress sites is a listing of your blog posts. 
         
-        Both of these default settings and styles can be changed and will be covered in the next upcoming exercises.
+        These settings and styles can be changed. Let's look at the home page settings first.
       </script>
     </section>
     
@@ -549,7 +548,9 @@
       <script type="text/template">
         # Custom Menu
         
-        By default, all WordPress sites show your latest blog posts as the home page. But what if you wanted a navigation to look something like this:
+        By default, all WordPress sites show your latest blog posts as the home page. 
+        
+        But what if you wanted a navigation that looked like this:
         
         ![](framework/img/workshop/custom-menu.png)
         
@@ -565,7 +566,7 @@
       <script type="text/template">
         # Custom Menu
 
-        Before creating a navigation menu, you'll need to select a **page** to be displayed as the home page and a page for the blog since it won't be the default home page anymore.  (Remember the Home and Blog pages we created earlier?)
+        Before creating a navigation menu, update your settings to select which **page** should be displayed as the home page, as well as the page for the blog (since it won't be the default home page anymore).  Remember the Home and Blog pages we created earlier? We're going to use them now.
         
         Go to the **Settings > Reading** menu to update these settings. 
         
@@ -621,9 +622,9 @@
         
         ![](framework/img/workshop/wp-content-files.png)<!-- .element: class="left" -->
         
-        When you upload plugins, themes & media files, they automatically get added to these folders.  
+        When you upload plugins, themes & media files using the WordPress admin menus, they automatically get added to these folders.  
         
-        You can also manage these files by directly adding or deleting files in the folders rather than using the WordPress admin menus.
+        But, you can also manage these files by directly adding or deleting files in the folders rather than using the WordPress admin menus.
         
         <!-- .element: style="clear:both;" --><br>**Important**!  
         When adding themes or plugins directly to these folders, the zip files need to be unzipped first. But they still need to be activated in the WordPress admin settings. 
@@ -656,7 +657,7 @@
         
         Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often, these templates contain code for only a portion of a page. These partials fit together like a puzzle to generate full web pages.
         
-        Some of the templates can also be used across multiple pages, like the header and footer. Using partials makes it easier to update shared content.
+        Some templates are re-used across multiple pages such as the header and footer. Some are only used for specific conditions.
         
         WordPress is based on PHP so the files must use a `.php` extension.
         
@@ -695,7 +696,7 @@
       <script type="text/template">
         #Setting Up Your Project
         
-        Open the Atom editor and add your new WordPress site project folder.  
+        Open the text editor and add your new WordPress site project folder.  
         
         Go to **File > Add Project Folder** and click on your project's folder (your-project-name.dev) *once* and select **Open**. Unless you changed the default path during the ServerPress setup, it should be located under **Documents > Websites**.  
         
@@ -778,7 +779,7 @@
                 
         How much PHP do you need to know?
         
-        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress **template tags**.  
+        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress *template tags*.  
         
         However, being able to recognize PHP tags and having a general grasp of the PHP syntax will help a lot. 
         
@@ -795,11 +796,9 @@
       <script type="text/template">
         # PHP Syntax
 
-        PHP code is enclosed in special start and end processing instructions `<?php` and `?>` to jump in and out of “PHP mode”. 
+        PHP code is enclosed in special start and end, `<?php ?>`, processing instructions to jump in and out of “PHP mode”. 
         
-        PHP executed on the server generates HTML which is then sent to the client (the browser). 
-        
-        Anything outside of the opening and closing tags will be ignored by the PHP parser.
+        PHP executed on the server generates HTML which is then sent to the client (the browser). Anything outside of the opening and closing tags will be ignored by the PHP parser.
         
         ```php
         <?php PHP code in between here. ?>
@@ -816,7 +815,7 @@
       <script type="text/template">
         # PHP Syntax & HTML 
         
-        If you mix PHP with HTML, an opening and closing tag is required for each PHP code block that is separated by non-PHP code. This technique is used quite a bit in WordPress.
+        If you mix PHP with HTML, an opening and closing tag is required for each code block that is separated by non-PHP code. This technique is used quite a bit in WordPress.
         
         ```xml
         <p>This is just HTML and will be ignored by PHP.</p>
@@ -829,7 +828,7 @@
         You can even mix PHP between HTML tags.
         
         ```xml
-        <p>More HTML. Dynamic code here: <?php PHP code here. ?></p>
+        <p>More HTML. Dynamic code here: <?php PHP code ?></p>
         ```
       </script>
     </section>
@@ -839,8 +838,7 @@
         # Outputting PHP
 
         `string` - series of characters, contained in either single or double quotes  
-        `echo` – output one string or more, separated by a comma  
-        
+        `echo` – output one string or more, separated by a comma   
         Add a semi-colon `;` at the end of the command.
         
         ```
@@ -871,15 +869,16 @@
       <script type="text/template">
         #Class exercise: Write some PHP (finish at 1:45)
         
-        1. Create a new file (**File > New File**) in your editor and save it as **test.php**  
-          * It must end with a PHP file extension.<!-- .element: class="note" -->
-        1. Use an HTML to enclose the PHP content.
+        1. Create a new file (**File > New File**) in your editor and save it as **test.php** in your root folder, to be able to find it easily.
+  
+          ![](framework/img/workshop/test-folder-directory.png)
+        1. Use an HTML tag to enclose the PHP content.
           ```
           <p><?php echo "Hello!"; ?></p>
           ```
         1. Save it. (**File > Save**)
         1. To view this page, navigate to **test.php** by adding a forward slash `/` and the file name to the end of the URL. `http://your-project-name.dev/test.php`
-        1. Remember, with `echo`, you can output multiple strings using commas.  
+        1. Remember, with `echo`, you can output multiple strings using commas. Try it!
           ```  
           <p><?php echo "I", "like", "pizza."; ?></p>
           ```
@@ -887,8 +886,18 @@
           ```  
           <p><?php echo "I ", "like ", "pizza."; ?></p>
           ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #View the Source!
+                
+        Right-click or two-finger tap anywhere on the browser window and select **View Source**.
         
-        Note that the output in the browser only shows the string and the HTML, not the PHP tags.
+        ![](framework/img/workshop/view-source.png)
+        
+        Remember, since PHP is a *server-side* language, it gets parsed on the server first, then outputs onto the page. So even if you view the source in the browser (client-side), you won't see the PHP tags.
       </script>
     </section>
     
@@ -900,7 +909,7 @@
         
         Remember, HTML is *static*, it doesn't change.
         
-        When you're logged into WordPress, the admin toolbar appears and also shows your site title and username, using the data saved in the database.  
+        When you're logged into WordPress, the admin toolbar appears and shows your site title and username, using the data saved in the database.  
         
         ![](framework/img/workshop/wp-admin-bar.png)
         
@@ -946,6 +955,7 @@
         ```
         <?php
         $mygreeting = "Hello!";
+        
         echo $mygreeting;
         ?>
         ```
@@ -967,12 +977,13 @@
         ?>
         ```
 
-        Now add some HTML with the PHP variables, to output these values onto the page.
-        
+        Then, output the PHP variables. 
         ```
         <a href="#"><?php echo $site_title; ?></a>
         <a href="#">Howdy, <?php echo $username; ?></a>
         ```
+        
+        They are wrapped in HTML anchor tags to output these values onto the page as a link. (The `#` is just a placeholder for the link location usually contained in the `href`.)
       </script>
     </section>
     
@@ -1093,7 +1104,7 @@
       <script type="text/template">
         #Making a child theme: Step 1
         
-        In your theme folder, create a new folder for your child theme's files.
+        In your theme folder, create a new folder for your child theme's files. Any theme can be used to create a child theme but this workshop will use the **sydney** theme in the remainder of the examples.
         
         It’s best practice to name the folder the same name as the parent, but with `-child` appended to it.
           
@@ -1106,7 +1117,7 @@
         <script type="text/template">
           #Making a child theme: Step 2
           
-          In your text editor, create a new file (**File > New File** or command/control + N) and save it as **style.css**. It has to be named exactly as **style.css** and saved in your child theme folder, **sydney-child**.
+          In your text editor, create a new file (**File > New File** or **command/control + N**) and save it as **style.css**. It has to be named *exactly* as **style.css** and saved in your child theme folder, **sydney-child**.
           
           Your stylesheet **must** also contain specific header comments, at the top of the file, to tell WordPress information about the theme, including defining the parent theme.
             
@@ -1175,8 +1186,9 @@
         #Activate your Child Theme (2:30)
         
         Your new child theme is now available under the **Appearance > Themes** menu.   
+        Hover over the theme to see the button to activate it. 
         
-        Hover over the theme to activate it. The header comment information from the **styles.css** is used here to provide details about your child theme.
+        The header comment information from the **styles.css** is used here to show details about your child theme.
         
         ![](framework/img/workshop/child-theme-activate.png)
         ![](framework/img/workshop/child-theme-details.png)
@@ -1189,7 +1201,7 @@
         
         If there was anything missed when setting up your child theme, you'll see an error message like this one below:
         
-        ![](framework/img/workshop/theme-broken.png)<!-- .element: width="60%" -->
+        ![](framework/img/workshop/theme-broken.png)<!-- .element: width="70%" -->
         
         Also, sometimes when you activate a new theme, some of the settings will have to be added back in. For example the uploaded logo and navigation menu is no longer showing, with our newly activated child theme.
         
@@ -1298,13 +1310,15 @@
     
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Editing Template files (3pm)
+        #Template files & Hierarchy (3pm)
         
-        `page.php` is the template for single (static) page type. Though `index.php` can be used as well, but if `page.php` exists, it will take precedence in this hierarchy.
+        `page.php` is the template for single (static) page types. `index.php` can be used as well, but if `page.php` exists, it will take precedence.
         
-        `front-page.php` could be used for the home page but in our current theme (Sydney), this template isn't included, so it defaults to `home.php`, if the front page is the blog index and `page.php` if it's a static page.
+        So our About and Home pages must be using the `page.php` template.
         
-        Based on the hierarchy description and some process of elimination, our Home and About pages are using the `page.php` template. 
+        BUT `front-page.php` could be also used be used for displaying the home page. However, in our current theme (Sydney), this template isn't included.  
+        
+        So... that leads us back to `page.php` as the best available option.
         
         Let's take a look at this file and do a simple test to confirm this is the correct template being used.
 
@@ -1352,7 +1366,7 @@
       <script type="text/template">
         #Editing Templates
         
-        But in `page.php` we see the below snippet rather than the `<h1>` page heading.
+        But in `page.php` we see the below snippet rather than the `<h1 class="title-post"></h1>` page heading. What does this mean?
         
         ```
         <main id="main" class="post-wrap" role="main">
@@ -1412,6 +1426,8 @@
         <?php get_template_part( 'content', 'page' ); ?>
         ```
         
+        This is where the `<h1 class="title-post"></h1>` snippet we were looking for was supposed to be. But instead we see this.
+        
         Remember, all WordPress template tags follow this syntax, `name_of_tag()` so this must be a template tag! Don't know what it does? Look it up in the codex.
         
         The description in the [codex](https://codex.wordpress.org/Function_Reference/get_template_part) says:
@@ -1431,7 +1447,9 @@
         ![](framework/img/workshop/template-code-console.png)
         ![](framework/img/workshop/template-code-editor.png)
         
-        Delete that little bit of code and poof! Header is gone! (Also, delete the "page.php template" test note.)
+        Delete that little bit of code and poof! Header is gone! 
+        
+        Also, delete the "page.php template" test note in `page.php` now that we've confirmed that the correct file was being used.
         
         Since we're using a child theme, copy `page.php` and `content-page.php` and add it to your **sydney-child** folder to make the edits without revising the parent theme.
       </script>
@@ -1483,7 +1501,7 @@
         1. decide what change to make 
         1. find the template file where content is being outputted
         1. make a copy and save it in your child theme folder
-        1. revise the HTML & template tags as necessary
+        1. revise the HTML & template tags/PHP as necessary
         
         To make CSS changes, getting to know the browser development tools will be super handy.  The good news is, you can make all your revisions in your `style.css` file and don't have to search for template files!
       </script>

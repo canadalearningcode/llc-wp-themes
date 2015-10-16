@@ -93,6 +93,11 @@ ul, ol {
     margin: 4px 0 10px;
   }
 }
+
+ol > li {
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
 ul {
   list-style-type: none;
   
