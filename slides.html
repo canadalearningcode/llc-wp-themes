@@ -73,33 +73,10 @@
     
     <section class="slide two-col-list" data-markdown>
       <script type="text/template">
-      #Course Outline
-      
-      * Part One:
-        * What is WordPress?
-        * WordPress.com vs WordPress.org
-        * Creating a local dev environment
-        * Intro to PHP
-        * Syntax
-        * Variables
-        * Functions
-        * Getting to know the Dashboard
-        * Posts vs Pages
-        * Media & Comments
-        * Adding content
-        
-      * Part Two:
-        * Free & Premium themes
-        * Where to find
-        * Template file structure
-        * Making updates
-        * Child Themes
-        * Custom Themes
-        * Plugins
-        * Next steps & resources
-        
+        #Course Outline
         
         <div class="table-of-contents"></div>
+        
       </script>
     </section>
     
@@ -109,7 +86,7 @@
       </script>
     </section>
     
-    <section class="slide wp-intro" data-markdown>
+    <section class="slide wp-intro" data-markdown data-toc>
       <script type="text/template">
         #What is WordPress?
         
@@ -608,11 +585,15 @@
           
         ![](framework/img/workshop/wp-core-files.png)<!-- .element: width="85%" --> 
         
+        <!-- .element: class="note" -->**Note!**  
+        There is one file outside of **wp-content** that you may need to edit. **wp-config.php** contains the website's base configuration details, such as database connection information.  When using the DesktopServer app, you do not need to edit this file to set up a local server but some other applications as well as adding certain customizations may require edits.
+        
         ---
         ###Resources
         
         * [WordPress Codex: WordPress files](https://codex.wordpress.org/WordPress_Files)
         * [How to Edit Your WordPress Website (Without Hacking Core Files)](https://managewp.com/edit-wordpress-website)
+        * [Editing wp-config.php](https://codex.wordpress.org/Editing_wp-config.php)
       </script>
     </section>
     
@@ -664,33 +645,6 @@
         Content entered in the backend (posts, site title, media, etc) is stored in the *database* allowing you to update themes and keep your content.
       </script>
     </section>
-    
-    <!-- <section class="slide" data-markdown>
-      <script type="text/template">
-        #Theme Template Files (12:25)
-        
-        Here are some common template files recognized by WordPress, based on the filename and a  template hierarchy. 
-                
-        * **index.php** - main template file and required in all themes
-        * **style.css** - main CSS stylesheet and required in all themes
-        * **comments.php** - template for display comments
-        * **front-page.php** - used for a static front page / home page
-        * **home.php** - default home page, shows latest blog posts
-        * **header.php** - usually contains the  meta information, links to stylesheets and scripts and sometimes the site navigation.
-        * **single.php** - used for a single post
-        * **page.php** - template for single page
-        * **404.php** - used when WordPress cannot find a post, page, or other content that matches the visitor’s request
-        
-        See resources for a full list and more information.
-        
-        ---
-        ###Resources
-        
-        * [WordPress Codex: Template Files](https://codex.wordpress.org/Theme_Development#Template_Files_List)
-        * [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy/)
-        * [The Anatomy of a WordPress Theme](https://yoast.com/wordpress-theme-anatomy/)
-      </script>
-    </section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1409,6 +1363,15 @@
         * a `while` loop continues to execute as long as the condition in true
         * the while loops contains instructions for what content to display, from the posts
         
+        ```php
+        <?php if ( have_posts() ) : ?> // if we have posts
+            <?php while ( have_posts() ) : the_post(); ?> // while we have post_class
+              
+              // add instructions here to pull out some or all of the content contained in the database - usually with a combination of HTML & template tags
+              
+            <?php endwhile; ?> // end while
+        <?php endif; ?> // end the if statement
+        ```
         ---
         ###Resources
         * [WordPress Theme Handbook: The Loop](https://developer.wordpress.org/themes/basics/the-loop/)
@@ -1723,72 +1686,162 @@
       </script>
     </section>
     
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Child Themes & CSS Specificity
+        
+        You can still write your own CSS without inspecting the elements to find specific selectors, but based on the rules of CSS specificity, sometimes the style may not show as expected.
+        
+        Another options is to take advantage of the `body_class();` template tag. This is usually included in the `<body>` tag of the `header.php` template file like so:
+          
+        ```
+        <body <?php body_class(); ?>>
+        ```
+          
+        This template tag gives the `<body>` element different classes that can be used to apply the CSS specificity needed to override the parent theme's css.
+          
+        ---
+        ###Resources
+        * [Mozilla Developer Network:  Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
+        * [Taming Advanced CSS Selectors](http://www.smashingmagazine.com/2009/08/taming-advanced-css-selectors/)
+        * [Combinators: Descendant and Child Selectors](http://www.peachpit.com/articles/article.aspx?p=1413883&seqNum=10)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #body_class();
+        
+        Let's review what classes are generated on different pages of the site. These vary based on which templates are applied and specific post ids.
+        
+        ##Home page
+        ![](framework/img/workshop/body-class-home.png)
+        
+        ##About page
+        ![](framework/img/workshop/body-class-about.png)
+        
+        ##Blog page
+        ![](framework/img/workshop/body-class-blog.png)
+        
+        ##Blog post
+        ![](framework/img/workshop/body-class-blog-post.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Descendant Selectors & Specificity
+        
+        Descendant selectors can often be used to override other styles because of specificity rules.
+        
+        ```
+        p {
+          /* targets any paragraph anywhere on any page */
+        }
+        .blog p {
+          /* targets only paragraphs contained in an element with a class of blog */
+        }
+        ```
+        
+        Our previous custom CSS looked like this:
+        
+        ```css
+        .hentry .title-post {
+          font-size: 40px;  
+        }
+        h2 a {
+          color: #B109AA; /* LLC purply pink!*/
+        }
+        ```
+        
+        But we could also target the elements to be changed, combined with the body class selector, to create a more specific selector.
+        
+        ```css
+        .blog .title-post {
+          font-size: 20px;
+        }
+        .blog a {
+          color: red;
+        }
+        ```
+      </script>
+    </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         # Custom themes
         
+        Phew! That was a lot of detective work.  Why not just write it all yourself?
         
-        The main difference between using a child theme vs a custom theme is you'll have to make all those template files yourself! Or use a starter theme to get some basic functionality to start with.
+        You can! 
         
-        Recap: Use a child theme if you only want to make some basic changes. Use a custom theme if you need a lot of customization.
+        The main difference between using a child theme vs a custom theme is you'll have to make all those template files yourself including all the HTML, template tags, loops, css, etc. Or use a starter theme to get some basic functionality to start with.
         
-        and maybe some other customizations
-        The body_class() function
-        Custom fields
-        Post thumbnails (feature images)
-        Custom templates
-        Mastering the loop
-        http://underscores.me/
-        https://github.com/murtaugh/HTML5-Reset-WordPress-Theme
-        Custom post types & taxonomies -- segue into plugins
-        [~ 45mins]
+        Also, custom themes involve making changes directly to the files. A "child" folder is not needed.
+        
+        Rule of thumb: Use a child theme if you only want to make some small basic changes. Use a custom theme if you need a lot of customization. 
+        
+        But keep in mind that custom themes, even when using a starter theme, will require a bit more HTML/CSS/PHP knowledge.
+        
+        ---
+        ###Resources
+        
+        * [Why you should use a WordPress starter theme](https://thethemefoundry.com/blog/wordpress-starter-theme/)
+        * [WordPress Codex: Theme Development](https://codex.wordpress.org/Theme_Development)
+        * [WordPress Theme Development: Getting Started with Underscores (_s)](http://www.sitepoint.com/wordpress-theme-development-getting-started-with-underscores/)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #plugins
+        #Plugins
+        
+        WordPress plugins are bits of software that can be uploaded to your WordPress site to extend the functionality of your WordPress site.
+        
+        Earlier, we recommended using [Akismet](https://wordpress.org/plugins/akismet/) plugin to help with spam comments.
+        
+        Adding functionality with Plugins range from adding social media buttons and  related posts, to Google Analytics to adding eCommerce options and everything in between.  
+        
+        Just like themes, not all plugins are created equal.  Browse for plugins in the [WordPress Plugin Directory](https://wordpress.org/plugins/browse/popular/) and look out for things such as number of downloads, ratings and if it was updated recently.
+        
+        Plugins can be managed under the **Plugins** menu.
+        
+        ![](framework/img/workshop/admin-plugins.png)
+        
+        ---
+        ###Resources
+        
+        * [WPBeginner: Best WordPress Plugins](http://www.wpbeginner.com/category/plugins/)
+        * [What are WordPress Plugins?](https://ithemes.com/tutorials/what-are-wordpress-plugins/)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Custom themes
+        #Next Steps
         
+        Before going live, you'll need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
+        
+        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Domain and hosting - Use coupon code **LLC40** to get $40 off your registration!
+        * [hover.com](http://hover.com/ladiescode) - Domain registration
+
+        Why keep your domains and hosting separate? Learn more about Hover [here](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
+        
+        After securing domain & hosting, you'll need to move your local files and database to the live server.
+        
+        * [How to Move WordPress From Local Server to Live Site](http://www.wpbeginner.com/wp-tutorials/how-to-move-wordpress-from-local-server-to-live-site/)
+        * [Migrating a Local WordPress Installation to a Live Site - using a Plugin](https://premium.wpmudev.org/blog/guide-to-migrating-localhost-wordpress-to-live-site/)
+        * The premium version of the ServerPress DesktopServer app we've been using today includes a [direct deploy feature](https://serverpress.com/using-direct-deploy-to-launch-websites/). 
         
       </script>
     </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # how to make it live
-      </script>
-    </section>
-    
-    <section class="slide" data-markdown>
-      <script type="text/template">
-        # Resources
-        
-        https://codex.wordpress.org/Post_Formats
-        https://wordpress.org/support/
-        
-        * Glossary [http://www.wpbeginner.com/glossary/](http://www.wpbeginner.com/glossary/)
-        
-        mamp vs serverpress 
-        [Mamp](http://mamp.info) has been a go-to for many WordPress developers but today we'll be using the [DesktopServer](https://serverpress.com) app as this will reduce the need to manually create a database and streamline the WordPress installation process.
-        
-        If you're curious, read more about Mamp <!-- .element: class="footnote" --> [here](https://premium.wpmudev.org/blog/develop-wordpress-locally-mamp/).
-      </script>
-    </section>
-    
     
     <section class="slide last">
       <h2>Thank you!</h2>
 
       <h2 class="heading-bg">
-        <span></span><br>
-        <span></span>
+        <span> Intro to WordPress:</span><br>
+        <span>Create Your Own Theme </span>
       </h2>
       <!-- <h3><span>with</span> Instructor Name</h3>
 
@@ -1851,7 +1904,7 @@
       var ToC = "<ul>";
       var newLine, el, title, link;
 
-      jQuery(".slide > h1").each(function() {
+      jQuery("[data-toc] > h1").each(function() {
         el = jQuery(this);
         title = el.text();
         link = "#" + el.parent().attr("id");
