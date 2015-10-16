@@ -80,8 +80,7 @@
       <script type="text/template">
         #Course Outline
         
-        <div class="table-of-contents"></div>
-        
+        <div class="table-of-contents"></div>  
       </script>
     </section>
     
@@ -95,12 +94,13 @@
       <script type="text/template">
         #What is WordPress?
         
-        ![](framework/img/workshop/logo-wp.png)
+        <!-- ![](framework/img/workshop/logo-wp.png) -->
         
         * free, open source content management system (CMS)
         * can edit, publish content and manage the website using a graphical user interface, without editing the code or database (though you can!)
         * started as a blog publishing platform but can now be used for any type of website
-        * used by many individuals and companies (ladieslearningcode.com is powered by WordPress!)
+        * used by many individuals and companies  
+         ([ladieslearningcode.com](http://ladieslearningcode.com) is powered by WordPress!)
         * written primarily in [PHP](http://www.php.net) and [MySQL](http://www.mysql.com)
         * customizable core, can be extended and modified in anyway
         * large community of support
@@ -173,7 +173,7 @@
       <script type="text/template">
         #Local Development & server
         
-        Developing your website *locally* refers to developing it on your computer.  It can only be viewed on your computer (or whatever computer your files are on).
+        Developing your website *locally* refers to developing it on your computer and can only be viewed on your computer.
         
         It's better to develop your site & make changes locally rather than on your live web server, so you get a chance to test it before the world sees it.
         
@@ -181,7 +181,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         # Setting up your dev environment
         
@@ -198,25 +198,28 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Setting up your local server
+        # Setting up your local server & WordPress project
         
-        Open the DesktopServer app and let's follow the steps outlined in the getting started video below. The written instructions and some additional info are also found [here](https://serverpress.com/getting-started-with-desktopserver/). Once you've created a local WordPress site, you can access it with the **Sites** button. 
+        Open the DesktopServer app and let's follow the steps outlined in the getting started video below or using the written instructions [here](https://serverpress.com/getting-started-with-desktopserver/). 
+        
+        Once you've created a local WordPress site, you can access it with the **Sites** button. 
         
         <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
 
         ![](framework/img/workshop/desktopserver-sites.png)<!-- .element: height="315" -->
         
-        **You will need to run this local server anytime you're developing WordPress locally.**
+        ##Important!  
+        You will need to run a local server anytime you're developing WordPress locally.
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide title wp-site" data-markdown>
       <script type="text/template">
-        # celebratory gif here (10:45am)
+        #Say hello to your WordPress site!
       </script>
     </section>
     
-    <section class="slide title" data-markdown data-bg="admin-dashboard.png">
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #WordPress <br>Administration
       </script>
@@ -254,17 +257,21 @@
       <script type="text/template">
         # Dashboard > Home
         
-        The admin area defaults on the Dashboard Home page. 
+        The admin area defaults on the Dashboard Home page. Here you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog. 
         
-        Here you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog.
+        The other menus in the left sidebar allows access to additional settings such as:
         
-        The other menus in the left sidebar allows access to additional settings such as adding blog posts (**Posts**), pages (**Pages**), changing themes (**Appearance**), uploading media (**Media**) and other general site settings.
+        * adding blog posts (**Posts**)
+        * adding pages (**Pages**)
+        * changing themes (**Appearance**)
+        * uploading media (**Media**)
+        * other general site settings
         
-        Note that any content or settings that you add in any of the Admin area options are stored in your database.  That's how the CMS retains the settings and content, even when you change the theme to update the site layout.
+        Note that the content or settings updates added in any of the Admin area options are stored in your database.  That's how the CMS retains the content, even when you change the theme.
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Content Management
         ##Posts, Pages, Media & Comments
@@ -312,15 +319,15 @@
         ##Comments
         
         * manage all the comments left on your site
-        * edit, update, delete or mark comments as spam. 
-        * strongly recommended to use the [Akismet](https://en-ca.wordpress.org/plugins/akismet/) plugin to fight spam.
-        * go to **Settings > Discussion** menu to manage how or if comments are displayed
+        * edit, update, delete or mark comments as spam
+        * strongly recommended to use the [Akismet](https://en-ca.wordpress.org/plugins/akismet/) plugin to fight spam
+        * go to **Settings > Discussion** menu to manage how comments are displayed
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Exercise: Add some content (15mins) (finish by 11:15am)
+        # Exercise: Add some content (15mins)
         
         When designing a website, it's good to have some content before adding styles to add context to your page layouts. Follow the instructions below and [refer to the diagram](framework/img/workshop/admin-add-post.png) for more info.
         
@@ -351,7 +358,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         # Appearance Menus Overview
         
@@ -379,11 +386,11 @@
         
         ![](framework/img/workshop/admin-appearance.png)<!-- .element: class="left" -->
 
-        **Menus** are used to create site navigation links to pages, categories, tags, etc.
+        **Menus** are used to create the site navigation (links to pages, categories, tags, etc).
         
         The **Header** & **Background** feature allows you to manage images  displayed in the header and the look of the background for your theme.  This option will only be present if the theme author has configured these options to allow for this capability.
         
-        The **Editor** menu gives you access to edit the theme's PHP and CSS files but isn't the most intuitive way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
+        The **Editor** menu gives you access to directly edit the theme's PHP and CSS files but isn't the most intuitive way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
         
         ---
         ###Resources
@@ -394,7 +401,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Theme Development options
         
@@ -415,7 +422,7 @@
     </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #Free & Premium <br>Themes
       </script>
@@ -437,7 +444,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Sydney Theme (11:30)
+        # Sydney Theme
         
         This is what the site looks like with some basic content and the default settings. Much different from the Twenty Fifteen theme!
         
@@ -465,7 +472,7 @@
       <script type="text/template">
         # Appearance > Customize
       
-        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. Navigate to the **Customize** menu to view the options.
+        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. Navigate to the **Customize** menu to view the available options for this theme.
         
         ![](framework/img/workshop/admin-customize.gif)
       </script>
@@ -473,15 +480,15 @@
     
     <section id="heading-options" class="slide" data-markdown>
       <script type="text/template">
-        #Appearance > Customize: Site title/tagline/logo
+        #Customize: Site title/tagline/logo
         
         This setting gives you the option to display text or a logo in the header area.
         
-        ![](framework/img/workshop/admin-customize-title.gif)
+        ![](framework/img/workshop/admin-customize-title.gif)<!-- .element: width="80%" -->
         
         The **Site Title** & **Tagline** (but not uploading an image) can also be updated under **Settings > General**.
         
-        ![](framework/img/workshop/admin-general-title.png)
+        ![](framework/img/workshop/admin-general-title.png)<!-- .element: width="80%" -->
       </script>
     </section>
     
@@ -526,7 +533,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         # Custom Menu
         
@@ -560,7 +567,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Custom Menu (15mins) (finish at 12:10pm)
+        #Exercise: Custom Menu (15mins)
         
         Go to **Appearance > Menus** to add a menu. 
         
@@ -574,7 +581,7 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #WordPress Core Files <br>& Templates
       </script>
@@ -651,7 +658,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Setting Up Your Project
         
@@ -668,7 +675,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Setting Up Your Project (12:35)
+        #Setting Up Your Project
           
         In Atom, update the text wrapping option to make the code easier to read later on.  
         
@@ -732,9 +739,9 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
-        #Intro to PHP (1:20)
+        #Intro to PHP
                 
         How much PHP do you need to know?
         
@@ -826,12 +833,12 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class exercise: Write some PHP (finish at 1:45)
+        #Class exercise: Write some PHP
         
         1. Create a new file (**File > New File**) in your editor and save it as **test.php** in your root folder, to be able to find it easily.
   
           ![](framework/img/workshop/test-folder-directory.png)
-        1. Use an HTML tag to enclose the PHP content.
+        1. Use an HTML tag to enclose the PHP content. Use `echo` to output a message
           ```
           <p><?php echo "Hello!"; ?></p>
           ```
@@ -852,7 +859,7 @@
       <script type="text/template">
         #View the Source!
                 
-        Right-click or two-finger tap anywhere on the browser window and select **View Source**.
+        Right-click or two-finger tap anywhere on the browser window and select **View Page Source**.
         
         ![](framework/img/workshop/view-source.png)
         
@@ -975,11 +982,11 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Function arguments (2:10pm)
+        #Function arguments
         
         You can pass information into functions with *arguments*.  
         
-        Use a *parameter*, kind of like a placeholder, for the information you want to manipulate. The syntax for the parameter is just like a variable.  Use the `$` symbol.
+        Use a *parameter*, kind of like a placeholder, for the information you want to manipulate. The syntax for the parameter is just like a variable; use the `$` symbol.
         
         ##Class Exercise
         
@@ -998,7 +1005,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Wordpress Template Tags
         
@@ -1038,7 +1045,7 @@
       </script>
     </section>
 
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         #WordPress <br>Child Themes
       </script>
@@ -1053,7 +1060,7 @@
         * learn about WordPress theme development by reverse engineering existing code
         * recommended for modifying an existing theme
         * inherits the functionality and styling of parent theme and leverages existing code
-        * can make development faster since the main functionality, templates, etc, are already created
+        * main functionality, templates, etc, are already created
         
         If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme your modifications will be preserved.
       </script>
@@ -1078,7 +1085,7 @@
           
           In your text editor, create a new file (**File > New File** or **command/control + N**) and save it as **style.css**. It has to be named *exactly* as **style.css** and saved in your child theme folder, **sydney-child**.
           
-          Your stylesheet **must** also contain specific header comments, at the top of the file, to tell WordPress information about the theme, including defining the parent theme.
+          Your stylesheet **must** also contain specific header comments, at the top of the file, to tell WordPress information about the theme, including the parent theme.
             
           ```css
           /*
@@ -1142,7 +1149,7 @@
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Activate your Child Theme (2:30)
+        #Activate your Child Theme
         
         Your new child theme is now available under the **Appearance > Themes** menu.   
         Hover over the theme to see the button to activate it. 
@@ -1181,7 +1188,7 @@
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Custom Theme Screenshot (3pm)
+        #Custom Theme Screenshot
         
         To create a thumbnail screenshot for your theme, create an image and name it `screenshot.png`. Place it in the root of your theme folder.
         
@@ -1215,7 +1222,7 @@
       </script>
     </section>
     
-    <section class="slide side-by-side" data-markdown>
+    <section class="slide side-by-side" data-markdown data-toc>
       <script type="text/template">
         #Editing Template files
         
@@ -1269,7 +1276,7 @@
     
     <section class="slide no-bullet-list" data-markdown>
       <script type="text/template">
-        #Template files & Hierarchy (3pm)
+        #Template files & Hierarchy
         
         `page.php` is the template for single (static) page types. `index.php` can be used as well, but if `page.php` exists, it will take precedence.
         
@@ -1298,13 +1305,14 @@
         
         In the text editor, open `page.php`, contained in the parent theme folder, **sydney**. 
         
-        Let's add a note, "page.php template", somewhere on the page where it will be seen. If we see our note when viewing the page in the browser, then it's confirmed that we have the correct template!
+        Let's add a note, something like "page.php template", somewhere on the page where it will be seen. If we see our note when viewing the page in the browser, then it's confirmed that we have the correct template!
         
         ![](framework/img/workshop/template-test.png)
         
         We should now see the note.
         
         ![](framework/img/workshop/template-test-home.png)
+        
         ![](framework/img/workshop/template-test-about.png)
       </script>
     </section>
@@ -1370,9 +1378,9 @@
         
         ```php
         <?php if ( have_posts() ) : ?> // if we have posts
-            <?php while ( have_posts() ) : the_post(); ?> // while we have post_class
+            <?php while ( have_posts() ) : the_post(); ?> // while we have posts
               
-              // add instructions here to pull out some or all of the content contained in the database - usually with a combination of HTML & template tags
+              // add instructions here to pull out some or all of the content contained in the database for that post - usually with a combination of HTML & template tags
               
             <?php endwhile; ?> // end while
         <?php endif; ?> // end the if statement
@@ -1386,9 +1394,9 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Editing Templates (3:20)
+        #Editing Templates
         
-        Back in our `page.php`, within the loop, let's look at this line:
+        Back in `page.php`, within the loop, let's look at this line:
         
         ```
         <?php get_template_part( 'content', 'page' ); ?>
@@ -1449,7 +1457,7 @@
     
     <section class="slide side-by-side" data-markdown>
       <script type="text/template">
-        #Ta da!
+        #Editing Templates
         
         Your home and about page should look like the below example now. No more post title, sidebar or comments. 
         
@@ -1459,6 +1467,8 @@
         ![](framework/img/workshop/child-theme-about.png)
       </script>
     </section>
+    
+    <section class="slide ta-da"></section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -1481,11 +1491,11 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
-        #CSS Crash Course (3:35)
+        #CSS Crash Course
         
-        When using a child theme, you'll mostly be make revisions to existing styles so much of your CSS changes will need to override the parent theme's styles.  Let's go over some CSS syntax & terminology.
+        ##Syntax & terminology
         
         **Selectors** are used to determine which HTML element(s) to apply the styles to.
         
@@ -1579,7 +1589,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Change some CSS!
         
@@ -1645,7 +1655,7 @@
       <script type="text/template">
         #Update style.css 
         
-        The color of this heading is set using a *different* selector that targets the link, inside of the `<h1>` tag. That's why our CSS additions wasn't working.
+        The color of this heading is set using a *different* selector that targets the link, inside of the `<h1>` tag. That's why our CSS addition wasn't working.
         
         ![](framework/img/workshop/inspect-element-css-2.gif)
       </script>
@@ -1657,7 +1667,7 @@
         
         There seem to be multiple selectors being used to set the colour. How do you know which one to use?
         
-        When inspecting the element, (1) shows as crossed out. That means something else is using a more specific selector and is overriding. So, that means the selector shown in (2) should be used.  
+        When inspecting the element, (1) shows as crossed out. That means something else is using a more specific selector and is overriding it. So, that means the selector shown in (2) should be used.  
         
         ![](framework/img/workshop/css-change-2.png)
       </script>
@@ -1697,7 +1707,7 @@
         
         You can still write your own CSS without inspecting the elements to find specific selectors, but based on the rules of CSS specificity, sometimes the style may not show as expected.
         
-        Another options is to take advantage of the `body_class();` template tag. This is usually included in the `<body>` tag of the `header.php` template file like so:
+        Another option is to take advantage of the `body_class();` template tag. This is usually included in the `<body>` tag of the `header.php` template file like so:
           
         ```
         <body <?php body_class(); ?>>
@@ -1759,7 +1769,7 @@
         }
         ```
         
-        But we could also target the elements to be changed, combined with the body class selector, to create a more specific selector.
+        But we could also target the elements using with the body class selector, to create a more specific selector.
         
         ```css
         .blog .title-post {
@@ -1797,7 +1807,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Plugins
         
@@ -1821,7 +1831,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #Next Steps
         
@@ -1895,12 +1905,12 @@
       jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
       
       // adds full bg-images
-      var bgImg = jQuery('[data-bg]').attr("data-bg");
-      jQuery('[data-bg]').attr( "data-bg", function() {
-        jQuery(this).css({
-          "background-image": "url(framework/img/workshop/" + bgImg + ")"
-        });
-      });
+      // var bgImg = jQuery('[data-bg]').attr("data-bg");
+      // jQuery('[data-bg]').attr( "data-bg", function() {
+      //   jQuery(this).css({
+      //     "background-image": "url(framework/img/workshop/" + bgImg + ")"
+      //   });
+      // });
       
       jQuery( "h3:contains('Resources'), h3:contains('Resource')" ).addClass("resources");
       
