@@ -1582,7 +1582,7 @@
         }
         ```
 
-        When setting up the child theme, the script used to enqueue the parent and child theme stylesheets not only connected the parent stylesheet to the child theme but also to ensure that the child theme stylesheet would load after to be able to override the parent styles as needed.
+        When setting up the child theme, the script used to enqueue the parent and child theme stylesheets ensures that the parent and child themes are loaded in such a way that the child theme css can override the parent theme css file.
       </script>
     </section>
     
@@ -1639,23 +1639,18 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Update style.css
+        #Class Exercise: Update style.css
         
         Open `style.css` from your child theme folder, **sydney-child**, in the text editor.
         
-        Using the identified selectors, make some changes!  Here's a few examples:
+        Using the identified selector, make some changes!  Let's try updating the font-size and colour:
         
         ```css
-        body {
-          color: #222222; /* dark gray, almost black */
-          font-size: 18px;
-        }
         .hentry .title-post {
           font-size; 40px;
           color: #B109AA; /* LLC purply pink! */
         }
         ```
-        
         ---
         ###Resources
         
@@ -1663,6 +1658,71 @@
         * [Mozilla Developer Network: CSS Text Styles](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Text_styles)
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Update style.css
+        
+        Uh oh. How come only the `font-size` change is showing but not the color? 
+        
+        Inspecting the element shows that (1) the new css is being loaded and (2) the `font-size` is overriding the previous styles. But still no color change.
+        
+        **Hint**: See the arrow beside the `<h2>`? Click to open.
+        
+        ![](framework/img/workshop/css-change-1.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Update style.css 
+        
+        The color of this heading is set using a *different* selector that targets the link, inside of the `<h1>` tag. That's why our CSS additions wasn't working.
+        
+        ![](framework/img/workshop/inspect-element-css-2.gif)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Update style.css 
+        
+        There seem to be multiple selectors being used to set the colour. How do you know which one to use?
+        
+        When inspecting the element, (1) shows as crossed out. That means something else is using a more specific selector and is overriding. So, that means the selector shown in (2) should be used.  
+        
+        ![](framework/img/workshop/css-change-2.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Update style.css 
+        
+        This snippet below indicates that all of the links (`a`) contained within all of the headings (`h1, h2, etc`) will show the same colour by *combining* the selectors into a list separated by a comma.
+        ```css
+        h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+          color: #d65050;
+        }
+        ```
+        
+        If you only want to change the color for this specific heading, use just `h2 a` as your selector. Notice that when inspecting an element, the specific element being selected is highlighted when included in a list of combined selectors.
+        
+        ![](framework/img/workshop/inspect-css-selectors.png)
+        
+        Update style.css with the new selector.
+        
+        ```css
+        .hentry .title-post {
+          font-size: 40px;  
+        }
+        h2 a {
+          color: #B109AA; /* LLC purply pink!*/
+        }
+        ```
+      </script>
+    </section>
+    
     
     <section class="slide" data-markdown>
       <script type="text/template">
