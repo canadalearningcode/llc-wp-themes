@@ -109,7 +109,10 @@ ul {
     padding-right: 10px;
   }
 }
-
+.cursive {
+  font-family: $cursive;
+  color: $llc-pink;
+}
 .two-col-list > {
   ul, ol {
     overflow: hidden;
@@ -425,18 +428,28 @@ e.g.
   }
 }
 
-/* Title & Intro slides
-------------------------*/
-.logo {
-  height: 65px;
-  margin-left: -19px;
-}
-
+/* Pre-workshop instructions
+-----------------------------*/
 header {
-  background: #111;
-      
+  font-size: $font-size-base + 2;
+  
+  &.slide {
+    padding: 0;
+  }
+  .bg {
+    background: #111;
+  }
+  .bg, 
+  .instructions {
+    padding: 40px 64px 10px;
+  }
+  .logo {
+    float: left;
+    margin: 0 25px 0 -19px;
+    height: 50px;
+  }
   h1 {
-    padding-bottom: 15px;
+    font-weight: 400;
       
     .en & {
       font-size: 55px;
@@ -447,43 +460,27 @@ header {
       margin-top: 5px;
     }
   }
-  h3 {
-    margin: 15px 0;
+  h2 {
+    font-size: 26px;
+    float: left;
+  }
+  p, 
+  .instructions > ul {
+    margin: 0 0 0 235px;
+  }
+  .instructions > ul > li {
+    margin-bottom: 20px;
   }
   a {
-    letter-spacing: 0.1em;
-    border-bottom: none;
-  }
-  &.slide {
-    padding: inherit 64px;
-  }
-  .logo {
-    float: left;
-    margin-right: 25px;
-    height: 50px;
-  }
-  .instructions {
-    background: #ecf0f1;
-    margin: 0 -64px;
-    padding: 20px 45px;
-  }
-  h2 {
-    font-size: 24px;
-    float: left;
-  }
-  p, ol, ul {
-    margin: 0 0 15px 220px
-  }
-  .sponsor {
-    color: #ecf0f1;
-    
-    img {
-      margin-left: 10px;
-      width: 120px;
-    }
+    letter-spacing: 0.1em; 
+    font-size: inherit;
   }
 }
-.intro {
+
+/* Instructor Info
+-------------------*/
+.intro, 
+.last {
   /*uncomment this if you don't want to use a background image */
   // background: $gray-dark; 
   background: linear-gradient(rgba($black, 0.7),
@@ -498,46 +495,45 @@ header {
     color: $white;
     font-weight: 400;
   }
-  .connected {  
-    font-size: 30px;
-    
-    span { 
-      display: inline-block;
-      padding: 6px 10px;
-    }
-    strong {
-      letter-spacing: 0.25rem;
-    }
-  }
-  .info {
-    ul {
-      @include list-reset();
-      font-size: 2.2rem;
-    }
-    .fa {
-      padding-right: 10px;
-    }
-    a {
-      color: $white;
-    }
-  }
-  .instructor-img {
+  .instructor {
     border-radius: 50%;
-    width: 100px;
+    max-width: 225px;
     float: left;
-    margin-right: 20px;
+    margin-right: 30px;
   }
   h2 {
-    margin-bottom: 20px;
-    color: $white;
-
+    margin: 50px 0 20px;
+    font-weight: 400;
+    font-size: $font-sz-heading;
+    
     span {
-      color: $llc-pink;
-      font-family: $cursive;
       margin-right: 4px;
-      font-size: 3rem;
-      text-transform: lowercase;
-      font-weight: 400;
+    }
+  }
+  ul li:before {
+    content: "";
+  }
+  .fa {
+    padding: 0 10px;
+  }
+  a {
+    color: $white;
+  }
+}
+.last {
+  background: #222;
+  
+  .heading-bg {
+    font-family: $heading-font;
+    text-transform: uppercase;
+  }
+  .attribution {
+    position: absolute;
+    bottom: 5px;
+    font-size: $font-size-xsm;
+    
+    a {
+      color: $llc-pink;
     }
   }
 }
@@ -556,50 +552,7 @@ header {
 }
 
 
-/* Last/ Instructor info slide
--------------------------------*/
-.last {
-  ul {
-    @include list-reset();
-    font-size: 2.2rem;
-  }
-  .fa {
-    padding-right: 10px;
-  }
-  .heading-bg {
-    margin-top: 40px;
 
-    span {
-      background: rgba($llc-pink, 0.8);
-      color: $white;
-      border-radius: 5px;
-      padding: 0 10px 0 6px;
-      text-transform: uppercase;
-    }
-  }
-  .instructor-img {
-    border-radius: 50%;
-    width: 100px;
-    float: left;
-    margin-right: 20px;
-  }
-  h3 {
-    margin-bottom: 20px;
-
-    span {
-      color: $llc-pink;
-      font-family: $cursive;
-      margin-right: 4px;
-      font-size: 3rem;
-      text-transform: lowercase;
-      font-weight: 400;
-    }
-  }
-  .attribution {
-    position: absolute;
-    bottom: 20px;
-  }
-}
 
 
 /* highlight.js customizations
