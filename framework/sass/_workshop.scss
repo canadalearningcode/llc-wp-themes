@@ -1,52 +1,8 @@
 /* Styles specific to this workshop
 ------------------------------------*/
-/* .wp-intro {
-  img {
-    float: right;
-    margin: -60px 20px 20px 50px;
-  }
-} */
-.wp-site {
-  background: url(../img/workshop/excited-kelly-r.gif);
+.slide.intro {
+  background: linear-gradient(rgba($black, 0.7),
+              rgba($black, 0.7)), 
+              url(../img/banner-home2.jpg) no-repeat;
   background-size: cover;
-  
-  h1 {
-    color: white;
-  }
-}
-.ta-da {
-  background: url(../img/workshop/ta-da.gif);
-  background-size: cover;
-}
-.post-pages {
-  img {
-    width: 60%;
-    margin-bottom: 10px;
-  }
-  .note {
-    font-size: 14px;
-  }
-}
-.appearance-customize {
-  img {
-    margin-right: 20px;
-    
-    &:first-child{
-      width: 240px;
-      float: left;
-    }
-    &:last-child {
-      width: 350px;
-    }
-  }
-}
-.wp-content {
-  ul {
-    margin-left: 50px;
-  }
-}
-.css-review {
-  pre:nth-of-type(2n+2){  
-    margin-top: -10px;
-  }
 }
