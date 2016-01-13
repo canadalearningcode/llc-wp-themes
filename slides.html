@@ -571,11 +571,11 @@
         
         ![](framework/img/workshop/menu-default.png)<!-- .element: class="left" height="600" -->
         
-        Blog page templates generally default to include a sidebar with widgets (Recent Posts, Recent Comments, etc).
+        Since WordPress starting as a blogging platform, the default homepage for all WordPress sites is a listing of your blog posts.
         
-        Also by default, the homepage for all WordPress sites is a listing of your blog posts. 
+        Blog page *templates* also generally default to include a sidebar with widgets (Recent Posts, Recent Comments, etc).
         
-        These settings and styles can be changed. Let's look at the home page settings first.
+        These settings and styles can be changed. Let's look at the homepage settings first.
       </script>
     </section>
     
@@ -583,9 +583,7 @@
       <script type="text/template">
         # Custom Menu
         
-        By default, all WordPress sites show your latest blog posts as the home page. 
-        
-        But what if you wanted a navigation that looked like this:
+        If the default homepage is a listing of latest blog posts, how do create and navigate to a homepage? What if you wanted a navigation that looked like this:
         
         ![](framework/img/workshop/custom-menu.png)
         
@@ -593,37 +591,51 @@
         `About` - link to a page with some static info about you  
         `Blog` - link to a page showing all blog posts  
         
-        These settings can be changed!
+        These settings can be changed when creating a menu.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Custom Menu
+        #Class Exercise: Update Page Settings
 
-        Before creating a navigation menu, update your settings to select which **page** should be displayed as the home page, as well as the page for the blog (since it won't be the default home page anymore).  Remember the Home and Blog pages we created earlier? We're going to use them now.
+        Before creating the actual navigation menu, update your default settings to change which *page* will display as the home page and for the blog (since it won't be the default home page anymore). 
         
-        Go to the **Settings > Reading** menu to update these settings. 
+        Remember the Home and Blog pages we created earlier? We're going to use them now.
         
-        While we're here, make sure the SEO setting is unchecked to allow indexing of your site (once it goes live).
+        Go to the **Settings > Reading** menu to update these settings.  You can also uncheck the SEO setting to allow indexing of your site.
         
-        ![](framework/img/workshop/admin-settings-reading.png)<!-- .element: width="80%" -->
+        ![](framework/img/workshop/admin-settings-reading.png)
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Exercise: Custom Menu (15mins)
+        #Adding a Menu
         
-        Go to **Appearance > Menus** to add a menu. 
+        Go to **Appearance > Menus** to add a menu. You'll see options to add pages, blog posts, categories and tags to your menu.  
         
-        Here you will see options to add pages, specific blog posts, categories and tags to your menu.  Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.  
+        Drag and drop to reorder menu items.  Sub-menus can also be created by dragging the item underneath the intended parent item.  
         
-        The below example shows the settings for the navigation in the [previous](framework/img/workshop/custom-menu.png) example.
+        <!-- The below example shows the settings for the navigation in the [previous](framework/img/workshop/custom-menu.png) example. -->
         
-        ![](framework/img/workshop/admin-menus.gif)<!-- .element: width="80%" -->
+        ![](framework/img/workshop/admin-menus.gif)
         
         Click [here](framework/img/workshop/admin-menus.png) to see screenshot of the settings.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Exercise: Add a  Menu (15mins)
+        
+        Go to **Appearance > Menus** to add your menu.  
+        
+        Add the **Home**, **About** and **Blog** pages to your navigation. It should look similar to the example below.
+        
+        ![](framework/img/workshop/custom-menu.png)
+        
+        Click [here](framework/img/workshop/admin-menus.png) to see screenshot of the settings (but only if you're stuck)!
       </script>
     </section>
     
@@ -639,9 +651,9 @@
         
         The WordPress core files can be found under **Documents > Websites** (the default directory created during the DesktopServer setup). These files were added during the installation process.
         
-        Though you can access all of these files, there are some that should never be edited.  The majority of your edits will be contained in the **wp-content** folder.
+        Though you can access all of these files, the core WP files should never be edited.  Most of your edits will be in the **wp-content** folder.
           
-        ![](framework/img/workshop/wp-core-files.png)<!-- .element: width="85%" --> 
+        ![](framework/img/workshop/wp-core-files.png)
         
         <!-- .element: class="note" -->**Note!**  
         There is one file outside of **wp-content** that you may need to edit. **wp-config.php** contains the website's base configuration details, such as database connection information.  When using the DesktopServer app, you do not need to edit this file to set up a local server but some other applications as well as adding certain customizations may require edits.
@@ -655,38 +667,18 @@
       </script>
     </section>
     
-    <section class="slide wp-content" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #What's in wp-content?
         
         ![](framework/img/workshop/wp-content-files.png)<!-- .element: class="left" -->
         
-        When you upload plugins, themes & media files using the WordPress admin menus, they automatically get added to these folders.  
+        When uploading themes, media files and plugins using the WordPress admin menus, they are  automatically added to these folders.<br><br><br>
+        You can also manage these files by directly adding or deleting files in the folders rather than using the WordPress admin menus.
         
-        But, you can also manage these files by directly adding or deleting files in the folders rather than using the WordPress admin menus.
-        
-        <!-- .element: style="clear:both;" --><br>**Important**!  
-        When adding themes or plugins directly to these folders, the zip files need to be unzipped first. But they still need to be activated in the WordPress admin settings. 
-        
-        Take a look in each folder to familiarize yourself with the files directories.
+        **Important**! When adding themes or plugins directly to these folders, the zip files need to be unzipped first. But they still need to be activated in the WordPress admin settings.
       </script>
     </section>
-    
-<!--     <section class="slide" data-markdown>
-  <script type="text/template">
-    #Theme Templates
-    
-    Themes include multiple templates for displaying content.  For example, on a blog page, you might want to show a sidebar with links to recent posts and archives. 
-    
-    But you may not want to show a sidebar on the homepage.  You can change that by not including the sidebar code in your page template file or by creating additional custom page templates. 
-    
-    In the current theme, there are currently two custom options to choose from in additional to the default. Stick with the default template for now. 
-    
-    ![](framework/img/workshop/template-change.png).element: width="80%"
-    
-    Where are these templates and how do they work?
-  </script>
-</section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -694,13 +686,29 @@
         
         ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
         
-        Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often, these templates contain code for only a portion of a page. These partials fit together like a puzzle to generate full web pages.
+        Themes are a collection of [template files](https://developer.wordpress.org/themes/basics/template-files/). Often templates contain code for a portion of a page (e.g. header, footer). 
+        
+        These partials fit together like a puzzle to generate full web pages.
         
         Some templates are re-used across multiple pages such as the header and footer. Some are only used for specific conditions.
         
+        ---
+        ###Resource
+        * https://developer.wordpress.org/themes/basics/template-files/
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Theme Template Files
+        
+        ![](framework/img/workshop/theme-template.png)<!-- .element: class="left" -->
+        
         WordPress is based on PHP so the files must use a `.php` extension.
         
-        Content entered in the backend (posts, site title, media, etc) is stored in the *database* allowing you to update themes and keep your content.
+        WordPress also has specific naming conventions for template files. (e.g. header.php is for header content)
+        
+        Content entered in the backend (posts, site title, etc) is stored in the *database*, allowing you to update themes files without losing your content.
       </script>
     </section>
     
@@ -708,14 +716,16 @@
       <script type="text/template">
         #Setting Up Your Project
         
-        Open the text editor and add your new WordPress site project folder.  
+        Open the text editor and add your WordPress project folder.  
+        Go to **File > Add Project Folder** and click your project's folder (project-name.dev) *once* and select **Open**.  
         
-        Go to **File > Add Project Folder** and click on your project's folder (your-project-name.dev) *once* and select **Open**. Unless you changed the default path during the ServerPress setup, it should be located under **Documents > Websites**.  
+        ![](framework/img/workshop/open-project.jpg)
+        
+        Unless you changed the default path during the ServerPress setup, it should be located under <!-- .element: class="note" --> **Documents > Websites**.  
         
         Once open, the folders and all its content will show in the sidebar.
         
-        <!-- ![](framework/img/workshop/open-project.png) -->
-        ![](framework/img/workshop/open-project.gif)<!-- .element: width="80%" -->
+        ![](framework/img/workshop/open-project.gif) <!-- .element: width="80%" -->
       </script>
     </section>
     
@@ -723,11 +733,13 @@
       <script type="text/template">
         #Setting Up Your Project
           
-        In Atom, update the text wrapping option to make the code easier to read later on.  
+        In Atom, update the text wrapping option to make the code easier to read later on.  Go to **Preferences** and a Settings tab will open. 
+
+        ![](framework/img/workshop/atom-preferences.jpg)<!-- .element: width="70%" -->
+
+        Scroll down to **Soft Wrap** and make sure it's checked.
         
-        Go to **Preferences** and a Settings tab will open. Scroll down to **Soft Wrap** and make sure it's checked.
-        
-        ![](framework/img/workshop/atom-soft-wrap.gif)
+        ![](framework/img/workshop/atom-soft-wrap.jpg)<!-- .element: width="70%" -->
       </script>
     </section>
     
