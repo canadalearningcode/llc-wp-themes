@@ -31,6 +31,6 @@ $font-size-xsm:         $font-size-base - 10;
 $font-size-footnote:    $font-size-base - 16;
 $font-size-heading:     40px;
 $font-size-heading-lg:  75px;
-$font-size-heading-sm:  28px;
+$font-size-heading-sm:  $font-size-base + 2;
 $line-height:           1.4;
 

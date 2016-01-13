@@ -3,6 +3,54 @@
 .slide.intro {
   background: linear-gradient(rgba($black, 0.7),
               rgba($black, 0.7)), 
-              url(../img/banner-home2.jpg) no-repeat;
+              url(../img/banner-home4.jpg) no-repeat;
   background-size: cover;
+}
+
+.title.wp-site {
+  background: url(../img/workshop/excited-kelly-r.gif);
+  background-size: cover;
+  
+  h1 {
+    margin-top: 25%;
+    background: rgba(0,0,0,0.8);
+  }
+}
+
+.post-pages {
+  img {
+    float: left;
+    width: 35%;
+    margin-right: 40px;
+  }
+  ul:first-of-type {
+    margin: -15px 0;
+  }
+}
+
+.appearance-customize {
+  img {
+    margin-right: 20px;
+    float: left;
+  }
+  p:last-child {
+    margin-top: 70px;
+  }
+}
+
+.ta-da {
+  background: url(../img/workshop/ta-da.gif);
+  background-size: cover;
+}
+
+
+.wp-content {
+  ul {
+    margin-left: 50px;
+  }
+}
+.css-review {
+  pre:nth-of-type(2n+2){  
+    margin-top: -10px;
+  }
 }

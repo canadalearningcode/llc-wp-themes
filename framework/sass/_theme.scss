@@ -86,6 +86,12 @@ hr {
   border: none;
   border-top: 1px solid $gray-light;
   clear: both;
+  display: inline-block;
+  width: 100%;
+  
+  + p {
+    margin-top: 0;
+  }
 }
 ul, ol {
   padding: 0;
@@ -176,9 +182,6 @@ p {
   }
 }
 
-iframe {
-  margin-bottom: 20px;
-}
 strong {
   font-weight: 700;
   color: black;
@@ -249,7 +252,8 @@ td {
     padding-left: 10px;
   }  
 }
-img.left {
+img.left,
+iframe.left {
   margin-right: 30px;
 }
 .right {

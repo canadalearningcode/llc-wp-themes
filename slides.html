@@ -25,18 +25,19 @@
       
       <div class="instructions no-bullet-list">
         <!-- ADD WIFI INFO HERE -->
-        <h2>Get Connected</h2>
+        <!-- <h2>Get Connected</h2>
         <ul class="connected">
           <li>Network: wifi network</li>
           <li>Password: wifi password</li>
         </ul>
-        <hr>
+        <hr> -->
         
         <h2>Download<br> & Install</h2>
         <ul class="downloads">
-          <li>Slides: <a href="http://bitly.com/llc-wp-slides">http://bitly.com/llc-wp-slides</a></li>
+          <li>Slides {to slides or zip?}: <a href="http://bitly.com/llc-wp-slides">http://bitly.com/llc-wp-slides</a></li>
           <li>DesktopServer app, free version (can take up to 15 mins):
-            <a href="https://serverpress.com/get-desktopserver/">https://serverpress.com/get-desktopserver</a>
+            <a href="https://serverpress.com/get-desktopserver/">https://serverpress.com/get-desktopserver</a><br>
+            Download instructions screencast <a href="https://www.youtube.com/watch?v=d_MoCUKv3TI">here</a>
           </li>
           <li>Atom Editor: <a href="http://atom.io">http://atom.io</a></li>
           <li>Chrome Browser: <a href="https://www.google.ca/chrome/browser/desktop/">https://www.google.ca/chrome</a></li>
@@ -58,13 +59,13 @@
       </h1>
       
       <!-- FILL IN INSTRUCTOR DETAILS -->
-      <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
+      <!-- <img class="instructor" src="http://placehold.it/225x225" alt="Instructor Name">
       <h2><span class="cursive">with</span> Instructor name</h2>  
       <ul>
         <li><a href="mailto:">hello@email.com</a></li>
         <li><a href="http://website.com">website.com</a></li>
         <li><a href="http://twitter.com/">@twitter</a></li>
-      </ul>
+      </ul> -->
       
       <div class="sponsor">
         <p>In partnership with<br> <img src="framework/img/telus-logo-white.svg" alt="Telus"></p>
@@ -90,20 +91,16 @@
       </script>
     </section>
     
-    <section class="slide wp-intro" data-markdown data-toc>
+    <section class="slide" data-markdown data-toc>
       <script type="text/template">
         #What is WordPress?
         
-        <!-- ![](framework/img/workshop/logo-wp.png) -->
-        
-        * free, open source content management system (CMS)
-        * can edit, publish content and manage the website using a graphical user interface, without editing the code or database (though you can!)
-        * started as a blog publishing platform but can now be used for any type of website
+        * free & open source content management system (CMS)
+        * can edit, publish content and manage the website using a user interface, without editing the code or database (though you can!)
+        * started as a blog publishing platform
         * used by many individuals and companies  
          ([ladieslearningcode.com](http://ladieslearningcode.com) is powered by WordPress!)
         * written primarily in [PHP](http://www.php.net) and [MySQL](http://www.mysql.com)
-        * customizable core, can be extended and modified in anyway
-        * large community of support
         * and much [more](https://codex.wordpress.org/WordPress_Features)!
       </script>
     </section>
@@ -113,16 +110,16 @@
         #WordPress.com vs WordPress.org
         
         * WordPress**.com**
-          * hosted and all technical maintenance handled by WordPress
+          * all technical maintenance & hosting handled by WordPress
           * has fewer options for customizing
           * do not need to edit the code
           * some paid upgrades available for some customization
-          * no plugins
+          * no plugins :(
         * WordPress**.org**
           * provides the codebase for free to download & edit
           * must purchase your own domain and hosting 
           * you have full control over theme files & code
-          * plugins!
+          * plugins :)
         
         Today we'll be exploring the **.org** version.
         
@@ -155,17 +152,23 @@
       <script type="text/template">
         # What is PHP?
 
-        * PHP requires a *server* to run so you can't just simply open a PHP file in your browser to see the content
+        * PHP requires a *server* to run so you can't just open a PHP file in the browser to see the content (like HTML)
         * has been around since the 90s
-        * originally stood for **Personal Home Page** but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP.)
+        * was an acronym for **Personal Home Page** but now stands for **PHP: Hypertext Preprocessor** (Yep, that first “P” stands for PHP)
         * can be written on its own or mixed with HTML
         * used to make a website *dynamic* and generate HTML 
+      </script>
+    </section>
         
-        <!-- <br>
-        **How much PHP do you need to know?**  
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #How much PHP do you need to know?  
         
-        This depends on the level of customization required. However, much of the customizations can be achieved using WordPress [template tags](http://codex.wordpress.org/Template_Tags) and are all documented in the Codex. -->
+        This depends on the level of customization required. 
         
+        However, much of the customizations can be achieved using WordPress [template tags](http://codex.wordpress.org/Template_Tags) and are all documented in the Codex.
+        
+        We'll also discuss the different levels of customizations.
       </script>
     </section>
     
@@ -173,11 +176,11 @@
       <script type="text/template">
         #Local Development & server
         
-        Developing your website *locally* refers to developing it on your computer and can only be viewed on your computer.
+        Developing your website *locally* refers to developing it on your computer.
         
-        It's better to develop your site & make changes locally rather than on your live web server, so you get a chance to test it before the world sees it.
+        It's better to develop your site locally rather than on a live web server, so you get a chance to test it before the world sees it.
         
-        Since WordPress runs on PHP, which is a server-side language, a *server* is needed to run the files before you can view the content in a web browser.
+        Since WordPress runs on PHP, which is a server-side language, a *server* is needed to run the files. You will need a *local* server to do local development.
       </script>
     </section>
     
@@ -186,30 +189,34 @@
         # Setting up your dev environment
         
         ##Text Editor
-        There are many [free and premium editors](http://www.creativebloq.com/netmag/10-great-text-editors-web-designers-71412411) to choose from. Choose one that has features that help your workflow. Today we'll be using [Atom](http://atom.io).
+        There are many [editors](http://www.creativebloq.com/netmag/10-great-text-editors-web-designers-71412411) to choose from. Today we'll use [Atom](http://atom.io).  
+        <span class="note">(If you have another editor, it should be fine but some of the features may be slightly different.)</span>
         
-        ##A web browser
+        ##A modern web browser
         Using a [modern web browser](http://browsehappy.com/) will enhance your web experience as well as give you access to useful dev tools. Today we'll be using [Chrome](https://www.google.com/chrome/).
         
         ##Local Server
-        A local server setup will ensure that you can make edits locally. Today we'll be using the [DesktopServer](https://serverpress.com) app from ServerPress.  This app reduces the need to manually create a database and streamlines the WordPress installation process.
+        Today we'll be using the [DesktopServer](https://serverpress.com) from ServerPress.  
+        
+        ---
+        <!-- .element: class="note" -->[Mamp](https://www.mamp.info/en/) is a very popular & common option for local servers and has more features than the free version of DesktopServer but this app streamlines the WordPress installation process. The extra features contained in Mamp are not needed for today.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
         # Setting up your local server & WordPress project
+
+        <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
         
         Open the DesktopServer app and let's follow the steps outlined in the getting started video below or using the written instructions [here](https://serverpress.com/getting-started-with-desktopserver/). 
         
-        Once you've created a local WordPress site, you can access it with the **Sites** button. 
+        ---
         
-        <iframe class="left" width="420" height="315" src="https://www.youtube.com/embed/Po0MkaL8Fgc" frameborder="0"></iframe>
-
-        ![](framework/img/workshop/desktopserver-sites.png)<!-- .element: height="315" -->
+        ![](framework/img/workshop/desktopserver-sites.png)<!-- .element: class="left" width="420" --> Once you've created a local WordPress development site, access it via the **Sites** button. 
         
-        ##Important!  
-        You will need to run a local server anytime you're developing WordPress locally.
+        ----
+        ###Pro tip! You will need to run a local server anytime you're developing WordPress locally!
       </script>
     </section>
     
@@ -227,18 +234,18 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # WordPress Settings
+        # WordPress Admin
         
         Let's get acquainted with the WordPress Admin area. Getting to know the backend is key to theme customization.  
         
-        When using a local server, `http://your-project-name.dev` is the domain. To access the Admin Area, just add `/wp-admin/` to the end. 
+        When using a local server, `http://your-project-name.dev` is the domain. Access the Admin by adding `/wp-admin/` to the end. 
         
         ```
         http://your-project-name.dev/wp-admin/
         ```
         This works for any WordPress site you have admin access to, whether it's a live or local site.<!-- .element: class="note" -->
         
-        If you're already logged in, you can also access it from the admin toolbar by selecting your site name. Click on it again to get back to your site.
+        If you're logged in, you can access it from the admin toolbar by selecting your site name. Click on it again to get back to your site.
         
         ![](framework/img/workshop/admin-login.gif)
         
@@ -257,9 +264,9 @@
       <script type="text/template">
         # Dashboard > Home
         
-        The admin area defaults on the Dashboard Home page. Here you can view your drafts, check out basic stats, respond to comments and get a general overview of your blog. 
+        The admin area defaults to the Dashboard page where you can view drafts, see basic stats and get a general overview of your blog/website. 
         
-        The other menus in the left sidebar allows access to additional settings such as:
+        The menus in the sidebar allows access to additional settings such as:
         
         * adding blog posts (**Posts**)
         * adding pages (**Pages**)
@@ -267,7 +274,7 @@
         * uploading media (**Media**)
         * other general site settings
         
-        Note that the content or settings updates added in any of the Admin area options are stored in your database.  That's how the CMS retains the content, even when you change the theme.
+        <!-- .element: class="note" -->**Note**: that the content or settings updates added in any of the Admin area options are stored in your database.  That's how the CMS retains the content, even when you change the theme.
       </script>
     </section>
     
@@ -278,24 +285,44 @@
       </script>
     </section>
     
-    <section class="slide two-col-list post-pages" data-markdown>
+    <section class="slide post-pages" data-markdown>
       <script type="text/template">
-        # Posts vs Pages
+        # Post type: Posts
         
-        * ![](framework/img/workshop/admin-posts.png)  
-        **Posts**  
-          * used for date-based content
-          * posts are listed chronologically
-          * can also be assigned *categories* and *tags* (also referred to as **taxonomies**)
-          * *permalink* will include the date (can change this in the settings)  
-          `http://your-project-name.dev/2015/09/28/my-catchy-title/`<!-- .element: class="note" -->
-        * ![](framework/img/workshop/admin-pages.png)  
-        **Pages**
-          * used for single pages of static content (e.g. about or contact page)
-          * cannot have taxonomies
-          * can have a hierarchical structure (e.g. Travel > Beach vacations)
-          * *permalink* will not include the date
-          `http://your-project-name.dev/about/`<!-- .element: class="note" -->
+        ![](framework/img/workshop/admin-posts.png)
+        
+        * used for date-based content
+        * posts are listed chronologically
+        * can also be assigned *categories* and *tags* (also referred to as **taxonomies**)
+        
+        **Permalink** will include the date:
+        ```
+        http://your-project-name.dev/2015/09/28/my-catchy-title/
+        ```
+        
+        ---
+        ###Resources
+        
+        * https://codex.wordpress.org/Taxonomies
+        * https://en.support.wordpress.com/post-vs-page/
+        * [What is the Difference Between Posts vs. Pages in WordPress](http://www.wpbeginner.com/beginners-guide/what-is-the-difference-between-posts-vs-pages-in-wordpress/)
+      </script>
+    </section>
+    
+    <section class="slide post-pages" data-markdown>
+      <script type="text/template">
+        # Post Type: Pages
+        
+        ![](framework/img/workshop/admin-posts.png)  
+
+        * used for static content (e.g. About)
+        * cannot have taxonomies
+        * can have a hierarchical structure (e.g. Travel > Beach vacations)
+        
+        **Permalink** will not include the date:
+        ```
+        http://your-project-name.dev/about/
+        ```
           
         ---
         ###Resources
@@ -310,18 +337,16 @@
       <script type="text/template">
         #Media & Comments Menus
         
-        ##Media  
+        ##Media menu
         
         * add new media (images, pdf, word docs, etc)
         * view a library of all uploaded media
-        * includes media added in this menu or in your pages and posts
         
-        ##Comments
+        ##Comments menu
         
-        * manage all the comments left on your site
-        * edit, update, delete or mark comments as spam
+        * manage (edit, update, delete) all the comments left on your site
         * strongly recommended to use the [Akismet](https://en-ca.wordpress.org/plugins/akismet/) plugin to fight spam
-        * go to **Settings > Discussion** menu to manage how comments are displayed
+        * go to **Settings > Discussion** menu to manage how/if comments are displayed
       </script>
     </section>
     
@@ -329,7 +354,7 @@
       <script type="text/template">
         # Exercise: Add some content (15mins)
         
-        When designing a website, it's good to have some content before adding styles to add context to your page layouts. Follow the instructions below and [refer to the diagram](framework/img/workshop/admin-add-post.png) for more info.
+        Add content before adding styles to give context the page layouts. Follow the instructions below and [refer to the diagram](framework/img/workshop/admin-add-post.png) for a step-by-step guide to add content.
         
         1. Add 2-3 **posts** (anything you want!)
           * include some paragraphs, headings and at least one image
@@ -342,12 +367,7 @@
         Need some placeholder text or images?<br><!-- .element: class="note" -->
         [meettheipsums.com](http://meettheipsums.com), [thewireipsum.com](http://thewireipsum.com), [placeimg.com](https://placeimg.com/), [dummy-image-generator.com](http://dummy-image-generator.com/)  
         
-        ##Examples
-        Using the default Twenty Fifteen theme, the content will look similar to [this](framework/img/workshop/theme-default-example.png).
-        
-        ![](framework/img/workshop/posts-example.png)
-        
-        ![](framework/img/workshop/pages-example.png)
+        Using the default Twenty Fifteen theme, the content will look similar to [this example](framework/img/workshop/theme-default-example.png). The backend will look [like this](framework/img/workshop/posts-pages-example.jpg).
       </script>
     </section>
     
@@ -364,11 +384,13 @@
         
         ![](framework/img/workshop/admin-appearance.png)<!-- .element: class="left" -->
         
-        **Themes** are the overall design of the site. Included in every version of WordPress (and named after the year they were released in), are the default WordPress themes. You can also choose from 1000s of free and premium themes or create your own.
+        * **Themes** are the overall design of the site. 
+        * Default themes are included in every version of WordPress (and named after the year they were released). 
+        * You can also choose from 1000s of free and premium themes or create your own.
         
-        **Customize** displays the custom options for a specific theme and will only be present if the theme author has configured the theme to allow this capability.
+        **Customize** displays options for the specific theme and will only be present if the theme author has included this capability.
         
-        **Widgets** are used to add various pieces of information to your theme's sidebar. (i.e. Categories, Archives, Recent Posts, etc.) 
+        **Widgets** add various pieces of information to your theme's sidebar. (i.e. Categories, Archives, Recent Posts, etc.) 
         
         ---
         ###Resources
@@ -388,9 +410,11 @@
 
         **Menus** are used to create the site navigation (links to pages, categories, tags, etc).
         
-        The **Header** & **Background** feature allows you to manage images  displayed in the header and the look of the background for your theme.  This option will only be present if the theme author has configured these options to allow for this capability.
+        The **Header** & **Background** menu allows you to manage images/colors displayed in the header and background of the theme.  
         
-        The **Editor** menu gives you access to directly edit the theme's PHP and CSS files but isn't the most intuitive way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
+        This option will only be present if the theme author has configured these options to allow for this capability.
+        
+        The **Editor** menu gives direct access to edit the theme's PHP and CSS files but isn't the most intuitive way to edit the code. We'll be going over how to develop themes *locally* in Part 2 of this workshop.
         
         ---
         ###Resources
@@ -406,18 +430,18 @@
         #Theme Development options
         
         ##Option 1: Free & Premium Themes
-        * only pay for domain, hosting & cost of theme (from free to a few hundred)
-        * does not require any coding (though you still have access to the codebase)
-        * includes some theme options that can be updated in the WordPress admin area
+        * pay for domain, hosting & cost of theme (from free to a few hundred)
+        * does not require coding (though you have access to the codebase)
+        * includes some customization options that can be updated in the **Customize** menu
         
         ##Option 2: Child themes
-        * used to modify a theme without making any changes to the parent theme’s files
         * inherits the features of its parent theme including updates
-        * will require some knowledge of HTML, CSS and PHP 
+        * modify a theme without making changes to the parent theme files
+        * requires some knowledge of HTML, CSS and PHP 
         
         ##Option 3: Custom themes
         * built from scratch or from a [starter template](https://www.google.ca/search?q=wordpress+starter+theme)
-        * requires a deeper knowledge of HTML, CSS, PHP or get really good at following
+        * requires a deeper knowledge of HTML, CSS, PHP and reading
         the [WordPress documentation](https://codex.wordpress.org/)!
     </script>
     </section>
@@ -432,11 +456,23 @@
       <script type="text/template">
         #Adding Themes from the WordPress directory
 
-        There are literally 1000s of free WordPress themes available for download in the WordPress directory found under **Appearance > Themes**, **Add New**. Click on the thumbnail to see a preview, get info or install a new theme.
+        There are literally 1000s of free WordPress themes available for download in the WordPress directory. 
+        
+        They can be found under **Appearance > Themes**, **Add New**.  
+        Click on the thumbnail to see a preview, get info or install the theme.
       
         For today's exercises, use the **Sydney** theme to see the same customization options & files that will be referred to in the examples.
         
-        Go to **Appearance > Themes**, select **Add New**. Search for the "Sydney" theme, select **Install** and **activate** when the installation is complete.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Adding Themes from the directory
+        
+        * Go to **Appearance > Themes**, select **Add New**.  
+        * Search for the "Sydney" theme.  
+        * Select **Install** and **activate** when the installation is complete.
         
         ![](framework/img/workshop/admin-themes-add.gif)<!-- .element: width="80%" -->
       </script>
@@ -454,14 +490,17 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #More Themes
+        #Uploading Themes
         
-        Themes from outside of the WordPress directory can also be used and added by selecting the **Upload Theme** option. Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when using this option; upload the entire zip file.  
+        Themes from outside of the WordPress directory can be added by selecting the **Upload Theme** option.   
 
         ![](framework/img/workshop/upload-theme-2.png)<!-- .element: width="80%" -->
-
-        Get to know the pro & cons of using free vs premium themes as well as things to look out for and where to find them. Not all themes are created equal!
         
+        Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when using this option; upload the *entire zip* file.
+        
+        See the resources below to get to know the pro & cons of using free vs premium themes. Not all themes are created equal!
+        
+        ---
         ###Resources:<!-- .element: class="resources" -->
         * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes 
         * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
@@ -472,7 +511,7 @@
       <script type="text/template">
         # Appearance > Customize
       
-        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. Navigate to the **Customize** menu to view the available options for this theme.
+        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. Navigate to the **Customize** menu to view the options for this theme.
         
         ![](framework/img/workshop/admin-customize.gif)
       </script>
@@ -480,11 +519,17 @@
     
     <section id="heading-options" class="slide" data-markdown>
       <script type="text/template">
-        #Customize: Site title/tagline/logo
+        #Customize: Site title / tagline / logo
         
-        This setting gives you the option to display text or a logo in the header area.
+        This setting shows options for displaying text or a logo in the header. Reminder, the **Customize** menu shows options specific to the theme.
         
         ![](framework/img/workshop/admin-customize-title.gif)<!-- .element: width="80%" -->
+      </script>
+    </section>
+    
+    <section id="heading-options" class="slide" data-markdown>
+      <script type="text/template">
+        #Customize: Site title / tagline / logo
         
         The **Site Title** & **Tagline** (but not uploading an image) can also be updated under **Settings > General**.
         
@@ -496,10 +541,11 @@
       <script type="text/template">
         #Appearance > Customize
         
-        ![](framework/img/workshop/appearance-customize.png)
-        ![](framework/img/workshop/appearance-admin.png)
+        ![](framework/img/workshop/appearance-customize.png)<!-- .element: width="260px" -->
         
         Note that some of the options listed under **Customize** can also be accessed directly under the **Appearance** menu. 
+        
+        ![](framework/img/workshop/appearance-admin.png)<!-- .element: width="350px" -->
         
         The Customize options are specific to the theme and will vary but the options under Appearance are available for any theme.
       </script>
@@ -509,7 +555,7 @@
       <script type="text/template">
         #Responsive theme
         
-        In this theme, the menu & header area will look different depending on your browser window size because this is a *responsive* theme.  
+        In this theme, the menu & header area looks different depending on the browser window size because this is a *responsive* theme.  
         
         For example, a bigger screen size will show a menu link, the smaller screen size will show an icon.
         
