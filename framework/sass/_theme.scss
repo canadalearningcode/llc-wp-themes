@@ -71,11 +71,8 @@ h6 {
   margin: 5px 0;
 }
 a {
-  // color: $llc-pink;
-  // text-decoration: none;
   outline: none;
   color: inherit;
-  // border-bottom: 2px solid $llc-pink;
 
   &:hover {
     color: $llc-pink;
@@ -86,46 +83,10 @@ hr {
   border: none;
   border-top: 1px solid $gray-light;
   clear: both;
-  display: inline-block;
-  width: 100%;
-  
-  + p {
-    margin-top: 0;
-  }
 }
-ul, ol {
-  padding: 0;
-    
-  li {
-    margin-bottom: 6px;
-    margin-left: 24px;
-  }
-  ol, ul {
-    font-size: $font-size-sm;
-    width: 90%;
-    margin: 5px 0 20px;
-  }
-  
-  .list-sm & {
-    font-size: $font-size-sm;
-    
-    li { margin-bottom: 4px; }
-  }
-}
-
-ol > li {
-  margin-left: 40px;
-}
-ul {
-  list-style-type: none;
-  
-  li:before {
-    content: "\203A"; // › symbol
-    font-family: $quicksand;
-    font-weight: bold;
-    margin-left: -18px;
-    padding-right: 10px;
-  }
+p + ol,
+p + ul {
+  margin-top: 10px;
 }
 p {
   margin-bottom: 0;
@@ -138,50 +99,100 @@ p {
   font-family: $cursive;
   color: $llc-pink;
 }
+
+// List styles
+ul {
+  padding: 0;
+    
+  li {
+    margin-bottom: 6px;
+    margin-left: 24px;
+    list-style-type: none;
+    
+    &:before {
+      content: "\203A"; // › symbol
+      font-family: $quicksand;
+      font-weight: bold;
+      margin-left: -22px;
+      padding-right: 10px;
+    }
+  }
+}
+ul, ol {
+  ol, ul,
+  .list-sm & {
+    font-size: $font-size-sm;
+    
+    li { margin-bottom: 4px; }
+  }
+}
+
+//used to be no-bullet-list
+.nested-list {
+  ul {
+    margin-left: -22px;
+    
+    li {
+      margin-left: 22px;
+    }
+    
+    li:before {
+      content: "";
+      margin-left: -9px;
+    }
+    ol, ul {
+      width: 90%;
+      margin-bottom: 25px;
+      
+      li:before {
+        content: "\203A";
+        margin-left: 4px;
+      }  
+    }
+  }
+  .resources + ul {
+    > li {
+      margin-left: 35px;
+      
+      &:before {
+        content: "\203A";
+      }
+    }
+  }
+}
 .two-col-list > {
   ul, ol {
     overflow: hidden;
-    padding-left: 8px;
     
     > li {
-      width: 50%;
+      width: 45%;
       float: left;
-      margin-left: 0;
+      margin-left: 4px;
       
+      &:first-child {
+        margin-right: 5%;
+      }
       &:before {
         content: "";
+        margin-left: -12px;
       }
-    }
-    ul, ol {
-      margin-top: 10px;
     }
   }
   .resources + ul {
     > li {
       width: 100%;
-      margin-left: 20px;
+      margin-left: 12px;
       
       &:before {
         content: "\203A";
-        padding-right: 8px;
       }
     }
   }
 }
-.no-bullet-list {
-  > ul > li {
-    margin-left: 0;
-    
-    &:before {
-      content: "";
-      margin-left: -9px;
-    }
-    ul {
-      margin-left: 15px; 
-    }
-  }
-}
 
+iframe {
+  margin-top: 20px;
+}
 strong {
   font-weight: 700;
   color: black;
@@ -213,7 +224,10 @@ th {
   text-align: left;
   font-weight: normal;
 }
-td {  
+td {
+  // padding-right: 60px;
+  // padding-left: 10px;
+  
   .two-col-table & {
     width: 50%;
   }
@@ -428,22 +442,18 @@ textarea.snippet {
 /* Creates border for slide examples */
 .example,
 blockquote {
-  padding: 0 15px;
   font-size: $font-size-xsm;
+  margin: 15px 0;
   
   p {
-    margin: 10px 0;
-  }
-  &:last-child {
-    margin-bottom: 50px;
+    margin: 10px;
   }
 }
 .example {
   border: 1px solid $gray-light;
-  margin: 20px 0;
+  padding: 5px 10px;
 }
 blockquote {
-  margin: 25px 0 20px;
   background: #fff;
   border: 3px solid rgba(177, 9, 170, 0.2)
 }
@@ -459,8 +469,10 @@ Background color style for headings
 Use spans wrap inside of a heading for div. 
 e.g.
 <h1 class="title-bg">
-  <span>Welcome to </span><br>
-  <span>Ladies Learning Code!</span>
+  <span>
+    Welcome to<br>
+    Ladies Learning Code!
+  </span>
 </h1>
 */
 .heading-bg {
@@ -629,7 +641,7 @@ footer {
 /* code blocks
 -----------------------------*/
 pre {
-  margin: 10px 0;
+  margin: 12px 0;
   white-space: pre-wrap;
 
   code {

@@ -23,7 +23,7 @@
     <section class="slide welcome">
       <h1><img class="logo-stacked" src="framework/img/llc-logo-stacked-white.png" alt="Ladies Learning Code logo">Welcome!</h1>
       
-      <div class="instructions no-bullet-list">
+      <div class="instructions nested-list">
         <!-- ADD WIFI INFO HERE -->
         <!-- <h2>Get Connected</h2>
         <ul class="connected">
@@ -425,9 +425,9 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section id="theme-options" class="slide" data-markdown data-toc>
       <script type="text/template">
-        #Theme Development options
+        #Theme Options
         
         ##Option 1: Free & Premium Themes
         * pay for domain, hosting & cost of theme (from free to a few hundred)
@@ -801,18 +801,19 @@
       <script type="text/template">
         #Intro to PHP
                 
-        How much PHP do you need to know?
+        **How much PHP do you need to know?**
         
-        Though WordPress is written in PHP, much of what you need to change or customize can be accomplished by following the documentation and using the WordPress *template tags*.  
+        Though WordPress is written in PHP, much of your customizations can be accomplished by using WordPress specific PHP, *template tags*.  
         
         However, being able to recognize PHP tags and having a general grasp of the PHP syntax will help a lot. 
         
-        Before we get into the child themes, let's go over some PHP basics and get familiar with how the language works.
+        Before we get into modifying themes, let's go over some PHP basics you'll encounter and get familiar with how the language works.
         
         ---
         ###Resources
         * [PHP manual](http://php.net/manual/en/index.php)
         * [WordPress Codex](https://codex.wordpress.org/)
+        * [WordPress Template Tags](https://codex.wordpress.org/Template_Tags)
       </script>
     </section>
     
@@ -820,7 +821,7 @@
       <script type="text/template">
         # PHP Syntax
 
-        PHP code is enclosed in special start and end, `<?php ?>`, processing instructions to jump in and out of “PHP mode”. 
+        PHP code is enclosed in special start `<?php` and end `?>` tags to process instructions and to jump in and out of “PHP mode”. 
         
         PHP executed on the server generates HTML which is then sent to the client (the browser). Anything outside of the opening and closing tags will be ignored by the PHP parser.
         
@@ -839,7 +840,7 @@
       <script type="text/template">
         # PHP Syntax & HTML 
         
-        If you mix PHP with HTML, an opening and closing tag is required for each code block that is separated by non-PHP code. This technique is used quite a bit in WordPress.
+        If you mix PHP with HTML, an opening and closing tag is required for each code block that is separated by non-PHP code. 
         
         ```xml
         <p>This is just HTML and will be ignored by PHP.</p>
@@ -849,28 +850,32 @@
         <?php More PHP code here. ?>
         ```
         
-        You can even mix PHP between HTML tags.
+        You can even mix PHP *between* HTML tags.
         
         ```xml
         <p>More HTML. Dynamic code here: <?php PHP code ?></p>
         ```
+        
+        These technique are used quite often in WordPress.
       </script>
     </section>
     
-    <section class="slide" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         # Outputting PHP
 
-        `string` - series of characters, contained in either single or double quotes  
-        `echo` – output one string or more, separated by a comma   
-        Add a semi-colon `;` at the end of the command.
+        * `string` - series of characters, contained in single or double quotes  
+        * `echo` – outputs strings
+          * use a comma to separate multiple strings
+          * add a semi-colon `;` at the end of the command
         
         ```
         <?php echo "I'm one string"; ?>
         <?php echo "I'm", "multiple", "strings."; ?>
         ```
         
-        **Pro tip!**  In the previous example, if single quotes were used, it would produce an error because PHP will think the second quote closes the first one. 
+        **Watch out!**  If single quotes were used, it would produce an error.  
+        PHP will think the apostrophe in `I'm` closes the first quote. 
         
         ```xml
         <?php echo 'I'm one string.'; ?> /* this will produce an error */
@@ -901,12 +906,15 @@
           <p><?php echo "Hello!"; ?></p>
           ```
         1. Save it. (**File > Save**)
-        1. To view this page, navigate to **test.php** by adding a forward slash `/` and the file name to the end of the URL. `http://your-project-name.dev/test.php`
+        1. To view this page, navigate to **test.php** by adding a forward slash `/` and the file name to the end of the URL. 
+          ```xml
+          http://your-project-name.dev/test.php
+          ```
         1. Remember, with `echo`, you can output multiple strings using commas. Try it!
           ```  
           <p><?php echo "I", "like", "pizza."; ?></p>
           ```
-        1. Let's make the output a little nicer by adding a space after "I" and "like".  
+        1. Make the output a little nicer by adding a space after "I" and "like".  
           ```  
           <p><?php echo "I ", "like ", "pizza."; ?></p>
           ```
@@ -921,7 +929,7 @@
         
         ![](framework/img/workshop/view-source.png)
         
-        Remember, since PHP is a *server-side* language, it gets parsed on the server first, then outputs onto the page. So even if you view the source in the browser (client-side), you won't see the PHP tags.
+        Remember, since PHP is a *server-side* language, it gets parsed on the server *first*, then outputs the content onto the page. Even if you view the source in the browser (client-side), you won't see the PHP tags.
       </script>
     </section>
     
@@ -929,17 +937,16 @@
       <script type="text/template">
         # Creating Dynamic Content
         
-        Ok, that's great but how is that different from just writing HTML? 
-        
+        Ok, that's great but how is that different from just writing HTML?  
         Remember, HTML is *static*, it doesn't change.
         
-        When you're logged into WordPress, the admin toolbar appears and shows your site title and username, using the data saved in the database.  
+        When you're logged into WordPress, the admin toolbar shows your site title and username, using the data saved in the database.  
         
         ![](framework/img/workshop/wp-admin-bar.png)
         
         It couldn't do that with just HTML! It changes *dynamically* based on the information added by the user and stored in the database.
         
-        Variables can be used to store and retrieve this type of data.
+        **Variables** can be used to store and retrieve this type of data.
       </script>
     </section>
     
@@ -949,7 +956,7 @@
         
         To create a variable, *declare* it (name it) and give it a value. 
         
-        You can name it whatever you want but it must start with the `$` symbol and cannot contain spaces. WordPress uses underscores to separate words, though PHP also accepts camelCase.
+        Name it whatever you want but it *must* start with the `$` symbol and cannot contain spaces. WordPress uses underscores to separate words, though PHP also accepts camelCase.
         
         An `=` symbol is used to *assign* a value to the variable.
         
@@ -973,9 +980,11 @@
       <script type="text/template">
         #PHP Variables
         
-        Variables only *store* values so it just sits there, waiting, until you need it. 
+        Variables only *store* values so it sits there, waiting, until you need it. 
         
-        Just like the previous examples, you can use `echo` to output the variable value. But you do **not** need the quotes.  That is only required for string types.
+        Just like the previous examples, you can use `echo` to output the variable value. But you do **not** need the quotes.  
+        
+        That is only required for string types.
         ```
         <?php
         $mygreeting = "Hello!";
@@ -1001,29 +1010,40 @@
         ?>
         ```
 
-        Then, output the PHP variables. 
+        Then, output the PHP variables. They are wrapped in HTML anchor tags to output these values onto the page as a link.
         ```
         <a href="#"><?php echo $site_title; ?></a>
         <a href="#">Howdy, <?php echo $username; ?></a>
         ```
         
-        They are wrapped in HTML anchor tags to output these values onto the page as a link. (The `#` is just a placeholder for the link location usually contained in the `href`.)
+        The <!-- .element: class="note" -->`#` is just a placeholder for the link location usually contained in the `href`.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        # Functions
+        # PHP Functions
         
-        A function is a reusable block of code, designed to accomplish a single task. Functions are useful because you can use it to execute repetitive tasks. There are many functions already built into the PHP language. For example, `strlen()` is used to return the length of a string.
+        * reusable block of code, designed to accomplish a single task. 
+        * useful because it can execute repetitive tasks
+        * use functions already built into the PHP language
+        * create your own!
+        
+        
+        For example, `strlen()` is used to return the length of a string.
         
         ```
         <?php echo strlen("Hello class!"); ?>
         ```
-        
         This will return “12” since there are 12 characters, including the space.
-        
-        You can also create your own, by declaring it with the `function` keyword.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        # PHP Functions
+
+        You can create your own, by declaring it with the `function` keyword.
         
         ```
         <?php
@@ -1040,25 +1060,23 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Function arguments
+        #Class Exercise: Function arguments
         
         You can pass information into functions with *arguments*.  
         
         Use a *parameter*, kind of like a placeholder, for the information you want to manipulate. The syntax for the parameter is just like a variable; use the `$` symbol.
         
-        ##Class Exercise
-        
-        Let's revise the previous function and add a parameter to hold a value for a name.
+        Let's revise the function and add a `$name` parameter.
         
         ```
-        <?php
         function greeting($name) {
           echo "Hello $name!"; // code to be executed
         }
-
-        greeting("Beyonce"); // call the function with an argument
-        greeting("Blue Ivy"); // call the function with a different argument
-        ?>
+        ```
+        Now *call* the function with an argument.
+        ```
+        greeting("Rihanna"); // call the function with an argument
+        greeting("Your Name"); // call the function with a different argument
         ```
       </script>
     </section>
@@ -1067,9 +1085,9 @@
       <script type="text/template">
         #Wordpress Template Tags
         
-        The great thing about WordPress is that many of the complexities required for displaying content have already been created in the framework.  These are referred to as **template tags**. Some common template tags are:
+        In WordPress, many of the complexities required for displaying content have already been created as **template tags**. Some common template tags are:
         
-        * `get_header()` gets the header.php file and includes it in the current theme file. 
+        * `get_header()` gets the header.php template file and includes it (and it's content) in the current file. 
         * `the_title()` – tells WordPress to get the title of the page or post from the database
         * `bloginfo('name')` – tells WordPress to get the blog/website title from the database
         
@@ -1086,15 +1104,19 @@
       <script type="text/template">
         #Template tags & template files
         
-        How do the template tags and files all work together? In the **sydney** theme folder, the **header.php** file contains a line of code that looks like this:
+        How do the template tags and template files all work together? In the **sydney** theme folder, the **header.php** file contains a line of code that looks like this:
         
-            <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-            
+        ```
+        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+        ```  
+        
         `bloginfo('description')` will get the **Tagline** value, entered in your general settings.
         
         ![](framework/img/workshop/blog-info-settings.png)<!-- .element: width="70%" -->
         
-        Adding the template tag between an HTML tag outputs the title into the browser with the appropriate HTML and the data from the database.
+        Adding the template tag between an HTML tag outputs the title into the browser in an `<h2>` tag and will display in the header of your site.
+          
+        If you change your tagline, that value replaces the current value in the database and will automatically update on your site as well.
         
         ---
         ###Resource
@@ -1102,6 +1124,19 @@
         * [Function Reference/bloginfo](http://codex.wordpress.org/Function_Reference/bloginfo)
       </script>
     </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Creating your own theme
+                
+        Earlier, we talked about [three ways to use themes](slides.html#theme-options).  Using a pre-made theme is the easiest option but sometimes you need more customizations.
+        
+        Custom themes allow for basically doing whatever you want! But it also requires building pretty much everything from scratch.
+        
+        Child Themes are the "in-between" option. You can add your own customizations but still leverage the features of a pre-built theme.
+      </script>
+    </section>
+    
 
     <section class="slide title" data-markdown data-toc>
       <script type="text/template">
@@ -1113,37 +1148,42 @@
       <script type="text/template">
         #Child Themes 
         
-        Why use a [child theme](https://codex.wordpress.org/Child_Themes)?
+        Why use a child theme?
         
-        * learn about WordPress theme development by reverse engineering existing code
+        * learn about theme dev by reverse engineering existing code
         * recommended for modifying an existing theme
-        * inherits the functionality and styling of parent theme and leverages existing code
+        * inherits the functionality and styling of parent theme
         * main functionality, templates, etc, are already created
         
-        If you modify a theme directly and it is updated, then your modifications may be lost. By using a child theme your modifications will be preserved.
+        If you modify a theme's files directly and it is updated, your modifications may be lost. By using a child theme your modifications will be preserved.
+        
+        ---
+        ###Resource 
+        * https://codex.wordpress.org/Child_Themes
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Making a child theme: Step 1
+        #Class Exercise: Make a child theme
         
-        In your theme folder, create a new folder for your child theme's files. Any theme can be used to create a child theme but this workshop will use the **sydney** theme in the remainder of the examples.
+        **Step 1:** In your theme folder, create a new (empty) folder for your child theme files. Any theme can be used as a child theme but this workshop examples will use the **sydney** theme.
         
-        It’s best practice to name the folder the same name as the parent, but with `-child` appended to it.
+        Name the folder the same name as the parent theme, but with `-child` appended to it.
           
           ![](framework/img/workshop/child-theme-folder.png)
         
+        You only add specific files to be modified from in the -child theme folder, not all of the theme files.
         </script>
       </section>
       
       <section class="slide" data-markdown>
         <script type="text/template">
-          #Making a child theme: Step 2
+          #Class Exercise: Make a child theme 
           
-          In your text editor, create a new file (**File > New File** or **command/control + N**) and save it as **style.css**. It has to be named *exactly* as **style.css** and saved in your child theme folder, **sydney-child**.
+          **Step 2**: In your text editor, create a new CSS file (**File > New File**) and save it as **style.css**. It has to be named *exactly* as **style.css** and saved in your child theme folder, **sydney-child**.
           
-          Your stylesheet **must** also contain specific header comments, at the top of the file, to tell WordPress information about the theme, including the parent theme.
+          Your stylesheet **must** contain specific header comments, at the top of the file, to tell WordPress information about the theme, including the parent theme.
             
           ```css
           /*
@@ -1157,7 +1197,7 @@
           */
           ```
         
-          Only the **Theme Name** and **Template** comments are required. The **Template** has to be the exact name of the parent theme's folder.  
+          Only the **Theme Name** and **Template** comments are required. The **Template** has to be the exact name of the parent theme's folder.  This is how it connects the child theme to the parent theme.
           
           All of the other information is optional but commonly added.
           
@@ -1179,11 +1219,13 @@
       
       <section class="slide" data-markdown>
         <script type="text/template">
-          #Making a child theme: Step 3
+          #Class Exercise: Make a child theme  
           
-          Create a **functions.php** file. This file is generally used for adding features and functionality to a WordPress site. 
+          **Step 3**: Create a **functions.php** file. This file is used for adding features and functionality to a WordPress site. 
           
-          For a child theme, a script is needed to enqueue the parent and child theme stylesheets. This will ensure that both the parent and child theme's CSS will load properly. Add the below script to your **functions.php** file.
+          For a child theme, a script is needed to enqueue the parent and child theme stylesheets. This will ensure that both the parent and child theme's CSS will load properly. 
+          
+          Add the below script to your **functions.php** file.
           
           ```
           <?php
@@ -1205,16 +1247,22 @@
       </script>
     </section>
     
-    <section class="slide side-by-side" data-markdown>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #Activate your Child Theme
         
-        Your new child theme is now available under the **Appearance > Themes** menu.   
-        Hover over the theme to see the button to activate it. 
+        Your new child theme is now available under the **Appearance > Themes** menu. Hover over the theme to see the button to activate it. 
+        
+        ![](framework/img/workshop/child-theme-activate.png)
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Activate your Child Theme
         
         The header comment information from the **styles.css** is used here to show details about your child theme.
         
-        ![](framework/img/workshop/child-theme-activate.png)
         ![](framework/img/workshop/child-theme-details.png)
       </script>
     </section>
@@ -1223,9 +1271,9 @@
       <script type="text/template">
         #Some things to look out for 
         
-        If there was anything missed when setting up your child theme, you'll see an error message like this one below:
+        If there was anything missed when setting up your child theme, you'll see a "Broken Themes" error message like this one below:
         
-        ![](framework/img/workshop/theme-broken.png)<!-- .element: width="70%" -->
+        ![](framework/img/workshop/theme-broken.png)
         
         Also, sometimes when you activate a new theme, some of the settings will have to be added back in. For example the uploaded logo and navigation menu is no longer showing, with our newly activated child theme.
         
@@ -1235,7 +1283,7 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Add the menu back in
+        #Class Exercise: Add the menu back in
         
         Let's add the menu back in.  This information should still be there since it's saved in the database.  You'll probably just need to re-select the Menu Settings.
         
@@ -1264,9 +1312,7 @@
       <script type="text/template">
         # Making Changes
         
-        Now that your child theme is all set up, how do you make changes?  Using pre-made themes are great because everything you need is already done.
-        
-        However, if you need to make changes, there's a little detective work required to figure out where to make the changes.
+        Now that your child theme is all set up, how do you make changes? Since child themes leverage existing code, there's a little detective work required to figure out where to make the changes.
         
         Getting familiar with the various [template files](https://codex.wordpress.org/Theme_Development#Template_Files_List) and using the browser developer tools will help with narrowing down the search for content and making CSS updates.
         
@@ -1292,7 +1338,6 @@
         ![](framework/img/workshop/template-page-title-home.png)
         ![](framework/img/workshop/template-page-title-about.png)
         
-        That field can't be left empty when you add the post or page but you might not want it to show on the page. Now we just need to find the template file used for these pages to make the edits.
       </script>
     </section>
     
@@ -1300,10 +1345,20 @@
       <script type="text/template">
         #Editing Template files
         
-        ##Template Hierarchy
+        The page title field can't be left empty when you add the post or page but you might not want it to actually show on the page. 
+        
+        To make that change, you'll need to find the template file used for these pages to make the edits.
+        
+        WordPress uses a **template hierarchy** to determine what type of content gets displayed and where it gets displayed.
         
         Some template files, (i.e. header & footer), are used on all of pages, while others are used only under specific conditions.
-
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Template Hierarchy
+  
         The template *hierarchy* determines *which* template is used to display specific types of content for the different post types (pages, posts, custom posts, etc.)
         
         Let's look at the different templates & their place in the hierarchy and determine which template is most likely to contain the content we are looking to revise. 
@@ -1312,41 +1367,37 @@
       </script>
     </section>
     
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
-        #Editing Template files
-        
-        Here's a list of templates used to show page content:
-        
+        #Template Hierarchy
+
         * **index.php** - main template file and required in all themes
-        * **home.php** - shows latest blog posts index, whether it's set as the front page or not
+        * **home.php** - shows latest blog posts
           * this content will default to `index.php` if `home.php` does not exist
         * **page.php** - template for single (static) page type (i.e. About page)
-        * **single.php** - single posts (not the index of posts but for each individual post)
-        * **front-page.php** - used for the front page, whether set as static page or posts index
+        * **single.php** - single posts (for each individual post)
+        * **front-page.php** - home page, whether set as a page or posts index
           * this template takes precedence over `home.php` 
-          * if `front-page.php` does not exist, WordPress will either default to `home.php` or `page.php` depending on the setup in Settings → Reading. 
+          * if `front-page.php` does not exist, WordPress will either default to `home.php` or `page.php` depending on the **Settings**
           * if neither `home.php` or `page.php` exist, it will default to `index.php`
         
-        Based on this hierarchy, which templates do you think our Home & About is using?
+        > Based on this hierarchy, which templates do you think our Home & About is using?
       </script>
     </section>
     
-    <section class="slide no-bullet-list" data-markdown>
+    <section class="slide nested-list" data-markdown>
       <script type="text/template">
         #Template files & Hierarchy
         
-        `page.php` is the template for single (static) page types. `index.php` can be used as well, but if `page.php` exists, it will take precedence.
-        
-        So our About and Home pages must be using the `page.php` template.
+        `index.php` can be used for single (static) page types. But if `page.php` exists, it will take precedence.
         
         BUT `front-page.php` could be also used be used for displaying the home page. However, in our current theme (Sydney), this template isn't included.  
         
-        So... that leads us back to `page.php` as the best available option.
+        So... the About and Home pages must be using the `page.php` template.
         
         Let's take a look at this file and do a simple test to confirm this is the correct template being used.
 
-        (The template hierarchy is documented in the codex as well as in this [flowchart](framework/img/workshop/template-hierarchy.png).)
+        (The template hierarchy is documented in the codex as well as in this <!-- .element: class="note" --> [flowchart](framework/img/workshop/template-hierarchy.png).)
 
         ---
         ###Resources
@@ -1361,9 +1412,9 @@
       <script type="text/template">
         #Class Exercise: Editing Templates
         
-        In the text editor, open `page.php`, contained in the parent theme folder, **sydney**. 
+        First, copy `page.php` from the parent theme folder, **sydney**, into the **sydney-child** folder to make changes.
         
-        Let's add a note, something like "page.php template", somewhere on the page where it will be seen. If we see our note when viewing the page in the browser, then it's confirmed that we have the correct template!
+        Then, add a note, something like "page.php template", somewhere on the page where it will be seen. If we see our note on the site, then it's confirmed that we have the correct template!
         
         ![](framework/img/workshop/template-test.png)
         
@@ -1381,7 +1432,7 @@
         
         Now we need to look for the heading to be removed. We can find it by using the Chrome Developer Tool. Right-click/two-finger tap and select **Inspect Element**.
         
-        ![](framework/img/workshop/inspect-element.gif)<!-- .element: width="80%" -->
+        ![](framework/img/workshop/inspect-element.gif)
         
         ![](framework/img/workshop/inspect-element.png)
       </script>
@@ -1415,11 +1466,11 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #The Loop
+        #The WordPress Loop
 
-        The Loop is used in WordPress for outputting content into the theme’s template files by retrieving each post to be displayed and how to formats it. That's how one template file can be used to handle multiple pages.
+        The Loop is used for outputting content into the theme files by retrieving each post to be displayed and how to format it. That's how one template file can be used to handle multiple pages.
         
-        The basic loop is:
+        The basic loop looks like this:
         
         ```php
         <?php if ( have_posts() ) : ?>
@@ -1428,18 +1479,23 @@
             <?php endwhile; ?>
         <?php endif; ?>
         ```
-
-        * the `have_posts()` function checks whether there are any posts (true/false)
-        * this condition is true as long as there are posts
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #The WordPress Loop
+          
+        * the `have_posts()` function checks if there are any posts (true/false)
+        * the `if` condition is true as long as there are posts
         * a `while` loop continues to execute as long as the condition in true
         * the while loops contains instructions for what content to display, from the posts
         
         ```php
         <?php if ( have_posts() ) : ?> // if we have posts
             <?php while ( have_posts() ) : the_post(); ?> // while we have posts
-              
-              // add instructions here to pull out some or all of the content contained in the database for that post - usually with a combination of HTML & template tags
-              
+              // add instructions here to pull out some or all of the content contained in the 
+              // database for that post - usually with a combination of HTML & template tags
             <?php endwhile; ?> // end while
         <?php endif; ?> // end the if statement
         ```
@@ -1460,15 +1516,25 @@
         <?php get_template_part( 'content', 'page' ); ?>
         ```
         
-        This is where the `<h1 class="title-post"></h1>` snippet we were looking for was supposed to be. But instead we see this.
+        This is where the `<h1 class="title-post"></h1>` snippet we were looking for was supposed to be. But instead we see something else.
         
-        Remember, all WordPress template tags follow this syntax, `name_of_tag()` so this must be a template tag! Don't know what it does? Look it up in the codex.
+        Remember, all WordPress template tags follow this syntax, `name_of_tag()` so this must be a template tag! 
+        
+        Don't know what it does? Look it up in the [codex](https://codex.wordpress.org/Function_Reference/get_template_part).
+      </script>
+    </section>
+    
+    <section class="slide codex" data-markdown>
+      <script type="text/template">
+        #WordPress Codex
         
         The description in the [codex](https://codex.wordpress.org/Function_Reference/get_template_part) says:
 
-        >Load a template part into a template. Makes it easy for a theme to reuse sections of code and an easy way for child themes to replace sections of their parent theme. 
+        >Load a template part into a template. Makes it easy for a theme to reuse sections of code and an easy way for child themes to replace sections of their parent theme.
         
-        Looking further into the documentation, this basically means, look for a template file called `content-page.php`. This template tag allows you to create template files outside of the WordPress defined template files (`page.php`, `home.php`, etc). 
+        Looking further into the documentation, this basically means, look for a template file called `content-page.php`. 
+        
+        This template tag allows you to create template files outside of the WordPress defined template files (`page.php`, `home.php`, etc). 
       </script>
     </section>
     
@@ -1476,38 +1542,42 @@
       <script type="text/template">
         #Class Exercise: Editing Templates
         
-        Open `content-page.php` in your editor and compare the code to the snippet we found when inspecting the page.
+        Copy `content-page.php` from the parent them folder to the child theme folder to make edits.
+        
+        Compare the code to the snippet we found when inspecting the page.
         
         ![](framework/img/workshop/template-code-console.png)
         ![](framework/img/workshop/template-code-editor.png)
         
         Delete that little bit of code and poof! Header is gone! 
-        
-        Also, delete the "page.php template" test note in `page.php` now that we've confirmed that the correct file was being used.
-        
-        Since we're using a child theme, copy `page.php` and `content-page.php` and add it to your **sydney-child** folder to make the edits without revising the parent theme.
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #Class Exercise: Editing Templates
+        #Editing Templates Recap
         
         Your child theme folder directory should look like this now:
         
         ![](framework/img/workshop/child-theme-folder-update.png)
         
-        Open your new `content-page.php` and delete the header.
+        Also, delete the "page.php template" test note in `page.php` now that we've confirmed that the correct file was being used.
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class Exercise: Remove the Sidebar
         
-        Open `page.php` and make one more edit.  Let's get rid of the sidebar in the page template. No need to show archives & recent blog posts on a static page.
+        Back in `page.php`, let's make anoter edit.  There's no need to show archives & recent blog posts on a static page. 
         
-        At the bottom of `page.php`, there's this snippet:
+        Find the snippet and delete it! Look for this template tag:
         
         ```php
         <?php get_sidebar(); ?>
         ```
         
-        That's another [template tag](https://codex.wordpress.org/Function_Reference/get_sidebar), used to include the `sidebar.php` file. Delete it and the sidebar is gone from this template but still available for use on the blog page.
+        This [template tag](https://codex.wordpress.org/Function_Reference/get_sidebar) is used to include the `sidebar.php` file. Delete it and the sidebar content will no longer be pulled into this page but is still available for use on the blog page (or any other template).
         
         You can also delete the whole `comments_template();` block if you don't want to include comments on your page template as well.
       </script>
