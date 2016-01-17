@@ -34,7 +34,7 @@
         
         <h2>Download<br> & Install</h2>
         <ul class="downloads">
-          <li>Slides {to slides or zip?}: <a href="http://bitly.com/llc-wp-slides">http://bitly.com/llc-wp-slides</a></li>
+          <li>Slide: <a href="http://bitly.com/llc-wp-slides">http://bitly.com/llc-wp-slides</a></li>
           <li>DesktopServer app, free version (can take up to 15 mins):
             <a href="https://serverpress.com/get-desktopserver/">https://serverpress.com/get-desktopserver</a><br>
             Download instructions screencast <a href="https://www.youtube.com/watch?v=d_MoCUKv3TI">here</a>
@@ -122,7 +122,7 @@
           * plugins :)
         
         Today we'll be exploring the **.org** version.
-        
+
         ---
         ###Resources
         * [WordPress.com and WordPress.org](https://en.support.wordpress.com/com-vs-org/)
@@ -130,23 +130,6 @@
         * http://wordpress.org
       </script>
     </section>
-    
-<!--     <section class="slide" data-markdown>
-  <script type="text/template">
-    # What is a CMS?
-    
-    A content management system (CMS) is an application used to edit content and manage a website using a graphical user interface. Web content can therefore be modified and published without editing the code or database.
-    
-    A CMS like WordPress also includes features such as:
-    
-    * database management 
-    * themes and templates for page layouts
-    * making content searchable and indexable
-    * and much more!
-    
-    In addition to WordPress, there are many other CMS platforms as well, such as [Drupal](https://www.drupal.org) and [Joomla](https://www.joomla.org).
-  </script>
-</section> -->
     
     <section class="slide" data-markdown>
       <script type="text/template">
@@ -278,7 +261,7 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown data-toc>
+    <section class="slide title" data-markdown>
       <script type="text/template">
         #Content Management
         ##Posts, Pages, Media & Comments
@@ -378,7 +361,7 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section class="slide" data-markdown>
       <script type="text/template">
         # Appearance Menus Overview
         
@@ -446,7 +429,7 @@
     </script>
     </section>
     
-    <section class="slide title" data-markdown data-toc>
+    <section class="slide title" data-markdown>
       <script type="text/template">
         #Free & Premium <br>Themes
       </script>
@@ -496,14 +479,14 @@
 
         ![](framework/img/workshop/upload-theme-2.png)<!-- .element: width="80%" -->
         
-        Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when using this option; upload the *entire zip* file.
+        Downloaded themes are packaged as a zip file.  Do **NOT** unzip it when using this option; upload the *entire* zip file.
         
         See the resources below to get to know the pro & cons of using free vs premium themes. Not all themes are created equal!
         
         ---
         ###Resources:<!-- .element: class="resources" -->
-        * https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes 
-        * http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/
+        * [Free vs Premium WordPress Themes](https://www.elegantthemes.com/blog/editorial/free-vs-premium-wordpress-themes)
+        * [Free WordPress Themes: The Ultimate Guide](http://premium.wpmudev.org/blog/free-wordpress-themes-ultimate-guide/)
       </script>
     </section>
     
@@ -511,7 +494,9 @@
       <script type="text/template">
         # Appearance > Customize
       
-        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. Navigate to the **Customize** menu to view the options for this theme.
+        These options listed here will be specific to the active theme and will vary based on what features were made available by the theme author. 
+        
+        Navigate to the **Customize** menu to view the options for this theme.
         
         ![](framework/img/workshop/admin-customize.gif)
       </script>
@@ -1171,9 +1156,9 @@
         
         Name the folder the same name as the parent theme, but with `-child` appended to it.
           
-          ![](framework/img/workshop/child-theme-folder.png)
+        ![](framework/img/workshop/child-theme-folder.png)
         
-        You only add specific files to be modified from in the -child theme folder, not all of the theme files.
+        Only add specific files to be modified in the -child theme folder, not all of the theme files.
         </script>
       </section>
       
@@ -1217,7 +1202,7 @@
         </script>
       </section>
       
-      <section class="slide" data-markdown>
+      <section id="enqueue" class="slide" data-markdown>
         <script type="text/template">
           #Class Exercise: Make a child theme  
           
@@ -1367,16 +1352,21 @@
       </script>
     </section>
     
-    <section class="slide nested-list" data-markdown>
+    <section class="slide nested-list templates" data-markdown>
       <script type="text/template">
         #Template Hierarchy
 
-        * **index.php** - main template file and required in all themes
-        * **home.php** - shows latest blog posts
+        * **index.php**
+          * main template file and required in all themes  
+        * **home.php**
+          * shows latest blog posts 
           * this content will default to `index.php` if `home.php` does not exist
-        * **page.php** - template for single (static) page type (i.e. About page)
-        * **single.php** - single posts (for each individual post)
-        * **front-page.php** - home page, whether set as a page or posts index
+        * **page.php**
+          * template for single (static) page type (i.e. About page)
+        * **single.php**
+          * single posts (for each individual post)
+        * **front-page.php**
+          * home page, whether set as a page or posts index
           * this template takes precedence over `home.php` 
           * if `front-page.php` does not exist, WordPress will either default to `home.php` or `page.php` depending on the **Settings**
           * if neither `home.php` or `page.php` exist, it will default to `index.php`
@@ -1602,7 +1592,7 @@
       <script type="text/template">
         #Child Theme: Editing Templates recap
         
-        There is so much more you can do with theme customizations but the process is pretty similar to the process shown in the past examples.  
+        There is more you can do with theme customizations but the process is pretty similar to the process shown in the past examples.  
         
         1. decide what change to make 
         1. find the template file where content is being outputted
@@ -1613,17 +1603,15 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
-        #CSS Crash Course!
+        #CSS Overview
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section class="slide" data-markdown>
       <script type="text/template">
-        #CSS Crash Course
-        
-        ##Syntax & terminology
+        #CSS Syntax & terminology
         
         **Selectors** are used to determine which HTML element(s) to apply the styles to.
         
@@ -1672,23 +1660,20 @@
     
     <section class="slide" data-markdown>
       <script type="text/template">
-        #"Cascading" Style Sheets
+        #*Cascading* Style Sheets
         
-        In CSS, they style rules "cascade" and are executed from top to bottom.
-        
-        For example, if you have use the same selector for two different declarations, the one that comes after will override the one that comes before.
+        In CSS, the style rules "cascade" and are executed from top to bottom. For example, if you use the same selector, the one that comes after will override the one that came before.
         
         ```
         h1 {
           color: red;
         }
-        
         h1 {
           color: blue;  /* this style will be override the previous declaration */
         }
         ```
 
-        When setting up the child theme, the script used to enqueue the parent and child theme stylesheets ensures that the parent and child themes are loaded in such a way that the child theme css can override the parent theme css file.
+        When setting up the child theme, the [enqueue script](slides.html#enqueue) added in **functions.php** ensures that the themes are loaded in such a way that the child theme css can override the styles in the parent theme.
       </script>
     </section>
     
@@ -1696,7 +1681,7 @@
       <script type="text/template">
         #Inheritance and specificity
         
-        One of the strengths of CSS is styles can be inherited from parent to child elements using the family tree relationship between the elements.
+        In CSS, styles can be inherited from parent to child elements using the family tree relationship between the elements.
         
         ```
         <body>
@@ -1713,17 +1698,19 @@
           color: black;
         }
         ```
-        In the above example, the CSS properties in the body selector is inherited by the descendants elements (all nested elements). However, when a more specific selector is used (e.g. h1), it overrides the inherited values because it's more specific.
+        In the above example, the CSS properties in the body selector is inherited by the descendants elements (all nested elements). 
+        
+        However, when a more *specific* selector is used (e.g. h1), it will override the inherited values.
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #Change some CSS!
         
-        Let's look at our blog page and change the font size and colour of the headings and paragraph.  You will need to open the browser developer tools to most effectively find the right selector to use.
+        On the blog page, let's change the font size and colour of the headings and paragraph.  Open the browser developer tools to most effectively find the right selector to use.
         
-        **Right-click > Inspect Element** to open the console.  Use the top left pointer icon to navigate and select the element and see the corresponding CSS on the right.
+        **Right-click > Inspect Element** to open the tool.
         
         ![](framework/img/workshop/inspect-element-css.gif)
       </script>
@@ -1733,7 +1720,7 @@
       <script type="text/template">
         #Change some CSS!
         
-        For the title, there is a specific selector for that element, `.hentry .title-post`. We can use this selector to change the `font-size` (as well as the other properties).
+        For the title, there is a specific selector for that element, `.hentry .title-post`.  Use this selector to change the `font-size` (and any other properties).
         
         ![](framework/img/workshop/inspect-css-h1.png)
         
@@ -1747,9 +1734,9 @@
       <script type="text/template">
         #Class Exercise: Update style.css
         
-        Open `style.css` from your child theme folder, **sydney-child**, in the text editor.
+        In the `style.css` file from your child theme folder, use the selector `.hentry .title-post` to make some changes!  
         
-        Using the identified selector, make some changes!  Let's try updating the font-size and colour:
+        Let's update the `font-size` and `color`:
         
         ```css
         .hentry .title-post {
@@ -1769,9 +1756,7 @@
       <script type="text/template">
         #Update style.css
         
-        Uh oh. How come only the `font-size` change is showing but not the color? 
-        
-        Inspecting the element shows that (1) the new css is being loaded and (2) the `font-size` is overriding the previous styles. But still no color change.
+        Uh oh. Only the `font-size` changed but not the color? Inspecting the element shows that (1) the new css *is* loaded and (2) the `font-size` *is* overriding the previous styles. But still no color change.
         
         **Hint**: See the arrow beside the `<h2>`? Click to open.
         
@@ -1783,7 +1768,7 @@
       <script type="text/template">
         #Update style.css 
         
-        The color of this heading is set using a *different* selector that targets the link, inside of the `<h1>` tag. That's why our CSS addition wasn't working.
+        The color of this heading uses a *different* selector, one that targets the link *inside* of the `<h1>` tag. That's why the CSS wasn't working.
         
         ![](framework/img/workshop/inspect-element-css-2.gif)
       </script>
@@ -1793,9 +1778,9 @@
       <script type="text/template">
         #Update style.css 
         
-        There seem to be multiple selectors being used to set the colour. How do you know which one to use?
+        There are two selectors used to set the colour. How do you know which one to use?
         
-        When inspecting the element, (1) shows as crossed out. That means something else is using a more specific selector and is overriding it. So, that means the selector shown in (2) should be used.  
+        When inspecting the element, #1 in example shows as crossed out. That means a more specific selector (the one not crossed out) is overriding it. So, the #2 selector should be used.  
         
         ![](framework/img/workshop/css-change-2.png)
       </script>
@@ -1805,16 +1790,23 @@
       <script type="text/template">
         #Update style.css 
         
-        This snippet below indicates that all of the links (`a`) contained within all of the headings (`h1, h2, etc`) will show the same colour by *combining* the selectors into a list separated by a comma.
         ```css
         h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
           color: #d65050;
         }
         ```
         
-        If you only want to change the color for this specific heading, use just `h2 a` as your selector. Notice that when inspecting an element, the specific element being selected is highlighted when included in a list of combined selectors.
+        This snippet shows that all links (`a`) contained within all of the headings (`h1, h2, etc`) show the same colour.
         
-        ![](framework/img/workshop/inspect-css-selectors.png)
+        If you only want to change the color for *this* specific heading, use just `h2 a` as your selector. When multiple selectors are combined, the specific element being inspected will be highlighted.
+        
+        ![](framework/img/workshop/inspect-css-selectors.png)<!-- .element: width="50%" -->
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Class exercise: Update style.css 
         
         Update style.css with the new selector.
         
@@ -1833,15 +1825,15 @@
       <script type="text/template">
         #Child Themes & CSS Specificity
         
-        You can still write your own CSS without inspecting the elements to find specific selectors, but based on the rules of CSS specificity, sometimes the style may not show as expected.
+        You can write CSS without inspecting elements each time. But based on the rules of CSS specificity, sometimes the style may not show as expected.
         
-        Another option is to take advantage of the `body_class();` template tag. This is usually included in the `<body>` tag of the `header.php` template file like so:
+        Another option is to use the `body_class();` template tag. This tag generates *classes*, based on the template and can be used for CSS.
+        
+        This should be included in the `<body>` tag in `header.php` to use specificity rules to apply styles to elements on the entire page.
           
         ```
         <body <?php body_class(); ?>>
         ```
-          
-        This template tag gives the `<body>` element different classes that can be used to apply the CSS specificity needed to override the parent theme's css.
           
         ---
         ###Resources
@@ -1855,19 +1847,19 @@
       <script type="text/template">
         #body_class();
         
-        Let's review what classes are generated on different pages of the site. These vary based on which templates are applied and specific post ids.
+        Let's review what classes are generated on different pages of our sample site. The classes vary based on page templates and post ids.
         
         ##Home page
-        ![](framework/img/workshop/body-class-home.png)
+        ![](framework/img/workshop/body-class-home.png)<!-- .element: width="100%" -->
         
         ##About page
-        ![](framework/img/workshop/body-class-about.png)
+        ![](framework/img/workshop/body-class-about.png)<!-- .element: width="100%" -->
         
         ##Blog page
-        ![](framework/img/workshop/body-class-blog.png)
+        ![](framework/img/workshop/body-class-blog.png)<!-- .element: width="100%" -->
         
         ##Blog post
-        ![](framework/img/workshop/body-class-blog-post.png)
+        ![](framework/img/workshop/body-class-blog-post.png)<!-- .element: width="100%" -->
       </script>
     </section>
     
@@ -1875,16 +1867,35 @@
       <script type="text/template">
         #Descendant Selectors & Specificity
         
-        Descendant selectors can often be used to override other styles because of specificity rules.
+        Descendant selectors can be used to override other styles because of specificity rules.
         
+        ```
+        <body>
+          <p>paragraph</p>
+        </body>
+        ```
         ```
         p {
           /* targets any paragraph anywhere on any page */
         }
+        ```
+        --- 
+        ```
+        <body class="blog">
+          <p>paragraph</p>
+        </body>
+        ```
+        ```
         .blog p {
           /* targets only paragraphs contained in an element with a class of blog */
         }
         ```
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        #Descendant Selectors & Specificity
         
         Our previous custom CSS looked like this:
         
@@ -1910,7 +1921,7 @@
       </script>
     </section>
     
-    <section class="slide title" data-markdown>
+    <section class="slide title" data-markdown data-toc>
       <script type="text/template">
         # Next Steps!
       </script>
@@ -1920,34 +1931,30 @@
       <script type="text/template">
         #Next Steps: Custom themes
         
-        Phew! That was a lot of detective work.  Why not just write it all yourself?
+        Phew! Why not just write it all yourself? You can!
         
-        You can! 
+        The main difference between child & custom themes is you'll have to make all the template files; the HTML, template tags, loops, css, etc. Or use a starter theme to get some basic functionality to start with.
         
-        The main difference between using a child theme vs a custom theme is you'll have to make all those template files yourself including all the HTML, template tags, loops, css, etc. Or use a starter theme to get some basic functionality to start with.
+        Custom themes, even with a starter theme, will require a bit more HTML/CSS/PHP knowledge.
         
-        Also, custom themes involve making changes directly to the files. A "child" folder is not needed.
-        
-        Rule of thumb: Use a child theme if you only want to make some small basic changes. Use a custom theme if you need a lot of customization. 
-        
-        But keep in mind that custom themes, even when using a starter theme, will require a bit more HTML/CSS/PHP knowledge.
+        Rule of thumb: Use a child theme to make a few changes. Use a custom theme if you need a lot of customization. 
         
         ---
         ###Resources
         
         * [Why you should use a WordPress starter theme](https://thethemefoundry.com/blog/wordpress-starter-theme/)
         * [WordPress Codex: Theme Development](https://codex.wordpress.org/Theme_Development)
-        * [WordPress Theme Development: Getting Started with Underscores (_s)](http://www.sitepoint.com/wordpress-theme-development-getting-started-with-underscores/)
+        * [WordPress Theme Development: Getting Started with Underscores](http://www.sitepoint.com/wordpress-theme-development-getting-started-with-underscores/)
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section class="slide" data-markdown>
       <script type="text/template">
         #Next Steps: Plugins
         
-        WordPress plugins are bits of software that can be uploaded to your WordPress site to extend the functionality of your WordPress site.
+        WordPress plugins are bits of software that can be uploaded to your WordPress site to extend the functionality.
         
-        Earlier, we recommended using [Akismet](https://wordpress.org/plugins/akismet/) plugin to help with spam comments.
+        For example, [Akismet](https://wordpress.org/plugins/akismet/) is a plugin to help with spam comments.
         
         Adding functionality with Plugins range from adding social media buttons and  related posts, to Google Analytics to adding eCommerce options and everything in between.  
         
@@ -1965,14 +1972,14 @@
       </script>
     </section>
     
-    <section class="slide" data-markdown data-toc>
+    <section class="slide small-type" data-markdown>
       <script type="text/template">
         #Next Steps: Going Live
         
         Before going live, you'll need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
         
-        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Domain and hosting - Use coupon code **LLC40** to get $40 off your registration!
-        * [hover.com](http://hover.com/ladiescode) - Domain registration
+        * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Domain and hosting - Use coupon code **LLC40** to get $40 off your registration
+        * [hover.com](http://hover.com/ladiescode) - save 10% with the promo code "learningcode"
 
         Why keep your domains and hosting separate? Learn more about Hover [here](http://ladieslearningcode.com/getting-hosted-domains-with-hover/).
         
@@ -1987,42 +1994,23 @@
     
     <section class="slide last">
       <h1>Thank you!</h1>
-
       <h2 class="heading-bg">
-        <span> Intro to WordPress:</span><br>
-        <span>Create Your Own Theme </span>
+        <span>
+          Intro to WordPress:<br>Create Your Own Theme 
+        </span>
       </h2>
       
-      <img class="instructor" src="http://christinatruong.com/christina-truong-square.jpg" alt="Christina Truong">
+      <!-- <img class="instructor" src="http://christinatruong.com/christina-truong-square.jpg" alt="Christina Truong">
       <h2><span class="cursive">with</span> Christina Truong</h2>  
       <ul>
-        <!-- <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li> -->
+        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
         <li><i class="fa fa-desktop"></i><a href="http://christinatruong.com">christinatruong.com</a></li>
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/christinatruong">@christinatruong</a></li>
-      </ul>
+      </ul> -->
       
       <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&rsquo;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
   </main>
-
-  <!-- Last slide -->
-  <section class="slide last">
-    <h1>Thank you!</h1>
-    <h2 class="heading-bg">
-      <span>Title of Workshop<br>Second line</span>
-    </h2>  
-
-    <img class="instructor" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
-    <h2><span class="cursive">with</span> Instructor Name</h2>
-    <ul>
-      <li><a href="mailto:">hello@email.com</a></li>
-      <li><a href="#">mywebsite.com</a></li>
-      <li><a href="http://twitter.com/">@twitter</a></li>
-    </ul>
-
-    <p class="attribution">Slide presentation created by <a href="http://christinatruong.com">Christina Truong</a> based on <a href="https://github.com/LeaVerou/csss">Lea Verou's SlideShow</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
-  </section>
-  </main><!-- cls main section -->
 
   <script src="framework/scripts/jquery-1.11.0.min.js"></script>
   <script src="framework/scripts/slideshow.js"></script>

@@ -83,6 +83,13 @@ hr {
   border: none;
   border-top: 1px solid $gray-light;
   clear: both;
+  margin: 30px 0 0;
+  display: inline-block;
+  width: 100%;
+  
+  + p {
+    margin-top: 16px;
+  }
 }
 p + ol,
 p + ul {
@@ -113,7 +120,7 @@ ul {
       content: "\203A"; // › symbol
       font-family: $quicksand;
       font-weight: bold;
-      margin-left: -22px;
+      margin-left: -19px;
       padding-right: 10px;
     }
   }
@@ -121,9 +128,8 @@ ul {
 ul, ol {
   ol, ul,
   .list-sm & {
+    margin-top: 6px;
     font-size: $font-size-sm;
-    
-    li { margin-bottom: 4px; }
   }
 }
 
@@ -131,10 +137,6 @@ ul, ol {
 .nested-list {
   ul {
     margin-left: -22px;
-    
-    li {
-      margin-left: 22px;
-    }
     
     li:before {
       content: "";
@@ -224,10 +226,7 @@ th {
   text-align: left;
   font-weight: normal;
 }
-td {
-  // padding-right: 60px;
-  // padding-left: 10px;
-  
+td {  
   .two-col-table & {
     width: 50%;
   }
@@ -398,7 +397,6 @@ a.highlight {
     letter-spacing: 0.05rem;
     font-size: $font-size-heading;
     font-family: "Quicksand",sans-serif;
-    // letter-spacing: -0.05em;
     text-transform: uppercase;
   }
 }
@@ -689,6 +687,9 @@ code {
 .hljs-doctype,
 .hljs-comment {
   color: #990;
+}
+.php .hljs-preprocessor {
+  color: green;
 }
 
 

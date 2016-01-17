@@ -34,6 +34,19 @@
     margin-top: 70px;
   }
 }
+.templates {
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+    li {
+      margin-bottom: 0px;
+    }
+  }
+  &.nested-list ul ul {
+    margin-bottom: 10px;
+  }
+}
 .ta-da {
   background: url(../img/workshop/ta-da.gif);
   background-size: cover;
