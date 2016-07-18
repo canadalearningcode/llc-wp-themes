@@ -1051,7 +1051,7 @@
         
         ```
         function greeting($name) {
-          echo "Hello $name!"; // code to be executed
+          echo "Hello ", $name, "!"; // code to be executed
         }
         ```
         Now *call* the function with an argument.
@@ -1215,8 +1215,6 @@
           function theme_enqueue_styles() {
               wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
           }
-          
-          ?>
           ```
           
           And that's it!
