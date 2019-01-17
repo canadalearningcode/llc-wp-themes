@@ -1,6 +1,6 @@
-#Ladies Learning Code
+# Ladies Learning Code
 
-##Intro to WordPress: Create Your Own Theme
+## Intro to WordPress: Create Your Own Theme
 
 A full day introductory WordPress workshop.
 
